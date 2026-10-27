@@ -1,0 +1,14 @@
+// @id revoked-principal
+// @name ABW-005 Revoked principal still calling MCP APIs
+// @severity High
+// @tactics Impact
+// @frequency PT5M
+// @period PT30M
+// @group Account
+// @entity Account.AadUserId=UserOid
+// @details Attempts=Attempts Servers=Servers
+// @description A user on the kill-switch deny list (APIM named value abw-deny-oids) is still presenting tokens. Revocation is working at the gateway; the caller needs to be contained at the identity layer (revoke sessions, disable the account).
+AbwGateway(30m)
+| where Reason == 'revoked'
+| summarize Attempts = count(), Servers = make_set(Server, 10), CallerIps = make_set(CallerIp, 10), FirstSeen = min(TimeGenerated), LastSeen = max(TimeGenerated) by UserOid
+| extend TimeGenerated = LastSeen

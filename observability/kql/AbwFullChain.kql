@@ -1,0 +1,103 @@
+// @function AbwFullChain
+// @params anyId:string, lookback:timespan = 7d, tokenIds:string = ''
+// @description The whole run for one id, Entra included: AbwFullChainCore plus the sign-in that started the session (password, MFA) and the token each MCP server accepted (Conditional Access verdicts, location), read from the Entra sign-in export and joined on the token id the MCP audit records. A token is reused until it expires, so the sign-in can be days older than the call: set the time range to 30 days. tokenIds is optional: the token ids (uti claims, comma separated) a caller sent, for a call the gateway refused before any MCP server logged its token. Deployed without an Entra workspace it is AbwFullChainCore.
+// @fallback AbwFullChainCore(anyId, lookback) | project-away TokenId
+let core = materialize(AbwFullChainCore(anyId, lookback));
+let sent = iff(isempty(tokenIds), dynamic([]), split(tokenIds, ','));
+let toks = array_concat(coalesce(toscalar(core | where isnotempty(TokenId) | summarize make_set(TokenId)), dynamic([])), sent, dynamic(['~none~']));
+// the two Entra sign-in tables; deployed with an Entra workspace id they are read from that workspace (infra\06b-observability.bicep)
+let entraNonInteractive = AADNonInteractiveUserSignInLogs;
+let entraInteractive = SigninLogs;
+// the two tables disagree on column types (string in one, dynamic in the other): give each the same shape before they meet
+// (a function over any table cannot name its columns, hence column_ifexists)
+let shape = (t:(*)) {
+    t
+    | project
+        TokenId = tostring(column_ifexists('UniqueTokenIdentifier', '')),
+        SessionId = tostring(column_ifexists('SessionId', '')),
+        STime = todatetime(column_ifexists('CreatedDateTime', datetime(null))),
+        Upn = tostring(column_ifexists('UserPrincipalName', '')),
+        App = tostring(column_ifexists('AppDisplayName', '')),
+        Resource = tostring(column_ifexists('ResourceDisplayName', '')),
+        Result = tostring(column_ifexists('ResultType', '')),
+        Protocol = tostring(column_ifexists('AuthenticationProtocol', '')),
+        Requirement = tostring(column_ifexists('AuthenticationRequirement', '')),
+        CaStatus = tostring(column_ifexists('ConditionalAccessStatus', '')),
+        Policies = todynamic(tostring(column_ifexists('ConditionalAccessPolicies', ''))),
+        AuthSteps = todynamic(tostring(column_ifexists('AuthenticationDetails', ''))),
+        Loc = todynamic(tostring(column_ifexists('LocationDetails', '')))
+};
+// reads the Conditional Access verdicts, the authentication steps and the place out of the JSON a sign-in row carries
+let explain = (t:(TokenId:string, SessionId:string, STime:datetime, Upn:string, App:string, Resource:string, Result:string, Protocol:string, Requirement:string, CaStatus:string, Policies:dynamic, AuthSteps:dynamic, Loc:dynamic)) {
+    t
+    | mv-apply p = Policies on (
+        where tostring(p.result) !in ('', 'notApplied', 'notEnabled', 'reportOnlyNotApplied')
+        | summarize Ca = make_set(strcat(tostring(p.displayName), ' = ', tostring(p.result))))
+    | mv-apply s = AuthSteps on (
+        extend Method = tostring(s.authenticationMethod), Said = tostring(s.authenticationStepResultDetail)
+        | where tostring(s.succeeded) =~ 'true'
+        | summarize
+            Steps = make_list(strcat(coalesce(Method, Said), iff(isnotempty(Method) and isnotempty(Said), strcat(': ', Said), ''))),
+            Methods = make_list_if(coalesce(Method, Said), Method != 'Previously satisfied'))
+    | extend
+        City = tostring(Loc.city),
+        Country = tostring(Loc.countryOrRegion),
+        Needs = case(Requirement == 'multiFactorAuthentication', 'MFA required', Requirement == 'singleFactorAuthentication', 'single factor', Requirement)
+};
+let caText = (ca:dynamic) { iff(array_length(ca) > 0, strcat(' [', strcat_array(ca, '; '), ']'), '') };
+// every token the MCP servers saw on this run: one row per token id (a refresh-token redemption is a non-interactive sign-in)
+let tokenRaw = materialize(
+    union
+        (entraNonInteractive | where UniqueTokenIdentifier in (toks) and CreatedDateTime > ago(lookback + 2d) | invoke shape()),
+        (entraInteractive | where UniqueTokenIdentifier in (toks) and CreatedDateTime > ago(lookback + 2d) | invoke shape())
+    | summarize arg_min(STime, *) by TokenId
+    | invoke explain());
+let tokenRows = tokenRaw
+    | project
+        Time = STime,
+        Step = 0,
+        Layer = 'Entra token issued',
+        Actor = Upn,
+        Action = strcat(App, ' was issued a token for ', Resource),
+        Detail = strcat(
+            iff(array_length(Steps) > 0, strcat(strcat_array(Steps, ' + '), ' | '), ''),
+            Needs,
+            ' | Conditional Access ', CaStatus, caText(Ca),
+            iff(isnotempty(City), strcat(' | ', City, ', ', Country), ''),
+            ' | token ', TokenId,
+            iff(isnotempty(SessionId), strcat(' | session ', substring(SessionId, 0, 8)), '')),
+        RequestId = '',
+        TraceId = '';
+// the interactive sign-in(s) of each session those tokens belong to: the login that earned the refresh token, often days earlier
+let sess = array_concat(coalesce(toscalar(tokenRaw | where isnotempty(SessionId) | summarize make_set(SessionId)), dynamic([])), dynamic(['~none~']));
+let loginRaw = entraInteractive
+    | where SessionId in (sess) and CreatedDateTime > ago(90d)
+    | invoke shape()
+    | invoke explain()
+    | extend NMethods = array_length(Methods);
+// one row per session: the first successful sign-in's time, and the steps of the attempt that actually asked for them (a device-code login logs those on its first row)
+let loginRows = loginRaw
+    | summarize
+        FirstOk = minif(STime, Result == '0'),
+        FirstAny = min(STime),
+        App = take_anyif(App, Result == '0'),
+        Protocol = take_anyif(Protocol, Result == '0' and Protocol != 'none'),
+        arg_max(NMethods, Upn, Steps, Methods, Needs, CaStatus, Ca)
+        by SessionId
+    | project
+        Time = coalesce(FirstOk, FirstAny),
+        Step = 0,
+        Layer = 'Entra sign-in',
+        Actor = Upn,
+        Action = strcat('signed in to ', App, iff(array_length(Methods) > 0, strcat(' with ', strcat_array(Methods, ' + ')), ' (MFA satisfied by an earlier sign-in)')),
+        Detail = strcat(
+            iff(array_length(Steps) > 0, strcat(strcat_array(Steps, ' + '), ' | '), ''),
+            Needs,
+            ' | Conditional Access ', CaStatus, caText(Ca),
+            iff(isnotempty(Protocol), strcat(' | ', Protocol, ' flow'), ''),
+            ' | session ', substring(SessionId, 0, 8)),
+        RequestId = '',
+        TraceId = '';
+union (core | project-away TokenId), tokenRows, loginRows
+| order by Time asc, Step asc
+| project Time, Step, Layer, Actor, Action, Detail, RequestId, TraceId

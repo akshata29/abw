@@ -1,0 +1,255 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1880" viewBox="0 0 2400 1880" font-family="Helvetica, Arial, sans-serif">
+<rect x="0" y="0" width="2400" height="1880" fill="#ffffff"/>
+<rect x="1172" y="22" width="1168" height="138" rx="32" ry="32" fill="#ffffff" stroke="#adb5bd" stroke-width="1"/>
+<rect x="60" y="232" width="280" height="72" rx="18" ry="18" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="200.00" y="268.00" font-size="18" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">User, Demo Console or CLI</text>
+<rect x="460" y="232" width="280" height="72" rx="18" ry="18" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="600.00" y="268.00" font-size="18" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">APIM /agents front door</text>
+<rect x="860" y="232" width="280" height="72" rx="18" ry="18" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="1000.00" y="268.00" font-size="18" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Foundry agent</text>
+<rect x="1260" y="232" width="280" height="72" rx="18" ry="18" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="1400.01" y="268.00" font-size="18" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">APIM gateway /&lt;server&gt;/mcp</text>
+<rect x="1660" y="232" width="280" height="72" rx="18" ry="18" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="1800.00" y="268.00" font-size="18" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">MCP server</text>
+<rect x="2060" y="232" width="280" height="72" rx="18" ry="18" fill="#ffe8cc" stroke="#e8590c" stroke-width="2"/>
+<text x="2200.00" y="256.75" font-size="18" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Data plane: Storage, Cosmos</text>
+<text x="2200.00" y="279.25" font-size="18" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">DB, Search</text>
+<rect x="1660" y="394" width="280" height="56" rx="14" ry="14" fill="#e5dbff" stroke="#6741d9" stroke-width="2"/>
+<text x="1800.01" y="422.00" font-size="18" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Entra ID token endpoint</text>
+<rect x="60" y="530" width="740" height="334" rx="32" ry="32" fill="#f3f0ff" stroke="#6741d9" stroke-width="2"/>
+<rect x="70" y="540" width="720" height="44" rx="11" ry="11" fill="#6741d9" stroke="#6741d9" stroke-width="1"/>
+<text x="430.00" y="562.00" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">T1  User token for Foundry and the front door</text>
+<rect x="830" y="530" width="740" height="334" rx="32" ry="32" fill="#f3f0ff" stroke="#6741d9" stroke-width="2"/>
+<rect x="840" y="540" width="720" height="44" rx="11" ry="11" fill="#6741d9" stroke="#6741d9" stroke-width="1"/>
+<text x="1200.00" y="562.00" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">T2  User token for one MCP API</text>
+<rect x="1600" y="530" width="740" height="334" rx="32" ry="32" fill="#f3f0ff" stroke="#6741d9" stroke-width="2"/>
+<rect x="1610" y="540" width="720" height="44" rx="11" ry="11" fill="#6741d9" stroke="#6741d9" stroke-width="1"/>
+<text x="1970.01" y="562.00" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">T3  Managed identity assertion (UAMI)</text>
+<rect x="60" y="888" width="740" height="354" rx="32" ry="32" fill="#f3f0ff" stroke="#6741d9" stroke-width="2"/>
+<rect x="70" y="898" width="720" height="44" rx="11" ry="11" fill="#6741d9" stroke="#6741d9" stroke-width="1"/>
+<text x="430.00" y="920.00" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">T4  OBO data token (Storage, Cosmos DB, Search)</text>
+<rect x="830" y="888" width="740" height="354" rx="32" ry="32" fill="#f3f0ff" stroke="#6741d9" stroke-width="2"/>
+<rect x="840" y="898" width="720" height="44" rx="11" ry="11" fill="#6741d9" stroke="#6741d9" stroke-width="1"/>
+<text x="1200.00" y="920.00" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Persona sign-in token (device code)</text>
+<rect x="1600" y="888" width="740" height="354" rx="32" ry="32" fill="#f3f0ff" stroke="#6741d9" stroke-width="2"/>
+<rect x="1610" y="898" width="720" height="44" rx="11" ry="11" fill="#6741d9" stroke="#6741d9" stroke-width="1"/>
+<text x="1970.00" y="920.00" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Operator tokens (az login)</text>
+<rect x="60" y="1316" width="740" height="294" rx="32" ry="32" fill="#fff5f5" stroke="#e03131" stroke-width="2"/>
+<rect x="70" y="1326" width="720" height="44" rx="11" ry="11" fill="#c92a2a" stroke="#c92a2a" stroke-width="1"/>
+<text x="430.00" y="1348.00" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">C5  APIM subscription key on /legacy</text>
+<rect x="830" y="1316" width="740" height="294" rx="32" ry="32" fill="#fff5f5" stroke="#e03131" stroke-width="2"/>
+<rect x="840" y="1326" width="720" height="44" rx="11" ry="11" fill="#c92a2a" stroke="#c92a2a" stroke-width="1"/>
+<text x="1200.00" y="1348.00" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">C6  Vendor API key (x-vendor-key)</text>
+<rect x="1600" y="1316" width="740" height="294" rx="32" ry="32" fill="#fff5f5" stroke="#e03131" stroke-width="2"/>
+<rect x="1610" y="1326" width="720" height="44" rx="11" ry="11" fill="#c92a2a" stroke="#c92a2a" stroke-width="1"/>
+<text x="1970.00" y="1348.00" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">C3  Agent client secret (abw-agent-client)</text>
+<rect x="60" y="1650" width="1500" height="155" rx="32" ry="32" fill="#f8f9fa" stroke="#343a40" stroke-width="2"/>
+<path d="M 344.00 268.00 L 456.00 268.00" fill="none" stroke="#6741d9" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 442.63 261.19 L 456.00 268.00 L 442.63 274.81" fill="none" stroke="#6741d9" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 744.00 268.00 L 856.00 268.00" fill="none" stroke="#6741d9" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 842.63 261.19 L 856.00 268.00 L 842.63 274.81" fill="none" stroke="#6741d9" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1144.00 268.00 L 1256.00 268.00" fill="none" stroke="#6741d9" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1242.63 261.19 L 1256.00 268.00 L 1242.63 274.81" fill="none" stroke="#6741d9" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1544.00 268.00 L 1656.00 268.00" fill="none" stroke="#6741d9" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1642.63 261.19 L 1656.00 268.00 L 1642.63 274.81" fill="none" stroke="#6741d9" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1800.00 308.00 L 1800.00 390.00" fill="none" stroke="#6741d9" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1806.81 376.63 L 1800.00 390.00 L 1793.19 376.63" fill="none" stroke="#6741d9" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1793.19 321.37 L 1800.00 308.00 L 1806.81 321.37" fill="none" stroke="#6741d9" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1944.00 268.00 L 2056.00 268.00" fill="none" stroke="#6741d9" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2042.63 261.19 L 2056.00 268.00 L 2042.63 274.81" fill="none" stroke="#6741d9" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="60.00" y="56.50" font-size="36" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Token anatomy: who issues it, who holds it, who checks it</text>
+<text x="60.00" y="98.50" font-size="20" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">Four tokens on the governed path, two sign-in tokens and three static secrets (C3, C5, C6)</text>
+<text x="60.00" y="1856.00" font-size="16" fill="#868e96" text-anchor="start" dominant-baseline="central" xml:space="preserve">Agents Behind the Wall - diagram 07 of 13 - generated by docs/diagrams/build_diagrams.py</text>
+<text x="1186.00" y="43.25" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Legend</text>
+<rect x="1186" y="61" width="36" height="22" rx="5.5" ry="5.5" fill="#e5dbff" stroke="#6741d9" stroke-width="2"/>
+<text x="1232.00" y="71.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Identity (Entra ID)</text>
+<rect x="1186" y="91" width="36" height="22" rx="5.5" ry="5.5" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="1232.00" y="101.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Network, API gateway (APIM)</text>
+<rect x="1186" y="121" width="36" height="22" rx="5.5" ry="5.5" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="1232.00" y="131.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Compute (agents, MCP servers)</text>
+<rect x="1476" y="61" width="36" height="22" rx="5.5" ry="5.5" fill="#ffe8cc" stroke="#e8590c" stroke-width="2"/>
+<text x="1522.00" y="71.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Data stores</text>
+<rect x="1476" y="91" width="36" height="22" rx="5.5" ry="5.5" fill="#c5f6fa" stroke="#0b7285" stroke-width="2"/>
+<text x="1522.00" y="101.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Observability</text>
+<rect x="1476" y="121" width="36" height="22" rx="5.5" ry="5.5" fill="#ffe3e3" stroke="#e03131" stroke-width="2"/>
+<text x="1522.00" y="131.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Deny, risk, kill switch</text>
+<rect x="1766" y="61" width="36" height="22" rx="5.5" ry="5.5" fill="#f1f3f5" stroke="#868e96" stroke-width="2" stroke-dasharray="10 7"/>
+<text x="1812.00" y="71.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Human / optional (dashed)</text>
+<rect x="1766" y="91" width="36" height="22" rx="5.5" ry="5.5" fill="#fff3bf" stroke="#f08c00" stroke-width="2"/>
+<text x="1812.00" y="101.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Azure Policy, governance</text>
+<rect x="1766" y="121" width="36" height="22" rx="5.5" ry="5.5" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="1812.00" y="131.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">People, client tools</text>
+<path d="M 2056.00 72.00 L 2092.00 72.00" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2078.63 65.19 L 2092.00 72.00 L 2078.63 78.81" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="2102.00" y="71.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Allowed flow</text>
+<path d="M 2056.00 102.00 L 2092.00 102.00" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2078.63 95.19 L 2092.00 102.00 L 2078.63 108.81" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="2102.00" y="101.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Denied exit / risk path</text>
+<path d="M 2056.00 132.00 L 2092.00 132.00" fill="none" stroke="#868e96" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="10 7"/>
+<path d="M 2078.63 125.19 L 2092.00 132.00 L 2078.63 138.81" fill="none" stroke="#868e96" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="2102.00" y="131.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Manual step (dashed)</text>
+<text x="60.00" y="202.50" font-size="20" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Which token is on which hop of one governed call (sign-in, consent and the OBO exchange: diagram 04)</text>
+<text x="60.00" y="380.00" font-size="16" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">The front door forwards T1 unchanged. The private MCP server skips the gateway: Foundry sends T2 to it directly, and only the server checks it.</text>
+<text x="60.00" y="506.50" font-size="20" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Entra-issued tokens: signed, short-lived, and only good for the audience they name</text>
+<text x="76.00" y="608.00" font-size="16" fill="#6741d9" text-anchor="start" dominant-baseline="central" xml:space="preserve">Issuer</text>
+<text x="192.00" y="608.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Entra ID, the tenant's endpoint. The front door accepts the v1 (sts.windows.net) and</text>
+<text x="192.00" y="628.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">the v2.0 issuer.</text>
+<text x="76.00" y="658.00" font-size="16" fill="#6741d9" text-anchor="start" dominant-baseline="central" xml:space="preserve">Audience</text>
+<text x="192.00" y="658.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">https://ai.azure.com, the Foundry data plane.</text>
+<text x="76.00" y="688.00" font-size="16" fill="#6741d9" text-anchor="start" dominant-baseline="central" xml:space="preserve">Key claims</text>
+<text x="192.00" y="688.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">tid, oid (the user), upn or preferred_username, exp. The kill switch, rate limit and</text>
+<text x="192.00" y="708.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">token budget are keyed on oid.</text>
+<text x="76.00" y="738.00" font-size="16" fill="#6741d9" text-anchor="start" dominant-baseline="central" xml:space="preserve">Lifetime</text>
+<text x="192.00" y="738.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Entra default, typically 60-90 min.</text>
+<text x="76.00" y="768.00" font-size="16" fill="#6741d9" text-anchor="start" dominant-baseline="central" xml:space="preserve">Held by</text>
+<text x="192.00" y="768.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">The caller: the operator's Azure CLI cache, or a persona's device-code cache. The</text>
+<text x="192.00" y="788.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">front door forwards it unchanged.</text>
+<text x="76.00" y="818.00" font-size="16" fill="#6741d9" text-anchor="start" dominant-baseline="central" xml:space="preserve">Validated by</text>
+<text x="192.00" y="818.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">APIM /agents (signature, issuer, audience, tid, expiry), then Foundry (Entra only,</text>
+<text x="192.00" y="838.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">local keys are off).</text>
+<text x="846.00" y="608.00" font-size="16" fill="#6741d9" text-anchor="start" dominant-baseline="central" xml:space="preserve">Issuer</text>
+<text x="962.00" y="608.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Entra ID, the tenant's v2.0 endpoint.</text>
+<text x="846.00" y="638.00" font-size="16" fill="#6741d9" text-anchor="start" dominant-baseline="central" xml:space="preserve">Audience</text>
+<text x="962.00" y="638.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">One MCP API app (api://&lt;app-id&gt;). A token for one server is refused by the others.</text>
+<text x="846.00" y="668.00" font-size="16" fill="#6741d9" text-anchor="start" dominant-baseline="central" xml:space="preserve">Key claims</text>
+<text x="962.00" y="668.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">ver 2.0, tid, oid, preferred_username, azp (an allowed client), scp Tools.Read (and</text>
+<text x="962.00" y="688.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Tools.Execute for actions), roles (the app roles), uti (logged as jti).</text>
+<text x="846.00" y="718.00" font-size="16" fill="#6741d9" text-anchor="start" dominant-baseline="central" xml:space="preserve">Lifetime</text>
+<text x="962.00" y="718.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Entra default, typically 60-90 min. Foundry reuses it until it expires, so a role</text>
+<text x="962.00" y="738.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">change reaches the agent only then.</text>
+<text x="846.00" y="768.00" font-size="16" fill="#6741d9" text-anchor="start" dominant-baseline="central" xml:space="preserve">Held by</text>
+<text x="962.00" y="768.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Foundry, after the user's one-time consent for that connection.</text>
+<text x="846.00" y="798.00" font-size="16" fill="#6741d9" text-anchor="start" dominant-baseline="central" xml:space="preserve">Validated by</text>
+<text x="962.00" y="798.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">APIM (signature, audience, tenant, deny list, client, scope, role), then the MCP</text>
+<text x="962.00" y="818.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">server again. The private server has no gateway in front.</text>
+<text x="1616.00" y="608.00" font-size="16" fill="#6741d9" text-anchor="start" dominant-baseline="central" xml:space="preserve">Issuer</text>
+<text x="1732.00" y="608.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Entra ID, the tenant's v2.0 endpoint, for the server's managed identity.</text>
+<text x="1616.00" y="638.00" font-size="16" fill="#6741d9" text-anchor="start" dominant-baseline="central" xml:space="preserve">Audience</text>
+<text x="1732.00" y="638.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">api://AzureADTokenExchange</text>
+<text x="1616.00" y="668.00" font-size="16" fill="#6741d9" text-anchor="start" dominant-baseline="central" xml:space="preserve">Key claims</text>
+<text x="1732.00" y="668.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">sub = the UAMI's principal id. It is not a token for any API: it is the client assertion</text>
+<text x="1732.00" y="688.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">that replaces a client secret.</text>
+<text x="1616.00" y="718.00" font-size="16" fill="#6741d9" text-anchor="start" dominant-baseline="central" xml:space="preserve">Lifetime</text>
+<text x="1732.00" y="718.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Set by the platform; the managed identity back end caches it about 24 h and it</text>
+<text x="1732.00" y="738.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">cannot be force-refreshed.</text>
+<text x="1616.00" y="768.00" font-size="16" fill="#6741d9" text-anchor="start" dominant-baseline="central" xml:space="preserve">Held by</text>
+<text x="1732.00" y="768.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">The MCP server, from its managed identity endpoint. No secret is stored.</text>
+<text x="1616.00" y="798.00" font-size="16" fill="#6741d9" text-anchor="start" dominant-baseline="central" xml:space="preserve">Validated by</text>
+<text x="1732.00" y="798.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Entra, against the federated credential on the API app: issuer, subject and</text>
+<text x="1732.00" y="818.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">audience must match. Exists for research, wall, actions and private only.</text>
+<text x="76.00" y="966.00" font-size="16" fill="#6741d9" text-anchor="start" dominant-baseline="central" xml:space="preserve">Issuer</text>
+<text x="192.00" y="966.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Entra ID, through the on-behalf-of (OBO) exchange of T2, authenticated by T3.</text>
+<text x="76.00" y="996.00" font-size="16" fill="#6741d9" text-anchor="start" dominant-baseline="central" xml:space="preserve">Audience</text>
+<text x="192.00" y="996.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">One data service: Storage, Cosmos DB or Search (scope user_impersonation).</text>
+<text x="76.00" y="1026.00" font-size="16" fill="#6741d9" text-anchor="start" dominant-baseline="central" xml:space="preserve">Key claims</text>
+<text x="192.00" y="1026.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">oid = the user, azp = the MCP API app, scp user_impersonation. The data plane</text>
+<text x="192.00" y="1046.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">resolves the user's group role assignments.</text>
+<text x="76.00" y="1076.00" font-size="16" fill="#6741d9" text-anchor="start" dominant-baseline="central" xml:space="preserve">Lifetime</text>
+<text x="192.00" y="1076.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Entra default, typically 60-90 min. MSAL keeps it in the server's memory.</text>
+<text x="76.00" y="1106.00" font-size="16" fill="#6741d9" text-anchor="start" dominant-baseline="central" xml:space="preserve">Held by</text>
+<text x="192.00" y="1106.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">The MCP server, in memory only. The audit event carries the request id, never the</text>
+<text x="192.00" y="1126.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">token.</text>
+<text x="76.00" y="1156.00" font-size="16" fill="#6741d9" text-anchor="start" dominant-baseline="central" xml:space="preserve">Validated by</text>
+<text x="192.00" y="1156.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">The data service: its own roles, on the user's own identity (Wall 3).</text>
+<text x="846.00" y="966.00" font-size="16" fill="#6741d9" text-anchor="start" dominant-baseline="central" xml:space="preserve">Issuer</text>
+<text x="962.00" y="966.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Entra ID, the tenant's v2.0 endpoint.</text>
+<text x="846.00" y="996.00" font-size="16" fill="#6741d9" text-anchor="start" dominant-baseline="central" xml:space="preserve">Audience</text>
+<text x="962.00" y="996.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">One MCP API app, requested as api://&lt;app-id&gt;/Tools.Read.</text>
+<text x="846.00" y="1026.00" font-size="16" fill="#6741d9" text-anchor="start" dominant-baseline="central" xml:space="preserve">Key claims</text>
+<text x="962.00" y="1026.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Same shape as T2, with azp = abw-test-client (a public client). Roles and groups</text>
+<text x="962.00" y="1046.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">come from the persona.</text>
+<text x="846.00" y="1076.00" font-size="16" fill="#6741d9" text-anchor="start" dominant-baseline="central" xml:space="preserve">Lifetime</text>
+<text x="962.00" y="1076.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Access token: Entra default. The refresh token sits in the cache file; the first token</text>
+<text x="962.00" y="1096.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">per persona, server and scope after a console start is forced fresh.</text>
+<text x="846.00" y="1126.00" font-size="16" fill="#6741d9" text-anchor="start" dominant-baseline="central" xml:space="preserve">Held by</text>
+<text x="962.00" y="1126.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">The Demo Console's MSAL cache file (.secrets\msal-test-&lt;id&gt;.json) on the</text>
+<text x="962.00" y="1146.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">machine that runs it.</text>
+<text x="846.00" y="1176.00" font-size="16" fill="#6741d9" text-anchor="start" dominant-baseline="central" xml:space="preserve">Validated by</text>
+<text x="962.00" y="1176.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">APIM and the MCP server, exactly like T2.</text>
+<text x="1616.00" y="966.00" font-size="16" fill="#6741d9" text-anchor="start" dominant-baseline="central" xml:space="preserve">Issuer</text>
+<text x="1732.00" y="966.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Entra ID, the tenant's endpoint.</text>
+<text x="1616.00" y="996.00" font-size="16" fill="#6741d9" text-anchor="start" dominant-baseline="central" xml:space="preserve">Audience</text>
+<text x="1732.00" y="996.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">ARM, Microsoft Graph, Log Analytics and Foundry. For the MCP APIs, a delegated</text>
+<text x="1732.00" y="1016.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">token for the operator.</text>
+<text x="1616.00" y="1046.00" font-size="16" fill="#6741d9" text-anchor="start" dominant-baseline="central" xml:space="preserve">Key claims</text>
+<text x="1732.00" y="1046.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">The operator's own oid and roles. azp = the well-known Azure CLI client (on the</text>
+<text x="1732.00" y="1066.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">client allow-list).</text>
+<text x="1616.00" y="1096.00" font-size="16" fill="#6741d9" text-anchor="start" dominant-baseline="central" xml:space="preserve">Lifetime</text>
+<text x="1732.00" y="1096.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Entra default. The console and the CLI mint tokens silently from the cache when</text>
+<text x="1732.00" y="1116.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">needed.</text>
+<text x="1616.00" y="1146.00" font-size="16" fill="#6741d9" text-anchor="start" dominant-baseline="central" xml:space="preserve">Held by</text>
+<text x="1732.00" y="1146.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">The Azure CLI's encrypted MSAL cache on the machine that runs the console. The</text>
+<text x="1732.00" y="1166.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">jump box has its own az login.</text>
+<text x="1616.00" y="1196.00" font-size="16" fill="#6741d9" text-anchor="start" dominant-baseline="central" xml:space="preserve">Validated by</text>
+<text x="1732.00" y="1196.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">ARM, Graph, Log Analytics and Foundry (their own RBAC). APIM and the MCP</text>
+<text x="1732.00" y="1216.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">server for the gateway beats.</text>
+<text x="60.00" y="1292.50" font-size="20" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Static secrets: long-lived, shared, and not tied to a user</text>
+<text x="76.00" y="1394.00" font-size="16" fill="#c92a2a" text-anchor="start" dominant-baseline="central" xml:space="preserve">Issuer</text>
+<text x="192.00" y="1394.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">API Management: the subscription sub-abw-legacy-poc.</text>
+<text x="76.00" y="1424.00" font-size="16" fill="#c92a2a" text-anchor="start" dominant-baseline="central" xml:space="preserve">Audience</text>
+<text x="192.00" y="1424.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">The /legacy API only, sent as the Ocp-Apim-Subscription-Key header.</text>
+<text x="76.00" y="1454.00" font-size="16" fill="#c92a2a" text-anchor="start" dominant-baseline="central" xml:space="preserve">Key claims</text>
+<text x="192.00" y="1454.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">None. An opaque string: no user, no roles, no expiry.</text>
+<text x="76.00" y="1484.00" font-size="16" fill="#c92a2a" text-anchor="start" dominant-baseline="central" xml:space="preserve">Lifetime</text>
+<text x="192.00" y="1484.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Static until someone rotates it.</text>
+<text x="76.00" y="1514.00" font-size="16" fill="#c92a2a" text-anchor="start" dominant-baseline="central" xml:space="preserve">Held by</text>
+<text x="192.00" y="1514.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">The Foundry connection mcp-legacy-key (custom keys), and anyone who copies it.</text>
+<text x="76.00" y="1544.00" font-size="16" fill="#c92a2a" text-anchor="start" dominant-baseline="central" xml:space="preserve">Validated by</text>
+<text x="192.00" y="1544.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">APIM only, plus a rate limit of 120 calls a minute per subscription key (else per</text>
+<text x="192.00" y="1564.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">caller IP). The legacy server checks nothing (reason no_user_context).</text>
+<text x="846.00" y="1394.00" font-size="16" fill="#c92a2a" text-anchor="start" dominant-baseline="central" xml:space="preserve">Issuer</text>
+<text x="962.00" y="1394.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">The deployment creates it as the Key Vault secret vendor-api-key.</text>
+<text x="846.00" y="1424.00" font-size="16" fill="#c92a2a" text-anchor="start" dominant-baseline="central" xml:space="preserve">Audience</text>
+<text x="962.00" y="1424.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">The simulated market-data vendor, a third party outside the private network.</text>
+<text x="846.00" y="1454.00" font-size="16" fill="#c92a2a" text-anchor="start" dominant-baseline="central" xml:space="preserve">Key claims</text>
+<text x="962.00" y="1454.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">None. An opaque string sent as the x-vendor-key header.</text>
+<text x="846.00" y="1484.00" font-size="16" fill="#c92a2a" text-anchor="start" dominant-baseline="central" xml:space="preserve">Lifetime</text>
+<text x="962.00" y="1484.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Static until rotated.</text>
+<text x="846.00" y="1514.00" font-size="16" fill="#c92a2a" text-anchor="start" dominant-baseline="central" xml:space="preserve">Held by</text>
+<text x="962.00" y="1514.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Key Vault (APIM reads it as a named value) plus a plain Container Apps secret</text>
+<text x="962.00" y="1534.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">copy on the vendor app. The user and the agent never see it.</text>
+<text x="846.00" y="1564.00" font-size="16" fill="#c92a2a" text-anchor="start" dominant-baseline="central" xml:space="preserve">Validated by</text>
+<text x="962.00" y="1564.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">The vendor (401 invalid_vendor_key). APIM adds it only after validating the user's</text>
+<text x="962.00" y="1584.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">token, and removes the user's Authorization header.</text>
+<text x="1616.00" y="1394.00" font-size="16" fill="#c92a2a" text-anchor="start" dominant-baseline="central" xml:space="preserve">Issuer</text>
+<text x="1732.00" y="1394.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Entra ID: a client secret on the confidential app registration abw-agent-client.</text>
+<text x="1616.00" y="1424.00" font-size="16" fill="#c92a2a" text-anchor="start" dominant-baseline="central" xml:space="preserve">Audience</text>
+<text x="1732.00" y="1424.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Entra's token endpoint, when Foundry exchanges a user's consent code for T2.</text>
+<text x="1616.00" y="1454.00" font-size="16" fill="#c92a2a" text-anchor="start" dominant-baseline="central" xml:space="preserve">Key claims</text>
+<text x="1732.00" y="1454.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">None. An opaque string.</text>
+<text x="1616.00" y="1484.00" font-size="16" fill="#c92a2a" text-anchor="start" dominant-baseline="central" xml:space="preserve">Lifetime</text>
+<text x="1732.00" y="1484.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">80 days. Setup-Entra.ps1 creates a new one when fewer than 10 days remain.</text>
+<text x="1616.00" y="1514.00" font-size="16" fill="#c92a2a" text-anchor="start" dominant-baseline="central" xml:space="preserve">Held by</text>
+<text x="1732.00" y="1514.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">The Foundry OAuth connections and the git-ignored .secrets folder.</text>
+<text x="1616.00" y="1544.00" font-size="16" fill="#c92a2a" text-anchor="start" dominant-baseline="central" xml:space="preserve">Validated by</text>
+<text x="1732.00" y="1544.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Entra, at the token endpoint.</text>
+<text x="76.00" y="1678.50" font-size="20" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">What to notice</text>
+<text x="76.00" y="1710.25" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">- Four tokens do the work: T1 gets a person into Foundry, T2 carries the person through the gateway and the MCP server, T3 is the server's own identity, and T4 reaches data as that</text>
+<text x="76.00" y="1732.75" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">  person.</text>
+<text x="76.00" y="1755.25" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">- Every token names its audience. T2 for one server fails at the others, and T4 works only at the one data service it was issued for.</text>
+<text x="76.00" y="1777.75" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">- The static secrets (C3, C5, C6) are long-lived, shared and carry no user. The four data-backed MCP servers hold none of them: they use managed identities.</text>
+<rect x="381.66" y="214" width="36.67" height="30" rx="7.5" ry="7.5" fill="#ffffff" stroke="none" stroke-width="1"/>
+<text x="400.00" y="229.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">T1</text>
+<rect x="781.66" y="214" width="36.67" height="30" rx="7.5" ry="7.5" fill="#ffffff" stroke="none" stroke-width="1"/>
+<text x="800.00" y="229.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">T1</text>
+<rect x="1181.66" y="214" width="36.67" height="30" rx="7.5" ry="7.5" fill="#ffffff" stroke="none" stroke-width="1"/>
+<text x="1200.00" y="229.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">T2</text>
+<rect x="1581.66" y="214" width="36.67" height="30" rx="7.5" ry="7.5" fill="#ffffff" stroke="none" stroke-width="1"/>
+<text x="1600.00" y="229.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">T2</text>
+<rect x="1832" y="334" width="144.74" height="30" rx="7.5" ry="7.5" fill="#ffffff" stroke="none" stroke-width="1"/>
+<text x="1837.00" y="349.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">T3 + T2 in, T4 out</text>
+<rect x="1981.66" y="214" width="36.67" height="30" rx="7.5" ry="7.5" fill="#ffffff" stroke="none" stroke-width="1"/>
+<text x="2000.00" y="229.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">T4</text>
+<ellipse cx="400" cy="268" rx="18" ry="18" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="400.00" y="268.00" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">1</text>
+<ellipse cx="800" cy="268" rx="18" ry="18" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="800.00" y="268.00" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">2</text>
+<ellipse cx="1200" cy="268" rx="18" ry="18" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1200.01" y="268.00" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">3</text>
+<ellipse cx="1600" cy="268" rx="18" ry="18" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1600.01" y="268.00" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">4</text>
+<ellipse cx="1800" cy="349" rx="18" ry="18" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1800.01" y="349.00" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">5</text>
+<ellipse cx="2000" cy="268" rx="18" ry="18" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="2000.01" y="268.00" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">6</text>
+</svg>

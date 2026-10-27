@@ -1,0 +1,16 @@
+// @id repeated-denials
+// @name ABW-006 Repeated denials for one identity across defence layers
+// @severity Medium
+// @tactics Discovery
+// @frequency PT5M
+// @period PT30M
+// @group AnyAlert
+// @entity Account.FullName=Principal
+// @details Denials=Denials Layers=Layers Reasons=Reasons Targets=Targets
+// @description Three or more refusals for the same principal within 30 minutes, from any layer (guardrail, gateway, MCP server, data plane). Probing behaviour from an agent or a user.
+AbwDenials(30m)
+| where not(Layer == '3-data-plane' and Principal == '(anonymous)')
+| where isnotempty(Principal)
+| summarize Denials = count(), Layers = make_set(Layer), Reasons = make_set(Reason, 10), Targets = make_set(Target, 10), FirstSeen = min(TimeGenerated), LastSeen = max(TimeGenerated) by Principal
+| where Denials >= 3
+| extend TimeGenerated = LastSeen

@@ -1,0 +1,51 @@
+// @function AbwIdentityChain
+// @params requestId:string, lookback:timespan = 7d
+// @description The audit answer for ONE request_id: the full chain from the Foundry agent, through the APIM gateway and the MCP server, to the Storage data plane, with the identity each hop saw. Paste a request_id from any denial or tool result.
+let rid = requestId;
+let agent = AppGenAIContent
+    | where TimeGenerated > ago(lookback)
+    | where tostring(ToolCallResult) has rid
+    | project
+        Time = TimeGenerated,
+        Step = 1,
+        Layer = 'Foundry agent',
+        Actor = AgentName,
+        Action = 'tool result returned to the model',
+        Detail = strcat('trace=', TraceId, ' span=', SpanId),
+        RequestId = rid;
+let gateway = AbwGateway(lookback)
+    | where RequestId == rid
+    | project
+        Time = TimeGenerated,
+        Step = 2,
+        Layer = 'APIM gateway',
+        Actor = coalesce(UserOid, ''),
+        Action = strcat(Method, ' ', Server),
+        Detail = strcat('HTTP ', ResponseCode, ' ', Outcome, iff(isnotempty(Reason) and Reason != 'ok', strcat(' (', Reason, ')'), ''), ' backend=', BackendResponseCode, ' ', TotalTimeMs, 'ms'),
+        RequestId;
+let mcpRaw = AbwMcpAudit(lookback) | where RequestId == rid;
+// the MCP SDK re-lists tools while serving a tools/call; keep tool_listed rows only for genuine tools/list requests
+let hasAction = toscalar(mcpRaw | where Event != 'tool_listed' | count) > 0;
+let mcp = mcpRaw
+    | where not(hasAction and Event == 'tool_listed')
+    | project
+        Time = EventTime,
+        Step = 3,
+        Layer = 'MCP server',
+        Actor = UserUpn,
+        Action = strcat(Server, '.', Tool, ' [', Event, ']'),
+        Detail = strcat(Decision, iff(isnotempty(Reason), strcat(' (', Reason, ')'), ''), ' obo=', OnBehalfOf, ' class=', DataClass, ' client=', ClientAppId, ' roles=', tostring(Roles)),
+        RequestId;
+let storage = StorageBlobLogs
+    | where TimeGenerated > ago(lookback)
+    | where ClientRequestId == rid
+    | project
+        Time = TimeGenerated,
+        Step = 4,
+        Layer = 'Storage data plane',
+        Actor = coalesce(RequesterUpn, RequesterObjectId),
+        Action = strcat(OperationName, ' ', tostring(split(Uri, '?')[0])),
+        Detail = strcat('HTTP ', StatusCode, ' ', StatusText, ' auth=', AuthenticationType, ' app=', RequesterAppId),
+        RequestId = ClientRequestId;
+union agent, gateway, mcp, storage
+| order by Step asc, Time asc

@@ -1,0 +1,265 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1940" viewBox="0 0 2400 1940" font-family="Helvetica, Arial, sans-serif">
+<rect x="0" y="0" width="2400" height="1940" fill="#ffffff"/>
+<rect x="60" y="190" width="350" height="1283" rx="32" ry="32" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<rect x="446" y="190" width="350" height="1283" rx="32" ry="32" fill="#ebfbee" stroke="#2f9e44" stroke-width="2"/>
+<rect x="832" y="190" width="350" height="1283" rx="32" ry="32" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/>
+<rect x="1218" y="190" width="350" height="1283" rx="32" ry="32" fill="#ebfbee" stroke="#2f9e44" stroke-width="2"/>
+<rect x="1604" y="190" width="350" height="1283" rx="32" ry="32" fill="#f3f0ff" stroke="#6741d9" stroke-width="2"/>
+<rect x="1990" y="190" width="350" height="1283" rx="32" ry="32" fill="#fff4e6" stroke="#e8590c" stroke-width="2"/>
+<rect x="76" y="202" width="66" height="36.5" rx="9.125" ry="9.125" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="109.00" y="220.25" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">User</text>
+<rect x="462" y="202" width="210.07" height="36.5" rx="9.125" ry="9.125" fill="#2b8a3e" stroke="#2b8a3e" stroke-width="1"/>
+<text x="567.03" y="220.25" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Foundry agent - Wall 0</text>
+<rect x="848" y="202" width="210.05" height="36.5" rx="9.125" ry="9.125" fill="#1971c2" stroke="#1971c2" stroke-width="1"/>
+<text x="953.02" y="220.25" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">APIM gateway - Wall 1</text>
+<rect x="1234" y="202" width="189.01" height="36.5" rx="9.125" ry="9.125" fill="#2b8a3e" stroke="#2b8a3e" stroke-width="1"/>
+<text x="1328.51" y="220.25" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">MCP server - Wall 2</text>
+<rect x="1620" y="202" width="151.03" height="36.5" rx="9.125" ry="9.125" fill="#6741d9" stroke="#6741d9" stroke-width="1"/>
+<text x="1695.52" y="220.25" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Entra ID (OBO)</text>
+<rect x="2006" y="202" width="181.05" height="36.5" rx="9.125" ry="9.125" fill="#d9480f" stroke="#d9480f" stroke-width="1"/>
+<text x="2096.53" y="220.25" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Data plane - Wall 3</text>
+<rect x="1172" y="22" width="1168" height="138" rx="32" ry="32" fill="#ffffff" stroke="#adb5bd" stroke-width="1"/>
+<rect x="80" y="270" width="310" height="101" rx="25.25" ry="25.25" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<rect x="466" y="420" width="310" height="161" rx="32" ry="32" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<rect x="852" y="570" width="310" height="161" rx="32" ry="32" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<rect x="1238" y="720" width="310" height="281" rx="32" ry="32" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<rect x="1624" y="720" width="310" height="141" rx="32" ry="32" fill="#e5dbff" stroke="#6741d9" stroke-width="2"/>
+<rect x="2010" y="921" width="310" height="141" rx="32" ry="32" fill="#ffe8cc" stroke="#e8590c" stroke-width="2"/>
+<rect x="466" y="294" width="310" height="80" rx="20" ry="20" fill="#ffe3e3" stroke="#e03131" stroke-width="2"/>
+<text x="621.00" y="314.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Denied at Wall 0: the guardrail stops the</text>
+<text x="621.00" y="334.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">run. The span carries error.type =</text>
+<text x="621.00" y="354.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">content_filter (Sentinel ABW-008).</text>
+<rect x="852" y="404" width="310" height="120" rx="30" ry="30" fill="#ffe3e3" stroke="#e03131" stroke-width="2"/>
+<text x="1007.00" y="424.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Denied at Wall 1: 401 unauthorized (a</text>
+<text x="1007.00" y="444.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">fixed message, no reason code); 403</text>
+<text x="1007.00" y="464.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">forbidden (revoked, client_not_allowed,</text>
+<text x="1007.00" y="484.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">missing_scope, missing_role); 429 rate</text>
+<text x="1007.00" y="504.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">limited. Sentinel ABW-004, 005, 009.</text>
+<rect x="1238" y="514" width="310" height="160" rx="32" ry="32" fill="#ffe3e3" stroke="#e03131" stroke-width="2"/>
+<text x="1393.00" y="534.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Denied at Wall 2: 401 (bad token) or</text>
+<text x="1393.00" y="554.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">403 (missing scope); or HTTP 200 with</text>
+<text x="1393.00" y="574.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">decision DENIED (missing_role,</text>
+<text x="1393.00" y="594.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">project_not_in_token_roles). Logged as</text>
+<text x="1393.00" y="614.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">auth_failed, tool_denied or</text>
+<text x="1393.00" y="634.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">wall_violation_attempt; Sentinel</text>
+<text x="1393.00" y="654.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">ABW-001 fires on the last.</text>
+<rect x="1624" y="614" width="310" height="60" rx="15" ry="15" fill="#ffe3e3" stroke="#e03131" stroke-width="2"/>
+<text x="1779.00" y="634.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">OBO refused: the MCP server answers</text>
+<text x="1779.00" y="654.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">FORBIDDEN obo_failed:&lt;code&gt;.</text>
+<rect x="2010" y="775" width="310" height="100" rx="25" ry="25" fill="#ffe3e3" stroke="#e03131" stroke-width="2"/>
+<text x="2165.00" y="795.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Denied at Wall 3: Storage answers 403;</text>
+<text x="2165.00" y="815.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">the MCP server reports</text>
+<text x="2165.00" y="835.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">storage_rbac_denied. Sentinel</text>
+<text x="2165.00" y="855.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">ABW-007.</text>
+<rect x="80" y="411" width="310" height="181" rx="32" ry="32" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<rect x="80" y="622" width="310" height="241" rx="32" ry="32" fill="#e5dbff" stroke="#6741d9" stroke-width="2"/>
+<rect x="852" y="1132" width="310" height="121" rx="30.25" ry="30.25" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<rect x="466" y="1132" width="310" height="121" rx="30.25" ry="30.25" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<rect x="80" y="1132" width="310" height="121" rx="30.25" ry="30.25" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<rect x="2010" y="1132" width="310" height="161" rx="32" ry="32" fill="#ffe8cc" stroke="#e8590c" stroke-width="2"/>
+<text x="2165.01" y="1182.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Storage worm-audit: append blob, one</text>
+<text x="2165.01" y="1202.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">JSON line per event, written by the</text>
+<text x="2165.01" y="1222.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">MCP server's managed identity (async,</text>
+<text x="2165.01" y="1242.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">best effort)</text>
+<rect x="80" y="1353" width="310" height="100" rx="25" ry="25" fill="#c5f6fa" stroke="#0b7285" stroke-width="2" stroke-dasharray="10 7"/>
+<text x="235.00" y="1373.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Entra SigninLogs: Wes's interactive</text>
+<text x="235.00" y="1393.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">sign-in (MFA, Conditional Access). Join</text>
+<text x="235.00" y="1413.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">key: session id. Separate export</text>
+<text x="235.00" y="1433.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">workspace.</text>
+<rect x="466" y="1353" width="310" height="100" rx="25" ry="25" fill="#c5f6fa" stroke="#0b7285" stroke-width="2"/>
+<text x="621.00" y="1383.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Application Insights spans:</text>
+<text x="621.00" y="1403.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">invoke_agent, execute_tool, chat. Join</text>
+<text x="621.00" y="1423.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">key: trace id.</text>
+<rect x="852" y="1353" width="310" height="100" rx="25" ry="25" fill="#c5f6fa" stroke="#0b7285" stroke-width="2"/>
+<text x="1007.00" y="1383.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">ApiManagementGatewayLogs plus the</text>
+<text x="1007.00" y="1403.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">abw-gateway trace. Join key: RequestId</text>
+<text x="1007.00" y="1423.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">= x-abw-request-id.</text>
+<rect x="1238" y="1353" width="310" height="100" rx="25" ry="25" fill="#c5f6fa" stroke="#0b7285" stroke-width="2"/>
+<text x="1393.00" y="1383.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Console stdout JSON (AbwMcpAudit):</text>
+<text x="1393.00" y="1403.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">request_id, jti, trace_id, decision,</text>
+<text x="1393.00" y="1423.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">downstream.</text>
+<rect x="1624" y="1353" width="310" height="100" rx="25" ry="25" fill="#c5f6fa" stroke="#0b7285" stroke-width="2" stroke-dasharray="10 7"/>
+<text x="1779.00" y="1383.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Entra non-interactive sign-in log: the</text>
+<text x="1779.00" y="1403.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">row that issued T2 (join key: token id =</text>
+<text x="1779.00" y="1423.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">the MCP jti). Separate workspace.</text>
+<rect x="2010" y="1353" width="310" height="100" rx="25" ry="25" fill="#c5f6fa" stroke="#0b7285" stroke-width="2"/>
+<text x="2164.99" y="1383.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">StorageBlobLogs. Join key:</text>
+<text x="2164.99" y="1403.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">ClientRequestId = request_id. Search</text>
+<text x="2164.99" y="1423.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">and Cosmos are matched by time.</text>
+<rect x="60" y="1543" width="2280" height="70" rx="17.5" ry="17.5" fill="#c5f6fa" stroke="#0b7285" stroke-width="2"/>
+<text x="1200.00" y="1578.00" font-size="18" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Log Analytics workspace: the KQL function AbwFullChain(&lt;any id&gt;) joins these rows into one chain. The Entra sign-in tables (dashed) sit in a separate export workspace and are read cross-workspace.</text>
+<rect x="60" y="1663" width="860" height="205" rx="32" ry="32" fill="#f8f9fa" stroke="#343a40" stroke-width="2"/>
+<rect x="950" y="1663" width="1390" height="205" rx="32" ry="32" fill="#f8f9fa" stroke="#343a40" stroke-width="2"/>
+<path d="M 235.00 1457.00 L 235.00 1539.00" fill="none" stroke="#0b7285" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="10 7"/>
+<path d="M 241.81 1525.63 L 235.00 1539.00 L 228.19 1525.63" fill="none" stroke="#0b7285" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 621.00 1457.00 L 621.00 1539.00" fill="none" stroke="#0b7285" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 627.81 1525.63 L 621.00 1539.00 L 614.19 1525.63" fill="none" stroke="#0b7285" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1007.00 1457.00 L 1007.00 1539.00" fill="none" stroke="#0b7285" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1013.81 1525.63 L 1007.00 1539.00 L 1000.19 1525.63" fill="none" stroke="#0b7285" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1393.00 1457.00 L 1393.00 1539.00" fill="none" stroke="#0b7285" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1399.81 1525.63 L 1393.00 1539.00 L 1386.19 1525.63" fill="none" stroke="#0b7285" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1779.00 1457.00 L 1779.00 1539.00" fill="none" stroke="#0b7285" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="10 7"/>
+<path d="M 1785.81 1525.63 L 1779.00 1539.00 L 1772.19 1525.63" fill="none" stroke="#0b7285" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2165.00 1457.00 L 2165.00 1539.00" fill="none" stroke="#0b7285" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2171.81 1525.63 L 2165.00 1539.00 L 2158.19 1525.63" fill="none" stroke="#0b7285" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 394.00 310.00 L 428.00 310.00 L 428.00 460.00 L 462.00 460.00" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 448.63 453.19 L 462.00 460.00 L 448.63 466.81" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 780.00 460.00 L 814.00 460.00 L 814.00 610.00 L 848.00 610.00" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 834.63 603.19 L 848.00 610.00 L 834.63 616.81" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1166.00 610.00 L 1200.00 610.00 L 1200.00 760.00 L 1234.00 760.00" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1220.63 753.19 L 1234.00 760.00 L 1220.63 766.81" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1552.00 790.00 L 1620.00 790.00" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1606.63 783.19 L 1620.00 790.00 L 1606.63 796.81" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1565.37 796.81 L 1552.00 790.00 L 1565.37 783.19" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1552.00 961.00 L 2006.00 961.00" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1992.63 954.19 L 2006.00 961.00 L 1992.63 967.81" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1565.37 967.81 L 1552.00 961.00 L 1565.37 954.19" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1234.00 981.00 L 1200.00 981.00 L 1200.00 1192.50 L 1166.00 1192.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1179.37 1199.31 L 1166.00 1192.50 L 1179.37 1185.69" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 848.00 1192.50 L 780.00 1192.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 793.37 1199.31 L 780.00 1192.50 L 793.37 1185.69" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 462.00 1192.50 L 394.00 1192.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 407.37 1199.31 L 394.00 1192.50 L 407.37 1185.69" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1453.00 1005.00 L 1453.00 1212.50 L 2006.00 1212.50" fill="none" stroke="#e8590c" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="10 7"/>
+<path d="M 1992.63 1205.69 L 2006.00 1212.50 L 1992.63 1219.31" fill="none" stroke="#e8590c" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 621.00 416.00 L 621.00 378.00" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 614.19 391.37 L 621.00 378.00 L 627.81 391.37" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1007.00 566.00 L 1007.00 528.00" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1000.19 541.37 L 1007.00 528.00 L 1013.81 541.37" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1393.00 716.00 L 1393.00 678.00" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1386.19 691.37 L 1393.00 678.00 L 1399.81 691.37" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1779.00 716.00 L 1779.00 678.00" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1772.19 691.37 L 1779.00 678.00 L 1785.81 691.37" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2165.00 917.00 L 2165.00 879.00" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2158.19 892.37 L 2165.00 879.00 L 2171.81 892.37" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="60.00" y="56.50" font-size="36" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Request data flow: one governed tool call</text>
+<text x="60.00" y="98.50" font-size="20" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">Wes asks for a Falcon deal memo; what travels on each hop, which wall can stop it, what gets logged</text>
+<text x="60.00" y="1916.00" font-size="16" fill="#868e96" text-anchor="start" dominant-baseline="central" xml:space="preserve">Agents Behind the Wall - diagram 03 of 13 - generated by docs/diagrams/build_diagrams.py</text>
+<text x="1186.00" y="43.25" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Legend</text>
+<rect x="1186" y="61" width="36" height="22" rx="5.5" ry="5.5" fill="#e5dbff" stroke="#6741d9" stroke-width="2"/>
+<text x="1232.00" y="71.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Identity (Entra ID)</text>
+<rect x="1186" y="91" width="36" height="22" rx="5.5" ry="5.5" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="1232.00" y="101.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Network, API gateway (APIM)</text>
+<rect x="1186" y="121" width="36" height="22" rx="5.5" ry="5.5" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="1232.00" y="131.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Compute (agents, MCP servers)</text>
+<rect x="1476" y="61" width="36" height="22" rx="5.5" ry="5.5" fill="#ffe8cc" stroke="#e8590c" stroke-width="2"/>
+<text x="1522.00" y="71.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Data stores</text>
+<rect x="1476" y="91" width="36" height="22" rx="5.5" ry="5.5" fill="#c5f6fa" stroke="#0b7285" stroke-width="2"/>
+<text x="1522.00" y="101.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Observability</text>
+<rect x="1476" y="121" width="36" height="22" rx="5.5" ry="5.5" fill="#ffe3e3" stroke="#e03131" stroke-width="2"/>
+<text x="1522.00" y="131.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Deny, risk, kill switch</text>
+<rect x="1766" y="61" width="36" height="22" rx="5.5" ry="5.5" fill="#f1f3f5" stroke="#868e96" stroke-width="2" stroke-dasharray="10 7"/>
+<text x="1812.00" y="71.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Human / optional (dashed)</text>
+<rect x="1766" y="91" width="36" height="22" rx="5.5" ry="5.5" fill="#fff3bf" stroke="#f08c00" stroke-width="2"/>
+<text x="1812.00" y="101.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Azure Policy, governance</text>
+<rect x="1766" y="121" width="36" height="22" rx="5.5" ry="5.5" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="1812.00" y="131.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">People, client tools</text>
+<path d="M 2056.00 72.00 L 2092.00 72.00" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2078.63 65.19 L 2092.00 72.00 L 2078.63 78.81" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="2102.00" y="71.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Allowed flow</text>
+<path d="M 2056.00 102.00 L 2092.00 102.00" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2078.63 95.19 L 2092.00 102.00 L 2078.63 108.81" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="2102.00" y="101.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Denied exit / risk path</text>
+<path d="M 2056.00 132.00 L 2092.00 132.00" fill="none" stroke="#868e96" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="10 7"/>
+<path d="M 2078.63 125.19 L 2092.00 132.00 L 2078.63 138.81" fill="none" stroke="#868e96" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="2102.00" y="131.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Manual step (dashed)</text>
+<text x="94.00" y="296.50" font-size="20" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Ask</text>
+<text x="94.00" y="327.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Wes (IB Associate) asks the agent for</text>
+<text x="94.00" y="347.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">the Falcon deal memo FALCON-001.</text>
+<text x="480.00" y="446.50" font-size="20" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Pick the tool</text>
+<text x="480.00" y="477.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Wall 0: the guardrail screens the</text>
+<text x="480.00" y="497.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">prompt (detective, preview,</text>
+<text x="480.00" y="517.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">probabilistic). The model picks</text>
+<text x="480.00" y="537.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">wall.get_deal_document; the agent's</text>
+<text x="480.00" y="557.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">allowed_tools list permits it.</text>
+<text x="866.00" y="596.50" font-size="20" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Check the call</text>
+<text x="866.00" y="627.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">validate-jwt: audience, tenant.</text>
+<text x="866.00" y="647.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">abw-deny: kill switch, client allow-list,</text>
+<text x="866.00" y="667.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">scope, role. Rate limit: 120 calls per</text>
+<text x="866.00" y="687.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">minute per user. Adds</text>
+<text x="866.00" y="707.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">x-abw-request-id.</text>
+<text x="1252.00" y="746.50" font-size="20" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Re-check, then act</text>
+<text x="1252.00" y="777.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Verifies the token again: signature</text>
+<text x="1252.00" y="797.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">(JWKS), audience, issuer, tenant,</text>
+<text x="1252.00" y="817.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">allowed client, scope Tools.Read. The</text>
+<text x="1252.00" y="837.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">role must allow the tool and the project</text>
+<text x="1252.00" y="857.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">(falcon) must be in the token's roles.</text>
+<text x="1252.00" y="877.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Swaps T2 for a Storage token (hop 4),</text>
+<text x="1252.00" y="897.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">then reads the blob (hop 5).</text>
+<text x="1638.00" y="746.50" font-size="20" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Exchange the token</text>
+<text x="1638.00" y="777.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Checks the managed identity's</text>
+<text x="1638.00" y="797.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">federated credential and the</text>
+<text x="1638.00" y="817.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">pre-granted consent, then issues T4 for</text>
+<text x="1638.00" y="837.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Wes: oid = Wes, audience Storage.</text>
+<text x="2024.00" y="947.50" font-size="20" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Check Azure RBAC</text>
+<text x="2024.00" y="978.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Evaluates Wes himself:</text>
+<text x="2024.00" y="998.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">sg-abw-wall-falcon holds Storage Blob</text>
+<text x="2024.00" y="1018.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Data Reader on wall-falcon. No other</text>
+<text x="2024.00" y="1038.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">identity is involved.</text>
+<text x="94.00" y="437.50" font-size="20" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Who is calling</text>
+<text x="94.00" y="468.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Wes, persona</text>
+<text x="94.00" y="488.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">abw.wes@&lt;tenant-domain&gt;. App roles:</text>
+<text x="94.00" y="508.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Research.Read, Wall.Falcon,</text>
+<text x="94.00" y="528.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">MarketData.Read. Groups:</text>
+<text x="94.00" y="548.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">sg-abw-demo-all, sg-abw-research,</text>
+<text x="94.00" y="568.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">sg-abw-wall-falcon.</text>
+<text x="94.00" y="648.50" font-size="20" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Tokens in this flow</text>
+<text x="94.00" y="679.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">T1: Entra token for Foundry (audience</text>
+<text x="94.00" y="699.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">https://ai.azure.com).</text>
+<text x="94.00" y="719.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">T2: Entra token for the wall MCP API</text>
+<text x="94.00" y="739.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">(audience = the API app, scope</text>
+<text x="94.00" y="759.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Tools.Read, app roles).</text>
+<text x="94.00" y="779.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">T3: managed identity token (audience</text>
+<text x="94.00" y="799.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">api://AzureADTokenExchange).</text>
+<text x="94.00" y="819.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">T4: Entra token for Storage (audience</text>
+<text x="94.00" y="839.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">https://storage.azure.com, oid = Wes).</text>
+<text x="866.00" y="1158.50" font-size="20" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Relay</text>
+<text x="866.00" y="1189.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Passes the result back and logs status</text>
+<text x="866.00" y="1209.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">and latency.</text>
+<text x="480.00" y="1158.50" font-size="20" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Record and answer</text>
+<text x="480.00" y="1189.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">The execute_tool span stores the result</text>
+<text x="480.00" y="1209.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">and the request_id; the model writes</text>
+<text x="480.00" y="1229.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">the reply.</text>
+<text x="94.00" y="1158.50" font-size="20" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Read</text>
+<text x="94.00" y="1189.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Wes reads the summary of</text>
+<text x="94.00" y="1209.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">FALCON-001.</text>
+<text x="76.00" y="1691.50" font-size="20" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">What to notice</text>
+<text x="76.00" y="1723.25" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">- Each wall is a different system with its own deny (red boxes); a denial stops the call and leaves a log</text>
+<text x="76.00" y="1745.75" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">  row.</text>
+<text x="76.00" y="1768.25" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">- The user's own identity reaches the data plane: T2 goes in, T4 comes out, so Azure RBAC decides on</text>
+<text x="76.00" y="1790.75" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">  Wes, not on the server.</text>
+<text x="76.00" y="1813.25" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">- One request id (x-abw-request-id) ties the APIM, MCP and Storage rows; Entra and the guardrail use</text>
+<text x="76.00" y="1835.75" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">  other ids (diagram 09).</text>
+<text x="966.00" y="1691.50" font-size="20" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Hops (numbers on the arrows)</text>
+<text x="966.00" y="1722.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">1. Prompt plus Wes's token T1 when sent through the APIM /agents front door (it validates</text>
+<text x="966.00" y="1742.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">    T1; diagram 11).</text>
+<text x="966.00" y="1762.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">2. tools/call get_deal_document {doc_id: FALCON-001} with Authorization: Bearer T2, the</text>
+<text x="966.00" y="1782.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">    user's own token that Foundry holds from the one-time consent.</text>
+<text x="966.00" y="1802.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">3. The same call and T2, unchanged, plus x-abw-request-id and x-abw-gateway: apim.</text>
+<text x="966.00" y="1822.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">4. Request to Entra: grant jwt-bearer, assertion T2, client_assertion T3, scope</text>
+<text x="966.00" y="1842.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">    https://storage.azure.com/user_impersonation. Response: T4.</text>
+<text x="1659.00" y="1722.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">5. GET FALCON-001.md in wall-falcon with Authorization: Bearer T4 and</text>
+<text x="1659.00" y="1742.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">    x-ms-client-request-id = request_id. Response: the document, or 403.</text>
+<text x="1659.00" y="1762.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">6. Tool result with request_id added (a denial is a result too: decision DENIED, reason,</text>
+<text x="1659.00" y="1782.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">    request_id).</text>
+<text x="1659.00" y="1802.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">7. The result, relayed by APIM, which logs status and latency.</text>
+<text x="1659.00" y="1822.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">8. The model's answer to Wes.</text>
+<rect x="1663.14" y="1174.5" width="132.72" height="30" rx="7.5" ry="7.5" fill="#ffffff" stroke="none" stroke-width="1"/>
+<text x="1729.50" y="1189.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">audit line, async</text>
+<ellipse cx="428" cy="385" rx="18" ry="18" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="428.00" y="385.00" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">1</text>
+<ellipse cx="814" cy="535" rx="18" ry="18" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="814.00" y="535.00" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">2</text>
+<ellipse cx="1200" cy="685" rx="18" ry="18" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1200.01" y="685.00" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">3</text>
+<ellipse cx="1586" cy="790" rx="18" ry="18" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1586.01" y="790.00" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">4</text>
+<ellipse cx="1779" cy="961" rx="18" ry="18" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1779.01" y="961.00" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">5</text>
+<ellipse cx="1200" cy="1086.75" rx="18" ry="18" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1200.01" y="1086.75" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">6</text>
+<ellipse cx="814" cy="1192.5" rx="18" ry="18" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="814.00" y="1192.50" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">7</text>
+<ellipse cx="428" cy="1192.5" rx="18" ry="18" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="428.00" y="1192.50" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">8</text>
+</svg>

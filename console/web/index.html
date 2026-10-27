@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agents Behind the Wall · Demo Console</title>
+<link rel="stylesheet" href="/web/style.css">
+</head>
+<body>
+<header id="topbar">
+  <div class="brand"><b>Agents Behind the Wall</b><span id="brand-sub">Demo console · connecting…</span></div>
+  <div class="lights" id="lights" aria-label="Environment status"></div>
+  <div class="running" id="running"></div>
+  <div class="top-actions">
+    <button class="btn toggle" id="btn-notes" title="Show or hide the presenter notes (N)">Presenter notes</button>
+    <button class="btn" id="btn-preflight" title="Check that everything is ready for the demo">Preflight</button>
+    <button class="btn" id="btn-reset" title="Put the gateway back to its baseline">Reset demo</button>
+  </div>
+</header>
+<div id="layout">
+  <nav id="rail" aria-label="Scenes"></nav>
+  <main id="main">
+    <section id="strip" class="hidden" aria-label="Architecture"></section>
+    <div id="page"></div>
+  </main>
+</div>
+<aside id="drawer" class="closed" aria-label="Prove it's real"></aside>
+<div id="toast" role="status"></div>
+<script src="/web/util.js"></script>
+<script src="/web/render.js"></script>
+<script src="/web/strip.js"></script>
+<script src="/web/personas.js"></script>
+<script src="/web/pages.js"></script>
+<script src="/web/app.js"></script>
+</body>
+</html>

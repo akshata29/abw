@@ -1,0 +1,274 @@
+{
+  "runUtc": "20261022-174305",
+  "assignment": "abw-agent-platform-controls",
+  "results": [
+    {
+      "id": "storage-shared-key",
+      "title": "Create a storage account with shared-key access and public network access",
+      "resource": "stabwtryae69c6",
+      "expected": "blocked",
+      "expectedControls": [
+        "storage-shared-key-disabled",
+        "storage-no-public"
+      ],
+      "httpStatus": 202,
+      "utc": "2026-10-22T17:39:29Z",
+      "outcome": "CORRECTED",
+      "rewritten": {
+        "properties.allowSharedKeyAccess": {
+          "sent": true,
+          "stored": false,
+          "changed": true
+        },
+        "properties.publicNetworkAccess": {
+          "sent": "Enabled",
+          "stored": "Disabled",
+          "changed": true
+        }
+      },
+      "initiativeFlags": [
+        "storage-no-public",
+        "storage-shared-key-disabled"
+      ],
+      "status": "PASS",
+      "cleanup": "deleted (HTTP 200)",
+      "correctedBy": [
+        {
+          "assignment": "MCAPSGovDeployPolicies",
+          "scope": "/providers/Microsoft.Management/managementGroups/1b87dd02-b726-59d7-b897-21370c7ef561",
+          "control": "ModifyAllowBlobAnonymousAccess"
+        },
+        {
+          "assignment": "MCAPSGovDeployPolicies",
+          "scope": "/providers/Microsoft.Management/managementGroups/1b87dd02-b726-59d7-b897-21370c7ef561",
+          "control": "StorageAccountDisableLocalAuth"
+        },
+        {
+          "assignment": "MCAPSGovDeployPolicies",
+          "scope": "/providers/Microsoft.Management/managementGroups/1b87dd02-b726-59d7-b897-21370c7ef561",
+          "control": "StorageAccountPublicNetworkModify"
+        }
+      ]
+    },
+    {
+      "id": "cosmos-local-auth",
+      "title": "Create a Cosmos DB account with key authentication and a public endpoint",
+      "resource": "cosmos-abw-try-ae69c6",
+      "expected": "blocked",
+      "expectedControls": [
+        "cosmos-local-auth-disabled",
+        "cosmos-no-public"
+      ],
+      "httpStatus": 200,
+      "utc": "2026-10-22T17:39:42Z",
+      "outcome": "CORRECTED",
+      "rewritten": {
+        "properties.disableLocalAuth": {
+          "sent": false,
+          "stored": true,
+          "changed": true
+        },
+        "properties.publicNetworkAccess": {
+          "sent": "Enabled",
+          "stored": "Disabled",
+          "changed": true
+        }
+      },
+      "initiativeFlags": [
+        "cosmos-no-public"
+      ],
+      "status": "PASS",
+      "cleanup": "deleted (HTTP 202)",
+      "correctedBy": [
+        {
+          "assignment": "MCAPSGovDeployPolicies",
+          "scope": "/providers/Microsoft.Management/managementGroups/1b87dd02-b726-59d7-b897-21370c7ef561",
+          "control": "CosmosDBPublicNetworkModify"
+        },
+        {
+          "assignment": "MCAPSGovDeployPolicies",
+          "scope": "/providers/Microsoft.Management/managementGroups/1b87dd02-b726-59d7-b897-21370c7ef561",
+          "control": "ModifyCosmosDBLocalAuth"
+        }
+      ]
+    },
+    {
+      "id": "search-local-auth",
+      "title": "Create an AI Search service with API keys and a public endpoint",
+      "resource": "srch-abw-try-ae69c6",
+      "expected": "blocked",
+      "expectedControls": [
+        "search-local-auth-disabled",
+        "search-no-public"
+      ],
+      "httpStatus": 403,
+      "utc": "2026-10-22T17:39:56Z",
+      "outcome": "BLOCKED",
+      "errorCode": "RequestDisallowedByPolicy",
+      "policy": [
+        {
+          "reference": "ai-local-auth-disabled",
+          "definition": "Azure AI Services resources should have key access disabled (disable local authentication)",
+          "effect": "Deny",
+          "assignment": "abw-agent-platform-controls",
+          "initiative": "abw-agent-platform-controls"
+        },
+        {
+          "reference": "search-local-auth-disabled",
+          "definition": "Azure AI Search services should have local authentication methods disabled",
+          "effect": "Deny",
+          "assignment": "abw-agent-platform-controls",
+          "initiative": "abw-agent-platform-controls"
+        },
+        {
+          "reference": "search-no-public",
+          "definition": "Azure AI Search services should disable public network access",
+          "effect": "Deny",
+          "assignment": "abw-agent-platform-controls",
+          "initiative": "abw-agent-platform-controls"
+        }
+      ],
+      "message": "Resource 'srch-abw-try-ae69c6' was disallowed by policy. Reasons: 'No shared secrets: use Entra ID (managed identity) or OAuth user delegation. Keys, SAS tokens, PATs and passwords are not allowed on this platform.','No shared secrets: use Entra ID (managed identity) or OAuth user delegation. Keys, SAS tokens, PATs and passwords are not allowed on this platform.','Data planes in this environment are reachable over private endpoints only. Public network access must stay disabled.'. See error details for policy resource IDs.",
+      "status": "PASS"
+    },
+    {
+      "id": "keyvault-access-policies",
+      "title": "Create a Key Vault with legacy access policies instead of Azure RBAC",
+      "resource": "kv-abw-try-ae69c6",
+      "expected": "blocked",
+      "expectedControls": [
+        "keyvault-rbac"
+      ],
+      "httpStatus": 403,
+      "utc": "2026-10-22T17:40:00Z",
+      "outcome": "BLOCKED",
+      "errorCode": "RequestDisallowedByPolicy",
+      "policy": [
+        {
+          "reference": "keyvault-rbac",
+          "definition": "Azure Key Vault should use RBAC permission model",
+          "effect": "Deny",
+          "assignment": "abw-agent-platform-controls",
+          "initiative": "abw-agent-platform-controls"
+        }
+      ],
+      "message": "Resource 'kv-abw-try-ae69c6' was disallowed by policy. Reasons: 'Blocked by the ABW agent-platform baseline (initiative abw-agent-platform-controls). See policy/README.md for the control catalogue and how to request an exemption.'. See error details for policy resource IDs.",
+      "status": "PASS"
+    },
+    {
+      "id": "acr-admin-user",
+      "title": "Create a container registry with the shared admin user enabled",
+      "resource": "crabwtryae69c6",
+      "expected": "blocked",
+      "expectedControls": [
+        "acr-admin-disabled"
+      ],
+      "httpStatus": 403,
+      "utc": "2026-10-22T17:40:04Z",
+      "outcome": "BLOCKED",
+      "errorCode": "RequestDisallowedByPolicy",
+      "policy": [
+        {
+          "reference": "acr-admin-disabled",
+          "definition": "Container registries should have local admin account disabled.",
+          "effect": "Deny",
+          "assignment": "abw-agent-platform-controls",
+          "initiative": "abw-agent-platform-controls"
+        }
+      ],
+      "message": "Resource 'crabwtryae69c6' was disallowed by policy. Reasons: 'Blocked by the ABW agent-platform baseline (initiative abw-agent-platform-controls). See policy/README.md for the control catalogue and how to request an exemption.'. See error details for policy resource IDs.",
+      "status": "PASS"
+    },
+    {
+      "id": "foundry-local-auth",
+      "title": "Create a Foundry (AI Services) account with API keys switched on",
+      "resource": "aif-abw-try-ae69c6",
+      "expected": "blocked",
+      "expectedControls": [
+        "ai-local-auth-disabled"
+      ],
+      "httpStatus": 201,
+      "utc": "2026-10-22T17:40:08Z",
+      "outcome": "CORRECTED",
+      "rewritten": {
+        "properties.disableLocalAuth": {
+          "sent": false,
+          "stored": true,
+          "changed": true
+        }
+      },
+      "initiativeFlags": [
+        "ai-local-auth-disabled"
+      ],
+      "status": "PASS",
+      "cleanup": "deleted (HTTP 200), purged",
+      "correctedBy": [
+        {
+          "assignment": "MCAPSGovDeployPolicies",
+          "scope": "/providers/Microsoft.Management/managementGroups/1b87dd02-b726-59d7-b897-21370c7ef561",
+          "control": "CognitiveServicesDisableLocalAuth"
+        }
+      ]
+    },
+    {
+      "id": "foundry-keyed-connection",
+      "title": "Add a Foundry project connection that stores an API key",
+      "resource": "abw-try-keyed",
+      "expected": "blocked",
+      "expectedControls": [
+        "foundry-no-keyed-connections"
+      ],
+      "httpStatus": 403,
+      "utc": "2026-10-22T17:40:22Z",
+      "outcome": "BLOCKED",
+      "errorCode": "RequestDisallowedByPolicy",
+      "policy": [
+        {
+          "reference": "foundry-no-keyed-connections",
+          "definition": "ABW: Foundry connections must not store keys, SAS tokens, PATs or passwords",
+          "effect": "Deny",
+          "assignment": "abw-agent-platform-controls",
+          "initiative": "abw-agent-platform-controls"
+        }
+      ],
+      "message": "Resource 'abw-try-keyed' was disallowed by policy. Reasons: 'No shared secrets: use Entra ID (managed identity) or OAuth user delegation. Keys, SAS tokens, PATs and passwords are not allowed on this platform.'. See error details for policy resource IDs.",
+      "status": "PASS"
+    },
+    {
+      "id": "foundry-unapproved-mcp",
+      "title": "Add a Foundry remote-tool (MCP) connection that points at an unapproved server",
+      "resource": "abw-try-unapproved-mcp",
+      "expected": "blocked",
+      "expectedControls": [
+        "foundry-approved-mcp-targets"
+      ],
+      "httpStatus": 403,
+      "utc": "2026-10-22T17:40:25Z",
+      "outcome": "BLOCKED",
+      "errorCode": "RequestDisallowedByPolicy",
+      "policy": [
+        {
+          "reference": "foundry-approved-mcp-targets",
+          "definition": "ABW: Foundry remote-tool (MCP) connections must target an approved endpoint",
+          "effect": "Deny",
+          "assignment": "abw-agent-platform-controls",
+          "initiative": "abw-agent-platform-controls"
+        }
+      ],
+      "message": "Resource 'abw-try-unapproved-mcp' was disallowed by policy. Reasons: 'This tool endpoint is not on the approved MCP list. Publish the server behind the enterprise gateway (APIM) or the private ingress, then add it to the approved list through a reviewed change.'. See error details for policy resource IDs.",
+      "status": "PASS"
+    },
+    {
+      "id": "positive-control",
+      "title": "Positive control: a compliant storage account (no shared key, no public access) is allowed",
+      "resource": "stabwokae69c6",
+      "expected": "allowed",
+      "expectedControls": [],
+      "httpStatus": 202,
+      "utc": "2026-10-22T17:40:29Z",
+      "outcome": "ALLOWED",
+      "status": "PASS",
+      "cleanup": "deleted (HTTP 200)"
+    }
+  ]
+}

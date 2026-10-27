@@ -1,0 +1,18 @@
+// @function AbwTokenUsage
+// @params lookback:timespan = 24h
+// @description FinOps view of agent spend: model tokens per Entra user and agent per hour, measured at the APIM agent front door (llm-emit-token-metric). It is the same identity the per-user token budget is enforced on, so a cost line and a quota line always name the same person.
+AppMetrics
+| where TimeGenerated > ago(lookback)
+| where Name == 'azure.ai_gateway.client.token.usage'
+| extend P = parse_json(Properties)
+| extend TokenType = tostring(P['gen_ai.token.type'])
+| where TokenType in ('input_tokens', 'output_tokens', 'total_tokens')
+| summarize
+    Runs = tolong(sumif(ItemCount, TokenType == 'total_tokens')),
+    InputTokens = tolong(sumif(Sum, TokenType == 'input_tokens')),
+    OutputTokens = tolong(sumif(Sum, TokenType == 'output_tokens')),
+    TotalTokens = tolong(sumif(Sum, TokenType == 'total_tokens')),
+    FirstSeen = min(TimeGenerated),
+    LastSeen = max(TimeGenerated)
+    by Hour = bin(TimeGenerated, 1h), User = tostring(P['upn']), UserOid = tostring(P['oid']), Agent = tostring(P['agent'])
+| order by Hour desc, TotalTokens desc

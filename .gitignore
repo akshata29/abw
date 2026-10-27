@@ -1,0 +1,37 @@
+# secrets & generated state — never commit
+.secrets/
+# state of a previous (still deployed) environment, parked while another tenant is active
+_archive/
+infra/generated/*.json
+infra/generated/logs/
+!infra/generated/.gitkeep
+*.local.json
+console/.state.json
+.env
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+node_modules/
+
+# raw proof evidence carries tenant / user identifiers: keep it local and commit the scrubbed copy instead
+#   python demo\scrub_evidence.py   ->   demo\evidence-scrubbed\
+demo/evidence/*
+!demo/evidence/.gitkeep
+
+# rendered deck artefacts and screenshots (screenshots can show tenant / subscription ids)
+deck/png/
+deck/*.pdf
+deck/screens/*.png
+
+deck/*
+.venv/
+
+docs/COST.md
+docs/CUSTOMER-GUIDE.md
+docs/DEMO-GUIDE.md
+docs/PROOF-PLAYBOOK.md
+docs/RUNBOOK.md
+docs/SELF-DEPLOY.md
+docs/TALK-TRACK-PORTAL-TOUR.md
+docs/TALK-TRACK.md

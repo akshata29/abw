@@ -1,0 +1,342 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="2310" viewBox="0 0 2400 2310" font-family="Helvetica, Arial, sans-serif">
+<rect x="0" y="0" width="2400" height="2310" fill="#ffffff"/>
+<rect x="60" y="410" width="2280" height="918.5" rx="32" ry="32" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/>
+<rect x="80" y="604" width="384" height="700.5" rx="32" ry="32" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/>
+<rect x="544" y="604" width="384" height="700.5" rx="32" ry="32" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/>
+<rect x="1008" y="604" width="384" height="700.5" rx="32" ry="32" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/>
+<rect x="1472" y="604" width="384" height="700.5" rx="32" ry="32" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/>
+<rect x="1936" y="604" width="384" height="700.5" rx="32" ry="32" fill="#f8f9fa" stroke="#868e96" stroke-width="2" stroke-dasharray="10 7"/>
+<rect x="1008" y="1548.5" width="1312" height="278.5" rx="32" ry="32" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/>
+<rect x="60" y="1388.5" width="888" height="554.5" rx="32" ry="32" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/>
+<rect x="76" y="422" width="310.11" height="36.5" rx="9.125" ry="9.125" fill="#1971c2" stroke="#1971c2" stroke-width="1"/>
+<text x="231.06" y="440.25" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">VNet vnet-abw-demo-&lt;region&gt;-001</text>
+<rect x="96" y="616" width="218.13" height="36.5" rx="9.125" ry="9.125" fill="#1971c2" stroke="#1971c2" stroke-width="1"/>
+<text x="205.06" y="634.25" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">snet-agent 10.42.0.0/24</text>
+<rect x="560" y="616" width="193.11" height="36.5" rx="9.125" ry="9.125" fill="#1971c2" stroke="#1971c2" stroke-width="1"/>
+<text x="656.56" y="634.25" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">snet-pe 10.42.1.0/24</text>
+<rect x="1024" y="616" width="207.1" height="36.5" rx="9.125" ry="9.125" fill="#1971c2" stroke="#1971c2" stroke-width="1"/>
+<text x="1127.55" y="634.25" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">snet-mcp 10.42.2.0/24</text>
+<rect x="1488" y="616" width="212.1" height="36.5" rx="9.125" ry="9.125" fill="#1971c2" stroke="#1971c2" stroke-width="1"/>
+<text x="1594.05" y="634.25" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">snet-apim 10.42.3.0/26</text>
+<rect x="1952" y="616" width="212.1" height="36.5" rx="9.125" ry="9.125" fill="#495057" stroke="#495057" stroke-width="1"/>
+<text x="2058.05" y="634.25" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">snet-jump 10.42.4.0/27</text>
+<rect x="1024" y="1560.5" width="436.2" height="36.5" rx="9.125" ry="9.125" fill="#1971c2" stroke="#1971c2" stroke-width="1"/>
+<text x="1242.10" y="1578.75" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Public endpoints reached through the NAT address</text>
+<rect x="76" y="1400.5" width="463.17" height="36.5" rx="9.125" ry="9.125" fill="#1971c2" stroke="#1971c2" stroke-width="1"/>
+<text x="307.59" y="1418.75" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Private DNS zones (linked to the VNet, registration off)</text>
+<rect x="1172" y="22" width="1168" height="138" rx="32" ry="32" fill="#ffffff" stroke="#adb5bd" stroke-width="1"/>
+<rect x="80" y="200" width="384" height="120" rx="30" ry="30" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="90.00" y="230.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Foundry account aif-abw-demo-&lt;region&gt;-&lt;u4&gt;</text>
+<text x="90.00" y="250.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Public network access on (policy-exempt), local</text>
+<text x="90.00" y="270.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">auth off. Its Agent Service runtime is injected into</text>
+<text x="90.00" y="290.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">snet-agent.</text>
+<rect x="776" y="200" width="384" height="120" rx="30" ry="30" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="786.00" y="240.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Callers outside the VNet</text>
+<text x="786.00" y="260.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">A laptop, curl, the Foundry portal. Each reaches a</text>
+<text x="786.00" y="280.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">public endpoint.</text>
+<rect x="1472" y="200" width="384" height="120" rx="30" ry="30" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="1482.00" y="220.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">API Management apim-abw-demo-&lt;region&gt;-&lt;u4&gt;</text>
+<text x="1482.00" y="240.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">(StandardV2)</text>
+<text x="1482.00" y="260.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Public gateway: public network access on.</text>
+<text x="1482.00" y="280.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Inbound: a private endpoint in snet-pe. Outbound:</text>
+<text x="1482.00" y="300.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">VNet integration into snet-apim.</text>
+<rect x="1936" y="200" width="384" height="120" rx="30" ry="30" fill="#f1f3f5" stroke="#868e96" stroke-width="2" stroke-dasharray="10 7"/>
+<text x="1946.00" y="240.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Operator (manual)</text>
+<text x="1946.00" y="260.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Azure portal, then the VM, Connect, Bastion. Sign</text>
+<text x="1946.00" y="280.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">in with the VM's local admin password.</text>
+<rect x="1936" y="440" width="384" height="80" rx="20" ry="20" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="1946.00" y="460.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Bastion Developer bas-abw-demo-&lt;region&gt;-001</text>
+<text x="1946.00" y="480.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Attached to the VNet, not to a subnet. No public</text>
+<text x="1946.00" y="500.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">IP, free, one session at a time.</text>
+<rect x="100" y="668.5" width="344" height="120" rx="30" ry="30" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="110.00" y="708.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Foundry Agent Service runtime</text>
+<text x="110.00" y="728.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Network-injected into this subnet. The</text>
+<text x="110.00" y="748.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">agents' tool calls to MCP servers start here.</text>
+<rect x="564" y="668.5" width="344" height="120" rx="30" ry="30" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="574.00" y="688.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Private endpoint: APIM gateway</text>
+<text x="574.00" y="708.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">How callers inside the VNet, such as the</text>
+<text x="574.00" y="728.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">agent runtime and the jump box, reach the</text>
+<text x="574.00" y="748.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">gateway privately. The public gateway stays</text>
+<text x="574.00" y="768.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">on for everyone else.</text>
+<rect x="1028" y="668.5" width="344" height="120" rx="30" ry="30" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="1038.00" y="698.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">ca-abw-mcp-private</text>
+<text x="1038.00" y="718.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Called straight from the agent subnet at its</text>
+<text x="1038.00" y="738.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">internal name. Never behind APIM, so the</text>
+<text x="1038.00" y="758.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">APIM kill switch cannot stop it.</text>
+<rect x="1492" y="668.5" width="344" height="120" rx="30" ry="30" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="1502.00" y="718.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Delegated to Microsoft.Web/serverFarms.</text>
+<text x="1502.00" y="738.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">NAT gateway attached.</text>
+<rect x="1956" y="668.5" width="344" height="160" rx="32" ry="32" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="1966.00" y="688.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Jump VM vm-abw-jump-&lt;region&gt;-001</text>
+<text x="1966.00" y="708.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">(optional)</text>
+<text x="1966.00" y="728.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Windows Server 2022, Trusted Launch, no</text>
+<text x="1966.00" y="748.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">public IP. A local admin password, because</text>
+<text x="1966.00" y="768.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Bastion Developer needs one.</text>
+<text x="1966.00" y="788.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Auto-shutdown at 03:00 Central as a</text>
+<text x="1966.00" y="808.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">backstop.</text>
+<rect x="100" y="802.5" width="344" height="120" rx="30" ry="30" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="110.00" y="842.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Delegated to Microsoft.App/environments.</text>
+<text x="110.00" y="862.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Default outbound access off. No NSG and</text>
+<text x="110.00" y="882.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">no NAT gateway.</text>
+<rect x="564" y="802.5" width="344" height="120" rx="30" ry="30" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="574.00" y="822.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Private endpoints: app data stores</text>
+<text x="574.00" y="842.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Storage blob (data and WORM audit),</text>
+<text x="574.00" y="862.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Cosmos DB (SQL) and AI Search. Public</text>
+<text x="574.00" y="882.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">access off and keys off: the only way in is a</text>
+<text x="574.00" y="902.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">private endpoint with an on-behalf-of token.</text>
+<rect x="1028" y="802.5" width="344" height="120" rx="30" ry="30" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="1038.00" y="832.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">ca-abw-mcp-research, -wall, -actions,</text>
+<text x="1038.00" y="852.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">-legacy</text>
+<text x="1038.00" y="872.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Reached through APIM, which calls them</text>
+<text x="1038.00" y="892.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">from snet-apim.</text>
+<rect x="1492" y="802.5" width="344" height="120" rx="30" ry="30" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="1502.00" y="822.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">APIM outbound VNet integration</text>
+<text x="1502.00" y="842.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">The gateway's calls to backends leave from</text>
+<text x="1502.00" y="862.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">this subnet: to the MCP apps inside the</text>
+<text x="1502.00" y="882.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">VNet, and to public hosts through the NAT</text>
+<text x="1502.00" y="902.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">gateway.</text>
+<rect x="100" y="936.5" width="344" height="40" rx="10" ry="10" fill="#c92a2a" stroke="#c92a2a" stroke-width="2"/>
+<text x="272.00" y="956.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">No path to the internet</text>
+<rect x="100" y="990.5" width="344" height="100" rx="25" ry="25" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="110.00" y="1010.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Tool calls leave this subnet two ways</text>
+<text x="110.00" y="1030.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Through the APIM private endpoint in</text>
+<text x="110.00" y="1050.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">snet-pe (step 2), or straight to</text>
+<text x="110.00" y="1070.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">ca-abw-mcp-private (step 5).</text>
+<rect x="564" y="936.5" width="344" height="40" rx="10" ry="10" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="574.00" y="956.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Private endpoint: Foundry account</text>
+<rect x="564" y="990.5" width="344" height="60" rx="15" ry="15" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="574.00" y="1010.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Private endpoints: Agent Service stores</text>
+<text x="574.00" y="1030.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">(BYO Storage blob, Cosmos DB, AI Search)</text>
+<rect x="564" y="1064.5" width="344" height="40" rx="10" ry="10" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="574.00" y="1084.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Private endpoint: Key Vault</text>
+<rect x="564" y="1118.5" width="344" height="60" rx="15" ry="15" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="574.00" y="1138.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Private endpoint: Azure Monitor Private Link</text>
+<text x="574.00" y="1158.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Scope (AMPLS)</text>
+<rect x="564" y="1192.5" width="344" height="80" rx="20" ry="20" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="574.00" y="1212.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Private endpoints only. PE network policies</text>
+<text x="574.00" y="1232.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">off, default outbound access off. No NSG</text>
+<text x="574.00" y="1252.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">and no NAT gateway.</text>
+<rect x="1028" y="936.5" width="344" height="100" rx="25" ry="25" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="1038.00" y="956.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Seed job caj-abw-seed-&lt;region&gt;-001</text>
+<text x="1038.00" y="976.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Loads the demo data from inside the VNet,</text>
+<text x="1038.00" y="996.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">because every data plane is</text>
+<text x="1038.00" y="1016.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">private-endpoint-only.</text>
+<rect x="1028" y="1050.5" width="344" height="140" rx="32" ry="32" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="1038.00" y="1070.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Container Apps environment</text>
+<text x="1038.00" y="1090.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">cae-abw-priv-&lt;region&gt;-001</text>
+<text x="1038.00" y="1110.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Internal: VNet-only ingress. One image</text>
+<text x="1038.00" y="1130.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">(abw-mcp); the MCP_SERVER setting picks</text>
+<text x="1038.00" y="1150.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">the server. 0.5 vCPU, 1 GiB, 1 to 2 replicas</text>
+<text x="1038.00" y="1170.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">each.</text>
+<rect x="1028" y="1204.5" width="344" height="80" rx="20" ry="20" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="1038.00" y="1224.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Delegated to Microsoft.App/environments.</text>
+<text x="1038.00" y="1244.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">NAT gateway attached (Entra signing keys,</text>
+<text x="1038.00" y="1264.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">on-behalf-of, telemetry). No NSG.</text>
+<rect x="1492" y="936.5" width="344" height="220" rx="32" ry="32" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="1502.00" y="956.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">NSG nsg-abw-apim-&lt;region&gt;-001 (outbound</text>
+<text x="1502.00" y="976.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">rules only)</text>
+<text x="1502.00" y="996.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">100 allow AzureKeyVault 443: an APIM v2</text>
+<text x="1502.00" y="1016.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">platform dependency</text>
+<text x="1502.00" y="1036.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">110 allow VirtualNetwork 443: the MCP apps</text>
+<text x="1502.00" y="1056.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">and the Foundry private endpoints</text>
+<text x="1502.00" y="1076.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">120 allow Internet 443: the vendor mock,</text>
+<text x="1502.00" y="1096.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Entra and Monitor through the NAT</text>
+<text x="1502.00" y="1116.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Only these three custom rules; no custom</text>
+<text x="1502.00" y="1136.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">inbound rules.</text>
+<rect x="1956" y="842.5" width="344" height="100" rx="25" ry="25" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="1966.00" y="862.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">NSG nsg-abw-jump-&lt;region&gt;-001</text>
+<text x="1966.00" y="882.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">100 allow RDP 3389 from VirtualNetwork</text>
+<text x="1966.00" y="902.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">(Bastion)</text>
+<text x="1966.00" y="922.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">4000 deny all inbound from the Internet</text>
+<rect x="1956" y="956.5" width="344" height="80" rx="20" ry="20" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="1966.00" y="976.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">NAT gateway attached, so the VM's browser</text>
+<text x="1966.00" y="996.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">reaches Entra and the portal. Default</text>
+<text x="1966.00" y="1016.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">outbound access off.</text>
+<rect x="1956" y="1050.5" width="344" height="120" rx="30" ry="30" fill="#f1f3f5" stroke="#868e96" stroke-width="2" stroke-dasharray="10 7"/>
+<text x="1966.00" y="1070.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Why it exists: every data plane is</text>
+<text x="1966.00" y="1090.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">private-endpoint-only, so the portal's data</text>
+<text x="1966.00" y="1110.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">pages fail from a laptop. From this VM the</text>
+<text x="1966.00" y="1130.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">same names resolve to the private</text>
+<text x="1966.00" y="1150.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">endpoints.</text>
+<rect x="1956" y="1184.5" width="344" height="80" rx="20" ry="20" fill="#ffe3e3" stroke="#e03131" stroke-width="2"/>
+<text x="1966.00" y="1204.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Never re-run the network stage while this</text>
+<text x="1966.00" y="1224.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">subnet exists: run jumpbox.ps1 -Remove</text>
+<text x="1966.00" y="1244.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">first.</text>
+<rect x="1008" y="1388.5" width="1312" height="80" rx="20" ry="20" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="1018.00" y="1408.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">NAT gateway ng-abw-demo-&lt;region&gt;-001 with public address pip-ng-abw-demo-&lt;region&gt;-001</text>
+<text x="1018.00" y="1428.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Standard SKU, one static IPv4 address, idle timeout 10 minutes. Attached to snet-mcp, snet-apim and snet-jump; not to snet-agent or snet-pe. This address is the only one allowed</text>
+<text x="1018.00" y="1448.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">through the Key Vault firewall (public endpoint on, default action Deny, trusted Azure services bypass).</text>
+<rect x="1028" y="1613" width="626" height="80" rx="20" ry="20" fill="#e5dbff" stroke="#6741d9" stroke-width="2"/>
+<text x="1038.00" y="1633.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Microsoft Entra ID</text>
+<text x="1038.00" y="1653.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">On-behalf-of token exchange and signing keys for the MCP servers; token-validation</text>
+<text x="1038.00" y="1673.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">metadata for APIM.</text>
+<rect x="1674" y="1613" width="626" height="80" rx="20" ry="20" fill="#c5f6fa" stroke="#0b7285" stroke-width="2"/>
+<text x="1684.00" y="1633.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Azure Monitor ingestion</text>
+<text x="1684.00" y="1653.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Telemetry from the MCP apps and APIM. The Monitor Private Link Scope runs in</text>
+<text x="1684.00" y="1673.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Open ingestion mode, so writers outside the VNet can still ingest.</text>
+<rect x="1028" y="1707" width="626" height="100" rx="25" ry="25" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="1038.00" y="1737.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Public Container Apps environment cae-abw-pub-&lt;region&gt;-001</text>
+<text x="1038.00" y="1757.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Hosts ca-abw-mcp-vendor, the simulated third-party MCP server. No VNet</text>
+<text x="1038.00" y="1777.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">configuration. APIM calls it on 443 through the NAT gateway.</text>
+<rect x="1674" y="1707" width="626" height="100" rx="25" ry="25" fill="#f1f3f5" stroke="#868e96" stroke-width="2" stroke-dasharray="10 7"/>
+<text x="1684.00" y="1727.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">From the jump box</text>
+<text x="1684.00" y="1747.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Entra sign-in, Azure portal, ai.azure.com, Azure Resource Manager, Microsoft Graph</text>
+<text x="1684.00" y="1767.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">and the container registry host. The one-time console installers (Python, Azure CLI,</text>
+<text x="1684.00" y="1787.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">PowerShell 7) pass the same way.</text>
+<rect x="1008" y="1857" width="1312" height="86" rx="21.5" ry="21.5" fill="#c5f6fa" stroke="#0b7285" stroke-width="2"/>
+<text x="1018.00" y="1890.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Observed from inside the jump box (in-VM run command): 11 of 11 private names resolve to 10.42.1.x and answer on 443, 6 of 6 outbound hosts answer, and the egress address is</text>
+<text x="1018.00" y="1910.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">the NAT gateway's. Not observed: the Bastion browser session itself.</text>
+<rect x="80" y="1481" width="416" height="40" rx="10" ry="10" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="288.00" y="1501.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">privatelink.services.ai.azure.com</text>
+<rect x="512" y="1481" width="416" height="40" rx="10" ry="10" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="719.99" y="1501.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">privatelink.openai.azure.com</text>
+<rect x="80" y="1531" width="416" height="40" rx="10" ry="10" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="288.00" y="1551.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">privatelink.cognitiveservices.azure.com</text>
+<rect x="512" y="1531" width="416" height="40" rx="10" ry="10" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="720.00" y="1551.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">privatelink.search.windows.net</text>
+<rect x="80" y="1581" width="416" height="40" rx="10" ry="10" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="288.00" y="1601.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">privatelink.blob.core.windows.net</text>
+<rect x="512" y="1581" width="416" height="40" rx="10" ry="10" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="720.00" y="1601.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">privatelink.documents.azure.com</text>
+<rect x="80" y="1631" width="416" height="40" rx="10" ry="10" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="288.00" y="1651.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">privatelink.fabric.microsoft.com (unused)</text>
+<rect x="512" y="1631" width="416" height="40" rx="10" ry="10" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="720.00" y="1651.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">privatelink.azurecr.io (unused)</text>
+<rect x="80" y="1681" width="416" height="40" rx="10" ry="10" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="288.00" y="1701.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">privatelink.vaultcore.azure.net</text>
+<rect x="512" y="1681" width="416" height="40" rx="10" ry="10" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="720.00" y="1701.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">privatelink.monitor.azure.com</text>
+<rect x="80" y="1731" width="416" height="40" rx="10" ry="10" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="288.00" y="1751.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">privatelink.oms.opinsights.azure.com</text>
+<rect x="512" y="1731" width="416" height="40" rx="10" ry="10" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="719.99" y="1751.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">privatelink.ods.opinsights.azure.com</text>
+<rect x="80" y="1781" width="416" height="40" rx="10" ry="10" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="288.00" y="1801.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">privatelink.agentsvc.azure-automation.net</text>
+<rect x="80" y="1863" width="416" height="60" rx="15" ry="15" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="288.00" y="1893.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">privatelink.azure-api.net (APIM gateway endpoint)</text>
+<rect x="512" y="1863" width="416" height="60" rx="15" ry="15" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="720.00" y="1883.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">The internal environment's default domain, wildcard</text>
+<text x="720.00" y="1903.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">record to its internal address (platform stage)</text>
+<rect x="60" y="1993" width="860" height="245" rx="32" ry="32" fill="#f8f9fa" stroke="#343a40" stroke-width="2"/>
+<rect x="950" y="1993" width="1390" height="245" rx="32" ry="32" fill="#f8f9fa" stroke="#343a40" stroke-width="2"/>
+<path d="M 1164.00 260.00 L 1468.00 260.00" fill="none" stroke="#1971c2" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1454.63 253.19 L 1468.00 260.00 L 1454.63 266.81" fill="none" stroke="#1971c2" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 772.00 260.00 L 468.00 260.00" fill="none" stroke="#1971c2" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 481.37 266.81 L 468.00 260.00 L 481.37 253.19" fill="none" stroke="#1971c2" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 440.00 324.00 L 440.00 600.00" fill="none" stroke="#1971c2" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 446.81 586.63 L 440.00 600.00 L 433.19 586.63" fill="none" stroke="#1971c2" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1796.00 324.00 L 1796.00 600.00" fill="none" stroke="#1971c2" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1802.81 586.63 L 1796.00 600.00 L 1789.19 586.63" fill="none" stroke="#1971c2" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 448.00 728.50 L 560.00 728.50" fill="none" stroke="#1971c2" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 546.63 721.69 L 560.00 728.50 L 546.63 735.31" fill="none" stroke="#1971c2" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 448.00 682.50 L 480.00 682.50 L 480.00 486.00 L 1332.00 486.00 L 1332.00 664.50" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1338.81 651.13 L 1332.00 664.50 L 1325.19 651.13" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1488.00 862.50 L 1376.00 862.50" fill="none" stroke="#1971c2" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1389.37 869.31 L 1376.00 862.50 L 1389.37 855.69" fill="none" stroke="#1971c2" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1024.00 862.50 L 912.00 862.50" fill="none" stroke="#1971c2" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 925.37 869.31 L 912.00 862.50 L 925.37 855.69" fill="none" stroke="#1971c2" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 736.00 1308.50 L 736.00 1384.50" fill="none" stroke="#1971c2" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 742.81 1371.13 L 736.00 1384.50 L 729.19 1371.13" fill="none" stroke="#1971c2" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1200.00 1308.50 L 1200.00 1384.50" fill="none" stroke="#1971c2" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1206.81 1371.13 L 1200.00 1384.50 L 1193.19 1371.13" fill="none" stroke="#1971c2" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1664.00 1308.50 L 1664.00 1384.50" fill="none" stroke="#1971c2" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1670.81 1371.13 L 1664.00 1384.50 L 1657.19 1371.13" fill="none" stroke="#1971c2" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2128.00 1308.50 L 2128.00 1384.50" fill="none" stroke="#1971c2" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2134.81 1371.13 L 2128.00 1384.50 L 2121.19 1371.13" fill="none" stroke="#1971c2" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1664.00 1472.50 L 1664.00 1544.50" fill="none" stroke="#1971c2" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1670.81 1531.13 L 1664.00 1544.50 L 1657.19 1531.13" fill="none" stroke="#1971c2" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2260.00 324.00 L 2260.00 436.00" fill="none" stroke="#868e96" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="10 7"/>
+<path d="M 2266.81 422.63 L 2260.00 436.00 L 2253.19 422.63" fill="none" stroke="#868e96" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2260.00 524.00 L 2260.00 664.50" fill="none" stroke="#1971c2" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2266.81 651.13 L 2260.00 664.50 L 2253.19 651.13" fill="none" stroke="#1971c2" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="60.00" y="56.50" font-size="36" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Network topology: subnets, private endpoints, egress</text>
+<text x="60.00" y="98.50" font-size="20" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">Private-endpoint-only data planes, one NAT address, no internet path from the agent subnet</text>
+<text x="60.00" y="2286.00" font-size="16" fill="#868e96" text-anchor="start" dominant-baseline="central" xml:space="preserve">Agents Behind the Wall - diagram 02 of 13 - generated by docs/diagrams/build_diagrams.py</text>
+<text x="1186.00" y="43.25" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Legend</text>
+<rect x="1186" y="61" width="36" height="22" rx="5.5" ry="5.5" fill="#e5dbff" stroke="#6741d9" stroke-width="2"/>
+<text x="1232.00" y="71.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Identity (Entra ID)</text>
+<rect x="1186" y="91" width="36" height="22" rx="5.5" ry="5.5" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="1232.00" y="101.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Network, API gateway (APIM)</text>
+<rect x="1186" y="121" width="36" height="22" rx="5.5" ry="5.5" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="1232.00" y="131.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Compute (agents, MCP servers)</text>
+<rect x="1476" y="61" width="36" height="22" rx="5.5" ry="5.5" fill="#ffe8cc" stroke="#e8590c" stroke-width="2"/>
+<text x="1522.00" y="71.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Data stores</text>
+<rect x="1476" y="91" width="36" height="22" rx="5.5" ry="5.5" fill="#c5f6fa" stroke="#0b7285" stroke-width="2"/>
+<text x="1522.00" y="101.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Observability</text>
+<rect x="1476" y="121" width="36" height="22" rx="5.5" ry="5.5" fill="#ffe3e3" stroke="#e03131" stroke-width="2"/>
+<text x="1522.00" y="131.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Deny, risk, kill switch</text>
+<rect x="1766" y="61" width="36" height="22" rx="5.5" ry="5.5" fill="#f1f3f5" stroke="#868e96" stroke-width="2" stroke-dasharray="10 7"/>
+<text x="1812.00" y="71.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Human / optional (dashed)</text>
+<rect x="1766" y="91" width="36" height="22" rx="5.5" ry="5.5" fill="#fff3bf" stroke="#f08c00" stroke-width="2"/>
+<text x="1812.00" y="101.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Azure Policy, governance</text>
+<rect x="1766" y="121" width="36" height="22" rx="5.5" ry="5.5" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="1812.00" y="131.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">People, client tools</text>
+<path d="M 2056.00 72.00 L 2092.00 72.00" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2078.63 65.19 L 2092.00 72.00 L 2078.63 78.81" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="2102.00" y="71.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Allowed flow</text>
+<path d="M 2056.00 102.00 L 2092.00 102.00" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2078.63 95.19 L 2092.00 102.00 L 2078.63 108.81" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="2102.00" y="101.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Denied exit / risk path</text>
+<path d="M 2056.00 132.00 L 2092.00 132.00" fill="none" stroke="#868e96" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="10 7"/>
+<path d="M 2078.63 125.19 L 2092.00 132.00 L 2078.63 138.81" fill="none" stroke="#868e96" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="2102.00" y="131.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Manual step (dashed)</text>
+<text x="84.00" y="478.00" font-size="16" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">Address space 10.42.0.0/16</text>
+<text x="84.00" y="498.00" font-size="16" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">Five subnets, the fifth optional</text>
+<text x="80.00" y="1463.00" font-size="16" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">13 network-stage zones the Foundry template references as existing (the 14th, APIM's, is below)</text>
+<text x="80.00" y="1845.00" font-size="16" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">Also in use: the APIM endpoint zone and the internal Container Apps zone</text>
+<text x="76.00" y="2021.50" font-size="20" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">What to notice</text>
+<text x="76.00" y="2053.25" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">- snet-agent has no NAT gateway and no default outbound access: the agent runtime has no internet</text>
+<text x="76.00" y="2075.75" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">  path. It reaches APIM through a private endpoint and the private MCP at its internal name.</text>
+<text x="76.00" y="2098.25" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">- Storage, Cosmos DB and AI Search accept no public traffic and no keys. The only way to data is a</text>
+<text x="76.00" y="2120.75" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">  private endpoint, with an on-behalf-of token.</text>
+<text x="76.00" y="2143.25" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">- All VNet egress leaves through one NAT address, the only address on the Key Vault firewall. The</text>
+<text x="76.00" y="2165.75" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">  APIM NSG allows three outbound destinations on 443; the jump-box NSG admits only Bastion and</text>
+<text x="76.00" y="2188.25" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">  denies the internet.</text>
+<text x="966.00" y="2021.50" font-size="20" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Numbered flow</text>
+<text x="966.00" y="2052.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">1. A client calls the APIM public gateway with a bearer token. Wall 1 (APIM) judges every call</text>
+<text x="966.00" y="2072.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">    there.</text>
+<text x="966.00" y="2092.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">2. The agent runtime has no internet path, so it reaches the same gateway through the APIM</text>
+<text x="966.00" y="2112.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">    private endpoint in snet-pe.</text>
+<text x="966.00" y="2132.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">3. APIM's backend calls leave through its outbound VNet integration in snet-apim.</text>
+<text x="966.00" y="2152.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">4. They stay inside the VNet to the MCP apps in the internal Container Apps environment</text>
+<text x="966.00" y="2172.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">    (NSG rule 110).</text>
+<text x="1659.00" y="2052.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">5. The private MCP is called straight from the agent subnet at its internal name. It is never</text>
+<text x="1659.00" y="2072.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">    behind APIM, so Wall 1 and the kill switch do not apply to it.</text>
+<text x="1659.00" y="2092.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">6. After the on-behalf-of exchange, the MCP servers reach Storage, Cosmos DB and AI</text>
+<text x="1659.00" y="2112.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">    Search through private endpoints. Private DNS answers with 10.42.1.x addresses.</text>
+<text x="1659.00" y="2132.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">7. Public hosts (Entra, Azure Monitor, the vendor mock) are reached through the NAT</text>
+<text x="1659.00" y="2152.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">    gateway's one static address, from snet-mcp, snet-apim and snet-jump only.</text>
+<text x="1659.00" y="2172.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">8. The operator opens the VM in the Azure portal and connects through Bastion Developer.</text>
+<text x="1659.00" y="2192.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">9. Bastion reaches the VM on RDP 3389, the only inbound NSG rule. From the VM the</text>
+<text x="1659.00" y="2212.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">    private names resolve to the private endpoints.</text>
+<rect x="1210.52" y="206" width="210.96" height="30" rx="7.5" ry="7.5" fill="#ffffff" stroke="none" stroke-width="1"/>
+<text x="1316.00" y="221.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">HTTPS with a bearer token</text>
+<rect x="503.39" y="222" width="233.22" height="30" rx="7.5" ry="7.5" fill="#ffffff" stroke="none" stroke-width="1"/>
+<text x="620.00" y="237.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">public endpoint (portal, laptop)</text>
+<rect x="294.85" y="529.8" width="137.15" height="30" rx="7.5" ry="7.5" fill="#ffffff" stroke="none" stroke-width="1"/>
+<text x="363.43" y="544.80" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">network injection</text>
+<rect x="1608.13" y="447" width="163.87" height="30" rx="7.5" ry="7.5" fill="#ffffff" stroke="none" stroke-width="1"/>
+<text x="1690.07" y="462.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">outbound integration</text>
+<rect x="678.94" y="432" width="454.11" height="30" rx="7.5" ry="7.5" fill="#ffffff" stroke="none" stroke-width="1"/>
+<text x="906.00" y="447.00" font-size="16" fill="#c92a2a" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Direct to the private MCP's internal name: never behind APIM</text>
+<rect x="752" y="1342.9" width="229.66" height="30" rx="7.5" ry="7.5" fill="#ffffff" stroke="none" stroke-width="1"/>
+<text x="757.00" y="1357.90" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">DNS zone group per endpoint</text>
+<ellipse cx="1316" cy="260" rx="18" ry="18" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1316.01" y="260.00" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">1</text>
+<ellipse cx="1796" cy="462" rx="18" ry="18" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1796.01" y="462.00" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">3</text>
+<ellipse cx="504" cy="728.5" rx="18" ry="18" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="504.00" y="728.50" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">2</text>
+<ellipse cx="906" cy="486" rx="18" ry="18" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="906.00" y="486.00" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">5</text>
+<ellipse cx="1432" cy="862.5" rx="18" ry="18" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1432.01" y="862.50" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">4</text>
+<ellipse cx="968" cy="862.5" rx="18" ry="18" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="968.00" y="862.50" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">6</text>
+<ellipse cx="1664" cy="1508.5" rx="18" ry="18" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1664.01" y="1508.50" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">7</text>
+<ellipse cx="2260" cy="380" rx="18" ry="18" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="2260.01" y="380.00" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">8</text>
+<ellipse cx="2260" cy="552" rx="18" ry="18" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="2260.01" y="552.00" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">9</text>
+</svg>

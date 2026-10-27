@@ -1,0 +1,13 @@
+// @id wall-violation
+// @name ABW-001 Information-barrier violation attempt (Wall MCP)
+// @severity High
+// @tactics Collection
+// @frequency PT5M
+// @period PT30M
+// @group Account
+// @entity Account.FullName=UserUpn Account.AadUserId=UserOid
+// @details Server=Server Tool=Tool Reason=Reason RequestId=RequestId ClientAppId=ClientAppId
+// @description A signed-in user (through an agent) asked the Wall MCP server for a deal room that is not in their token roles. The MCP server refused and logged wall_violation_attempt. Investigate with AbwIdentityChain('<RequestId>').
+AbwMcpAudit(30m)
+| where Event == 'wall_violation_attempt'
+| project TimeGenerated, UserUpn, UserOid, Server, Tool, Reason, RequestId, ClientAppId

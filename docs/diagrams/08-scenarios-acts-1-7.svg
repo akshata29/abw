@@ -1,0 +1,687 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="2690" viewBox="0 0 2400 2690" font-family="Helvetica, Arial, sans-serif">
+<rect x="0" y="0" width="2400" height="2690" fill="#ffffff"/>
+<rect x="60" y="190" width="740" height="534.5" rx="32" ry="32" fill="#f8f9fa" stroke="#1e1e1e" stroke-width="2"/>
+<rect x="830" y="190" width="740" height="534.5" rx="32" ry="32" fill="#f8f9fa" stroke="#1e1e1e" stroke-width="2"/>
+<rect x="1600" y="190" width="740" height="534.5" rx="32" ry="32" fill="#f8f9fa" stroke="#1e1e1e" stroke-width="2"/>
+<rect x="60" y="748.5" width="740" height="706.5" rx="32" ry="32" fill="#f8f9fa" stroke="#1e1e1e" stroke-width="2"/>
+<rect x="830" y="748.5" width="740" height="706.5" rx="32" ry="32" fill="#f8f9fa" stroke="#1e1e1e" stroke-width="2"/>
+<rect x="1600" y="748.5" width="740" height="706.5" rx="32" ry="32" fill="#f8f9fa" stroke="#1e1e1e" stroke-width="2"/>
+<rect x="60" y="1479" width="2280" height="813" rx="32" ry="32" fill="#f8f9fa" stroke="#1e1e1e" stroke-width="2"/>
+<rect x="76" y="1543.5" width="520" height="644.5" rx="32" ry="32" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<rect x="616" y="1543.5" width="760" height="644.5" rx="32" ry="32" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<rect x="1396" y="1543.5" width="440" height="644.5" rx="32" ry="32" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<rect x="1856" y="1543.5" width="468" height="644.5" rx="32" ry="32" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<rect x="632" y="1720" width="728" height="58" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1"/>
+<rect x="632" y="1778" width="728" height="58" fill="#ffffff" stroke="#dee2e6" stroke-width="1"/>
+<rect x="632" y="1836" width="728" height="58" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1"/>
+<rect x="632" y="1894" width="728" height="70" fill="#ffffff" stroke="#dee2e6" stroke-width="1"/>
+<rect x="632" y="1964" width="728" height="58" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1"/>
+<rect x="632" y="2022" width="728" height="78" fill="#ffffff" stroke="#dee2e6" stroke-width="1"/>
+<rect x="76" y="202" width="309.12" height="36.5" rx="9.125" ry="9.125" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="230.56" y="220.25" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Act 1: Same question, two answers</text>
+<rect x="846" y="202" width="144.05" height="36.5" rx="9.125" ry="9.125" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="918.02" y="220.25" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Act 2: No keys</text>
+<rect x="1616" y="202" width="315.17" height="36.5" rx="9.125" ry="9.125" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1773.59" y="220.25" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Act 3: Whose hands are on the data</text>
+<rect x="76" y="760.5" width="238.1" height="36.5" rx="9.125" ry="9.125" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="195.05" y="778.75" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Act 4: When it goes wrong</text>
+<rect x="846" y="760.5" width="230.1" height="36.5" rx="9.125" ry="9.125" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="961.05" y="778.75" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Act 5: What InfoSec sees</text>
+<rect x="1616" y="760.5" width="276.11" height="36.5" rx="9.125" ry="9.125" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1754.06" y="778.75" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Act 6: One request, every layer</text>
+<rect x="76" y="1491" width="436.65" height="36.5" rx="9.125" ry="9.125" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="294.32" y="1509.25" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Act 7: Every role, the agent's front door, and the bill</text>
+<rect x="92" y="1555.5" width="276.15" height="36.5" rx="9.125" ry="9.125" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="230.07" y="1573.75" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">7.1 Agent front door: four steps</text>
+<rect x="632" y="1555.5" width="414.23" height="36.5" rx="9.125" ry="9.125" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="839.12" y="1573.75" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">7.2 Every kind of user: one yes and one no each</text>
+<rect x="1412" y="1555.5" width="337.17" height="36.5" rx="9.125" ry="9.125" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1580.59" y="1573.75" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">7.3 Cost and tokens: the FinOps board</text>
+<rect x="1872" y="1555.5" width="356.21" height="36.5" rx="9.125" ry="9.125" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="2050.11" y="1573.75" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">7.4 Runaway agent: cut the token budget</text>
+<rect x="1172" y="22" width="1168" height="138" rx="32" ry="32" fill="#ffffff" stroke="#adb5bd" stroke-width="1"/>
+<rect x="76" y="254.5" width="48" height="80" rx="12" ry="12" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="100.00" y="294.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">1.1</text>
+<rect x="132" y="254.5" width="172" height="80" rx="20" ry="20" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="218.00" y="284.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Legacy agent: shared</text>
+<text x="218.00" y="304.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">key via APIM /legacy</text>
+<rect x="342" y="254.5" width="188" height="80" rx="20" ry="20" fill="#ffe3e3" stroke="#e03131" stroke-width="2"/>
+<text x="436.00" y="284.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Legacy server: no user</text>
+<text x="436.00" y="304.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">context, broad identity</text>
+<rect x="568" y="254.5" width="216" height="80" rx="20" ry="20" fill="#ffe3e3" stroke="#e03131" stroke-width="2"/>
+<text x="676.00" y="274.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Answered: LEAKED if</text>
+<text x="676.00" y="294.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">confidential terms come</text>
+<text x="676.00" y="314.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">back</text>
+<rect x="76" y="348.5" width="48" height="60" rx="12" ry="12" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="100.00" y="378.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">1.2</text>
+<rect x="132" y="348.5" width="172" height="60" rx="15" ry="15" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="218.00" y="368.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Governed agent,</text>
+<text x="218.00" y="388.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">same Orion question</text>
+<rect x="342" y="348.5" width="188" height="60" rx="15" ry="15" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="436.00" y="368.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Roles read from the</text>
+<text x="436.00" y="388.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">token: Falcon only</text>
+<rect x="568" y="348.5" width="216" height="60" rx="15" ry="15" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="676.00" y="368.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Model declines Orion in its</text>
+<text x="676.00" y="388.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">own words</text>
+<rect x="76" y="422.5" width="48" height="60" rx="12" ry="12" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="100.00" y="452.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">1.3</text>
+<rect x="132" y="422.5" width="172" height="60" rx="15" ry="15" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="218.00" y="442.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Ask for the Falcon</text>
+<text x="218.00" y="462.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">deal</text>
+<rect x="342" y="422.5" width="188" height="60" rx="15" ry="15" fill="#ffe8cc" stroke="#e8590c" stroke-width="2"/>
+<text x="436.00" y="442.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">OBO: Storage checks</text>
+<text x="436.00" y="462.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">the user's own token</text>
+<rect x="568" y="422.5" width="216" height="60" rx="15" ry="15" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="676.00" y="442.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Allowed: Storage logs</text>
+<text x="676.00" y="462.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">auth=OAuth</text>
+<rect x="76" y="496.5" width="48" height="80" rx="12" ry="12" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="100.00" y="536.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">1.4</text>
+<rect x="132" y="496.5" width="172" height="80" rx="20" ry="20" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="218.00" y="516.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Raw call for</text>
+<text x="218.00" y="536.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">ORION-001, no</text>
+<text x="218.00" y="556.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">model</text>
+<rect x="342" y="496.5" width="188" height="80" rx="20" ry="20" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="436.00" y="526.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">MCP server: Orion is</text>
+<text x="436.00" y="546.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">not in the token's roles</text>
+<rect x="568" y="496.5" width="216" height="80" rx="20" ry="20" fill="#ffe3e3" stroke="#e03131" stroke-width="2"/>
+<text x="675.99" y="526.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">DENIED (HTTP 200),</text>
+<text x="675.99" y="546.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Storage never touched</text>
+<rect x="846" y="254.5" width="48" height="100" rx="12" ry="12" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="870.00" y="304.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">2.1</text>
+<rect x="902" y="254.5" width="172" height="100" rx="25" ry="25" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="987.99" y="274.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">9 real Azure changes:</text>
+<text x="987.99" y="294.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">keys on, public</text>
+<text x="987.99" y="314.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">endpoint, unapproved</text>
+<text x="987.99" y="334.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">tool</text>
+<rect x="1112" y="254.5" width="188" height="100" rx="25" ry="25" fill="#fff3bf" stroke="#f08c00" stroke-width="2"/>
+<text x="1206.00" y="304.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Azure Policy initiative</text>
+<rect x="1338" y="254.5" width="216" height="100" rx="25" ry="25" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="1446.00" y="284.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">5 BLOCKED, 3</text>
+<text x="1446.00" y="304.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">CORRECTED, 1</text>
+<text x="1446.00" y="324.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">ALLOWED</text>
+<rect x="846" y="368.5" width="48" height="80" rx="12" ry="12" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="870.00" y="408.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">2.2</text>
+<rect x="902" y="368.5" width="172" height="80" rx="20" ry="20" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="988.00" y="398.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">KQL:</text>
+<text x="988.00" y="418.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">AbwZeroKeys(30d)</text>
+<rect x="1112" y="368.5" width="188" height="80" rx="20" ry="20" fill="#c5f6fa" stroke="#0b7285" stroke-width="2"/>
+<text x="1205.99" y="398.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">StorageBlobLogs, every</text>
+<text x="1205.99" y="418.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">request</text>
+<rect x="1338" y="368.5" width="216" height="80" rx="20" ry="20" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="1446.00" y="388.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">People, agents, apps:</text>
+<text x="1446.00" y="408.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">OAuth or TrustedAccess,</text>
+<text x="1446.00" y="428.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">none by key</text>
+<rect x="846" y="462.5" width="48" height="80" rx="12" ry="12" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="870.00" y="502.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">2.3</text>
+<rect x="902" y="462.5" width="172" height="80" rx="20" ry="20" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="988.00" y="492.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Live read of Azure</text>
+<text x="988.00" y="512.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Resource Manager</text>
+<rect x="1112" y="462.5" width="188" height="80" rx="20" ry="20" fill="#fff3bf" stroke="#f08c00" stroke-width="2"/>
+<text x="1206.00" y="482.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Foundry, its</text>
+<text x="1206.00" y="502.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">connections, the data</text>
+<text x="1206.00" y="522.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">stores</text>
+<rect x="1338" y="462.5" width="216" height="80" rx="20" ry="20" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="1446.00" y="482.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Local keys off, 5 OAuth</text>
+<text x="1446.00" y="502.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">connections, stores</text>
+<text x="1446.00" y="522.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Entra-only</text>
+<rect x="1616" y="254.5" width="48" height="80" rx="12" ry="12" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1640.00" y="294.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">3.1</text>
+<rect x="1672" y="254.5" width="172" height="80" rx="20" ry="20" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="1758.00" y="284.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Positions and credit</text>
+<text x="1758.00" y="304.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">headroom</text>
+<rect x="1882" y="254.5" width="188" height="80" rx="20" ry="20" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="1976.00" y="274.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Private MCP server</text>
+<text x="1976.00" y="294.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">(internal ingress)</text>
+<text x="1976.00" y="314.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">checks the token itself</text>
+<rect x="2108" y="254.5" width="216" height="80" rx="20" ry="20" fill="#ffe8cc" stroke="#e8590c" stroke-width="2"/>
+<text x="2216.00" y="284.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Cosmos DB read with the</text>
+<text x="2216.00" y="304.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">user's own token (OBO)</text>
+<rect x="1616" y="348.5" width="48" height="60" rx="12" ry="12" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1640.00" y="378.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">3.2</text>
+<rect x="1672" y="348.5" width="172" height="60" rx="15" ry="15" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="1758.00" y="368.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">DNS lookup from the</text>
+<text x="1758.00" y="388.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">laptop</text>
+<rect x="1882" y="348.5" width="188" height="60" rx="15" ry="15" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="1976.00" y="368.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Private DNS zone,</text>
+<text x="1976.00" y="388.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">linked to the VNet only</text>
+<rect x="2108" y="348.5" width="216" height="60" rx="15" ry="15" fill="#ffe3e3" stroke="#e03131" stroke-width="2"/>
+<text x="2216.00" y="368.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">No public record: it cannot</text>
+<text x="2216.00" y="388.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">resolve</text>
+<rect x="1616" y="422.5" width="48" height="80" rx="12" ry="12" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1640.00" y="462.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">3.3</text>
+<rect x="1672" y="422.5" width="172" height="80" rx="20" ry="20" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="1757.99" y="462.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Vendor quote request</text>
+<rect x="1882" y="422.5" width="188" height="80" rx="20" ry="20" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="1976.00" y="442.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">APIM checks the user,</text>
+<text x="1976.00" y="462.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">adds the vendor key</text>
+<text x="1976.00" y="482.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">from Key Vault</text>
+<rect x="2108" y="422.5" width="216" height="80" rx="20" ry="20" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="2216.00" y="442.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Quote returned; the user</text>
+<text x="2216.00" y="462.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">and agent never see the</text>
+<text x="2216.00" y="482.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">key</text>
+<rect x="76" y="616.5" width="72" height="30" rx="7.5" ry="7.5" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="111.99" y="631.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Proves</text>
+<rect x="76" y="678.5" width="72" height="30" rx="7.5" ry="7.5" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="112.00" y="693.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Walls</text>
+<rect x="160" y="678.5" width="115.58" height="30" rx="7.5" ry="7.5" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="217.79" y="693.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">W1 Gateway</text>
+<rect x="283.58" y="678.5" width="136.9" height="30" rx="7.5" ry="7.5" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="352.03" y="693.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">W2 MCP server</text>
+<rect x="428.48" y="678.5" width="129.82" height="30" rx="7.5" ry="7.5" fill="#ffe8cc" stroke="#e8590c" stroke-width="2"/>
+<text x="493.39" y="693.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">W3 Data plane</text>
+<rect x="846" y="616.5" width="72" height="30" rx="7.5" ry="7.5" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="882.00" y="631.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Proves</text>
+<rect x="846" y="678.5" width="72" height="30" rx="7.5" ry="7.5" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="882.00" y="693.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Walls</text>
+<rect x="930" y="678.5" width="112.91" height="30" rx="7.5" ry="7.5" fill="#fff3bf" stroke="#f08c00" stroke-width="2"/>
+<text x="986.46" y="693.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Azure Policy</text>
+<rect x="1050.91" y="678.5" width="129.82" height="30" rx="7.5" ry="7.5" fill="#ffe8cc" stroke="#e8590c" stroke-width="2"/>
+<text x="1115.82" y="693.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">W3 Data plane</text>
+<rect x="1616" y="616.5" width="72" height="30" rx="7.5" ry="7.5" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1651.99" y="631.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Proves</text>
+<rect x="1616" y="678.5" width="72" height="30" rx="7.5" ry="7.5" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1652.00" y="693.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Walls</text>
+<rect x="1700" y="678.5" width="115.58" height="30" rx="7.5" ry="7.5" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="1757.79" y="693.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">W1 Gateway</text>
+<rect x="1823.58" y="678.5" width="136.9" height="30" rx="7.5" ry="7.5" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="1892.03" y="693.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">W2 MCP server</text>
+<rect x="1968.48" y="678.5" width="129.82" height="30" rx="7.5" ry="7.5" fill="#ffe8cc" stroke="#e8590c" stroke-width="2"/>
+<text x="2033.39" y="693.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">W3 Data plane</text>
+<rect x="76" y="813" width="48" height="60" rx="12" ry="12" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="100.00" y="843.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">4.1</text>
+<rect x="132" y="813" width="172" height="60" rx="15" ry="15" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="218.00" y="843.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">400 calls in seconds</text>
+<rect x="342" y="813" width="188" height="60" rx="15" ry="15" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="436.00" y="833.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">APIM rate limit: 120 per</text>
+<text x="436.00" y="853.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">60 s per user</text>
+<rect x="568" y="813" width="216" height="60" rx="15" ry="15" fill="#ffe3e3" stroke="#e03131" stroke-width="2"/>
+<text x="676.00" y="833.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">About 125-133 served, the</text>
+<text x="676.00" y="853.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">rest HTTP 429</text>
+<rect x="76" y="887" width="48" height="80" rx="12" ry="12" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="100.00" y="927.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">4.2</text>
+<rect x="132" y="887" width="172" height="80" rx="20" ry="20" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="218.00" y="917.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Agent asks to place</text>
+<text x="218.00" y="937.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">an order</text>
+<rect x="342" y="887" width="188" height="80" rx="20" ry="20" fill="#f1f3f5" stroke="#868e96" stroke-width="2" stroke-dasharray="10 7"/>
+<text x="436.00" y="917.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Human approval gate in</text>
+<text x="436.00" y="937.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Foundry</text>
+<rect x="568" y="887" width="216" height="80" rx="20" ry="20" fill="#ffe3e3" stroke="#e03131" stroke-width="2"/>
+<text x="676.00" y="907.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Approved, still refused:</text>
+<text x="676.00" y="927.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">ZYNX is on the restricted</text>
+<text x="676.00" y="947.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">list</text>
+<rect x="76" y="981" width="48" height="80" rx="12" ry="12" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="100.00" y="1021.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">4.3</text>
+<rect x="132" y="981" width="172" height="80" rx="20" ry="20" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="218.00" y="1011.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Vendor feed carries a</text>
+<text x="218.00" y="1031.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">poisoned notice</text>
+<rect x="342" y="981" width="188" height="80" rx="20" ry="20" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="436.00" y="1011.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Guardrail on some runs,</text>
+<text x="436.00" y="1031.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">the wall every time</text>
+<rect x="568" y="981" width="216" height="80" rx="20" ry="20" fill="#ffe3e3" stroke="#e03131" stroke-width="2"/>
+<text x="676.00" y="1001.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">If the model obeys: Orion</text>
+<text x="676.00" y="1021.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">read and ZYNX order</text>
+<text x="676.00" y="1041.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">DENIED</text>
+<rect x="76" y="1075" width="48" height="80" rx="12" ry="12" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="100.00" y="1115.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">4.4</text>
+<rect x="132" y="1075" width="172" height="80" rx="20" ry="20" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="218.00" y="1095.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Block the Azure CLI</text>
+<text x="218.00" y="1115.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">client, then call with</text>
+<text x="218.00" y="1135.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">its token</text>
+<rect x="342" y="1075" width="188" height="80" rx="20" ry="20" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="436.00" y="1105.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">APIM client allow-list</text>
+<text x="436.00" y="1125.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">(abw-allowed-azp)</text>
+<rect x="568" y="1075" width="216" height="80" rx="20" ry="20" fill="#ffe3e3" stroke="#e03131" stroke-width="2"/>
+<text x="676.00" y="1095.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">200, then 403</text>
+<text x="676.00" y="1115.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">client_not_allowed. The</text>
+<text x="676.00" y="1135.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">agent is unaffected</text>
+<rect x="76" y="1169" width="48" height="80" rx="12" ry="12" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="100.00" y="1209.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">4.5</text>
+<rect x="132" y="1169" width="172" height="80" rx="20" ry="20" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="218.00" y="1199.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">SOC puts the user on</text>
+<text x="218.00" y="1219.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">the kill switch</text>
+<rect x="342" y="1169" width="188" height="80" rx="20" ry="20" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="436.00" y="1189.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">APIM deny list</text>
+<text x="436.00" y="1209.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">(abw-deny-oids),</text>
+<text x="436.00" y="1229.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">checked first</text>
+<rect x="568" y="1169" width="216" height="80" rx="20" ry="20" fill="#ffe3e3" stroke="#e03131" stroke-width="2"/>
+<text x="676.00" y="1189.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">403 revoked at all four</text>
+<text x="676.00" y="1209.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">governed servers, the agent</text>
+<text x="676.00" y="1229.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">fails closed</text>
+<rect x="846" y="813" width="48" height="80" rx="12" ry="12" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="870.00" y="853.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">5.1</text>
+<rect x="902" y="813" width="172" height="80" rx="20" ry="20" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="988.00" y="843.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Trace the Orion</text>
+<text x="988.00" y="863.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">denial by request id</text>
+<rect x="1112" y="813" width="188" height="80" rx="20" ry="20" fill="#c5f6fa" stroke="#0b7285" stroke-width="2"/>
+<text x="1206.00" y="833.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">AbwIdentityChain joins</text>
+<text x="1206.00" y="853.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">APIM, MCP audit and</text>
+<text x="1206.00" y="873.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Storage</text>
+<rect x="1338" y="813" width="216" height="80" rx="20" ry="20" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="1445.99" y="843.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Gateway allowed, MCP</text>
+<text x="1445.99" y="863.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">denied, no Storage row</text>
+<rect x="846" y="907" width="48" height="80" rx="12" ry="12" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="870.00" y="947.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">5.2</text>
+<rect x="902" y="907" width="172" height="80" rx="20" ry="20" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="988.00" y="937.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Trace an allowed</text>
+<text x="988.00" y="957.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">read</text>
+<rect x="1112" y="907" width="188" height="80" rx="20" ry="20" fill="#c5f6fa" stroke="#0b7285" stroke-width="2"/>
+<text x="1206.00" y="937.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Foundry agent, APIM,</text>
+<text x="1206.00" y="957.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">MCP server, Storage</text>
+<rect x="1338" y="907" width="216" height="80" rx="20" ry="20" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="1446.00" y="927.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">obo=True at the MCP</text>
+<text x="1446.00" y="947.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">server, auth=OAuth at</text>
+<text x="1446.00" y="967.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Storage</text>
+<rect x="846" y="1001" width="56" height="30" rx="7.5" ry="7.5" fill="#0b7285" stroke="#0b7285" stroke-width="1"/>
+<text x="874.00" y="1016.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">5.3</text>
+<rect x="846" y="1041" width="56" height="30" rx="7.5" ry="7.5" fill="#0b7285" stroke="#0b7285" stroke-width="1"/>
+<text x="874.00" y="1056.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">5.4</text>
+<rect x="846" y="1081" width="56" height="30" rx="7.5" ry="7.5" fill="#0b7285" stroke="#0b7285" stroke-width="1"/>
+<text x="874.00" y="1096.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">5.5</text>
+<rect x="846" y="1121" width="56" height="30" rx="7.5" ry="7.5" fill="#0b7285" stroke="#0b7285" stroke-width="1"/>
+<text x="874.00" y="1136.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">5.6</text>
+<rect x="1616" y="863" width="84" height="60" rx="15" ry="15" fill="#e5dbff" stroke="#6741d9" stroke-width="2"/>
+<text x="1658.01" y="893.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Entra ID</text>
+<rect x="1740.8" y="863" width="84" height="60" rx="15" ry="15" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="1782.80" y="893.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Guardrail</text>
+<rect x="1865.6" y="863" width="84" height="60" rx="15" ry="15" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="1907.61" y="883.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Foundry</text>
+<text x="1907.61" y="903.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">agent</text>
+<rect x="1990.4" y="863" width="84" height="60" rx="15" ry="15" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="2032.40" y="883.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Gateway</text>
+<text x="2032.40" y="903.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">(APIM)</text>
+<rect x="2115.2" y="863" width="84" height="60" rx="15" ry="15" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="2157.20" y="883.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">MCP</text>
+<text x="2157.20" y="903.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">server</text>
+<rect x="2240" y="863" width="84" height="60" rx="15" ry="15" fill="#ffe8cc" stroke="#e8590c" stroke-width="2"/>
+<text x="2282.00" y="883.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Data</text>
+<text x="2282.00" y="903.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">plane</text>
+<rect x="1639" y="935" width="38" height="30" rx="7.5" ry="7.5" fill="#c92a2a" stroke="#c92a2a" stroke-width="1"/>
+<text x="1658.00" y="950.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">6.1</text>
+<rect x="1763.8" y="935" width="38" height="30" rx="7.5" ry="7.5" fill="#c92a2a" stroke="#c92a2a" stroke-width="1"/>
+<text x="1782.80" y="950.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">6.6</text>
+<rect x="1888.6" y="935" width="38" height="30" rx="7.5" ry="7.5" fill="#c92a2a" stroke="#c92a2a" stroke-width="1"/>
+<text x="1907.60" y="950.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">6.2</text>
+<rect x="1991.4" y="935" width="38" height="30" rx="7.5" ry="7.5" fill="#c92a2a" stroke="#c92a2a" stroke-width="1"/>
+<text x="2010.40" y="950.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">6.2</text>
+<rect x="2035.4" y="935" width="38" height="30" rx="7.5" ry="7.5" fill="#c92a2a" stroke="#c92a2a" stroke-width="1"/>
+<text x="2054.40" y="950.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">6.3</text>
+<rect x="2138.2" y="935" width="38" height="30" rx="7.5" ry="7.5" fill="#c92a2a" stroke="#c92a2a" stroke-width="1"/>
+<text x="2157.20" y="950.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">6.4</text>
+<rect x="2263" y="935" width="38" height="30" rx="7.5" ry="7.5" fill="#c92a2a" stroke="#c92a2a" stroke-width="1"/>
+<text x="2282.00" y="950.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">6.5</text>
+<rect x="1616" y="975" width="708" height="30" rx="7.5" ry="7.5" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="1970.00" y="990.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">6.7 and 6.8 pass every path layer: allowed end to end</text>
+<rect x="1616" y="1021" width="56" height="30" rx="7.5" ry="7.5" fill="#c92a2a" stroke="#c92a2a" stroke-width="1"/>
+<text x="1644.00" y="1036.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">6.1</text>
+<rect x="1616" y="1061" width="56" height="30" rx="7.5" ry="7.5" fill="#c92a2a" stroke="#c92a2a" stroke-width="1"/>
+<text x="1644.00" y="1076.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">6.2</text>
+<rect x="1616" y="1101" width="56" height="30" rx="7.5" ry="7.5" fill="#c92a2a" stroke="#c92a2a" stroke-width="1"/>
+<text x="1644.00" y="1116.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">6.3</text>
+<rect x="1616" y="1141" width="56" height="30" rx="7.5" ry="7.5" fill="#c92a2a" stroke="#c92a2a" stroke-width="1"/>
+<text x="1644.00" y="1156.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">6.4</text>
+<rect x="1616" y="1181" width="56" height="30" rx="7.5" ry="7.5" fill="#c92a2a" stroke="#c92a2a" stroke-width="1"/>
+<text x="1644.00" y="1196.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">6.5</text>
+<rect x="1616" y="1221" width="56" height="30" rx="7.5" ry="7.5" fill="#c92a2a" stroke="#c92a2a" stroke-width="1"/>
+<text x="1644.00" y="1236.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">6.6</text>
+<rect x="1616" y="1261" width="56" height="30" rx="7.5" ry="7.5" fill="#2b8a3e" stroke="#2b8a3e" stroke-width="1"/>
+<text x="1644.00" y="1276.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">6.7</text>
+<rect x="1616" y="1301" width="56" height="30" rx="7.5" ry="7.5" fill="#2b8a3e" stroke="#2b8a3e" stroke-width="1"/>
+<text x="1644.00" y="1316.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">6.8</text>
+<rect x="76" y="1367" width="72" height="30" rx="7.5" ry="7.5" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="111.99" y="1382.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Proves</text>
+<rect x="76" y="1409" width="72" height="30" rx="7.5" ry="7.5" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="112.00" y="1424.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Walls</text>
+<rect x="160" y="1409" width="118.24" height="30" rx="7.5" ry="7.5" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="219.12" y="1424.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">W0 Guardrail</text>
+<rect x="286.24" y="1409" width="115.58" height="30" rx="7.5" ry="7.5" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="344.03" y="1424.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">W1 Gateway</text>
+<rect x="409.82" y="1409" width="136.9" height="30" rx="7.5" ry="7.5" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="478.27" y="1424.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">W2 MCP server</text>
+<rect x="846" y="1347" width="72" height="30" rx="7.5" ry="7.5" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="882.00" y="1362.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Proves</text>
+<rect x="846" y="1409" width="72" height="30" rx="7.5" ry="7.5" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="882.00" y="1424.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Walls</text>
+<rect x="930" y="1409" width="184.93" height="30" rx="7.5" ry="7.5" fill="#c5f6fa" stroke="#0b7285" stroke-width="2"/>
+<text x="1022.47" y="1424.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Observes all four walls</text>
+<rect x="1616" y="1347" width="72" height="30" rx="7.5" ry="7.5" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1651.99" y="1362.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Proves</text>
+<rect x="1616" y="1409" width="72" height="30" rx="7.5" ry="7.5" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1652.00" y="1424.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Walls</text>
+<rect x="1700" y="1409" width="82.69" height="30" rx="7.5" ry="7.5" fill="#e5dbff" stroke="#6741d9" stroke-width="2"/>
+<text x="1741.35" y="1424.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Entra ID</text>
+<rect x="1790.69" y="1409" width="118.24" height="30" rx="7.5" ry="7.5" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="1849.81" y="1424.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">W0 Guardrail</text>
+<rect x="1916.93" y="1409" width="115.58" height="30" rx="7.5" ry="7.5" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="1974.72" y="1424.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">W1 Gateway</text>
+<rect x="2040.51" y="1409" width="136.9" height="30" rx="7.5" ry="7.5" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="2108.96" y="1424.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">W2 MCP server</text>
+<rect x="2185.41" y="1409" width="129.82" height="30" rx="7.5" ry="7.5" fill="#ffe8cc" stroke="#e8590c" stroke-width="2"/>
+<text x="2250.32" y="1424.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">W3 Data plane</text>
+<rect x="92" y="1608" width="36" height="60" rx="9" ry="9" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="110.00" y="1638.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">1</text>
+<rect x="136" y="1608" width="444" height="60" rx="15" ry="15" fill="#ffe3e3" stroke="#e03131" stroke-width="2"/>
+<text x="358.00" y="1638.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">No token: HTTP 401, from the front door itself</text>
+<rect x="92" y="1680" width="36" height="60" rx="9" ry="9" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="110.00" y="1710.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">2</text>
+<rect x="136" y="1680" width="444" height="60" rx="15" ry="15" fill="#ffe3e3" stroke="#e03131" stroke-width="2"/>
+<text x="358.00" y="1700.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">A genuine token for ARM, not Foundry: HTTP 401. Only the</text>
+<text x="358.00" y="1720.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Foundry audience is accepted</text>
+<rect x="92" y="1752" width="36" height="80" rx="9" ry="9" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="110.00" y="1792.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">3</text>
+<rect x="136" y="1752" width="444" height="80" rx="20" ry="20" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="358.00" y="1772.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">A valid Foundry token is forwarded. A 404 from Foundry for</text>
+<text x="358.00" y="1792.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">a made-up response id proves it passed, and no model</text>
+<text x="358.00" y="1812.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">token was spent</text>
+<rect x="92" y="1844" width="36" height="60" rx="9" ry="9" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="110.00" y="1874.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">4</text>
+<rect x="136" y="1844" width="444" height="60" rx="15" ry="15" fill="#ffe3e3" stroke="#e03131" stroke-width="2"/>
+<text x="358.00" y="1864.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Honest check: Foundry's own endpoint still answers a valid</text>
+<text x="358.00" y="1884.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">token, because public network access is on in this demo</text>
+<rect x="632" y="1608" width="94.67" height="30" rx="7.5" ry="7.5" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="679.34" y="1623.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Overview</text>
+<rect x="734.67" y="1608" width="64.45" height="30" rx="7.5" ry="7.5" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="766.89" y="1623.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Priya</text>
+<rect x="807.12" y="1608" width="60" height="30" rx="7.5" ry="7.5" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="837.12" y="1623.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Wes</text>
+<rect x="875.12" y="1608" width="60.9" height="30" rx="7.5" ry="7.5" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="905.57" y="1623.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Tara</text>
+<rect x="944.02" y="1608" width="66.22" height="30" rx="7.5" ry="7.5" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="977.13" y="1623.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Carla</text>
+<rect x="1018.24" y="1608" width="50.24" height="30" rx="7.5" ry="7.5" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="1043.36" y="1623.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Ian</text>
+<rect x="1076.48" y="1608" width="73.34" height="30" rx="7.5" ry="7.5" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="1113.15" y="1623.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Admin</text>
+<rect x="632" y="1680" width="160" height="40" rx="10" ry="10" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="712.00" y="1700.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Person</text>
+<rect x="792" y="1680" width="250" height="40" rx="10" ry="10" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="917.00" y="1700.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Allowed</text>
+<rect x="1042" y="1680" width="318" height="40" rx="10" ry="10" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1201.00" y="1700.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Refused</text>
+<rect x="798" y="1725" width="238" height="48" rx="12" ry="12" fill="#ffffff" stroke="#1e1e1e" stroke-width="1"/>
+<text x="917.00" y="1749.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Research library opens</text>
+<rect x="1048" y="1725" width="306" height="48" rx="12" ry="12" fill="#ffe3e3" stroke="#e03131" stroke-width="1"/>
+<text x="1201.00" y="1749.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Wall server: refused at the gateway</text>
+<rect x="798" y="1783" width="238" height="48" rx="12" ry="12" fill="#ffffff" stroke="#1e1e1e" stroke-width="1"/>
+<text x="917.00" y="1807.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Falcon opens</text>
+<rect x="1048" y="1783" width="306" height="48" rx="12" ry="12" fill="#ffe3e3" stroke="#e03131" stroke-width="1"/>
+<text x="1201.00" y="1807.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Orion: refused by the MCP server</text>
+<rect x="798" y="1841" width="238" height="48" rx="12" ry="12" fill="#ffffff" stroke="#1e1e1e" stroke-width="1"/>
+<text x="917.00" y="1865.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Restricted-list check opens</text>
+<rect x="1048" y="1841" width="306" height="48" rx="12" ry="12" fill="#ffe3e3" stroke="#e03131" stroke-width="1"/>
+<text x="1201.01" y="1865.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">ZYNX order: refused by the MCP server</text>
+<rect x="798" y="1899" width="238" height="60" rx="15" ry="15" fill="#ffffff" stroke="#1e1e1e" stroke-width="1"/>
+<text x="917.00" y="1929.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Reads the restricted list</text>
+<rect x="1048" y="1899" width="306" height="60" rx="15" ry="15" fill="#ffe3e3" stroke="#e03131" stroke-width="1"/>
+<text x="1201.00" y="1919.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Order: refused by the MCP server, no</text>
+<text x="1201.00" y="1939.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Trade.Execute</text>
+<rect x="798" y="1969" width="238" height="48" rx="12" ry="12" fill="#ffffff" stroke="#1e1e1e" stroke-width="1"/>
+<text x="917.00" y="1993.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Reads the audit trail</text>
+<rect x="1048" y="1969" width="306" height="48" rx="12" ry="12" fill="#ffe3e3" stroke="#e03131" stroke-width="1"/>
+<text x="1201.00" y="1993.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Research data: refused at the gateway</text>
+<rect x="798" y="2027" width="238" height="68" rx="17" ry="17" fill="#ffffff" stroke="#1e1e1e" stroke-width="1"/>
+<text x="917.00" y="2061.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Falcon and the audit trail</text>
+<rect x="1048" y="2027" width="306" height="68" rx="17" ry="17" fill="#ffe3e3" stroke="#e03131" stroke-width="1"/>
+<text x="1200.99" y="2061.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Orion: refused, no deal role</text>
+<rect x="1412" y="1608" width="198" height="60" rx="15" ry="15" fill="#fff3bf" stroke="#f08c00" stroke-width="2"/>
+<text x="1511.00" y="1628.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Spend this month</text>
+<text x="1511.00" y="1648.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Cost Management</text>
+<rect x="1622" y="1608" width="198" height="60" rx="15" ry="15" fill="#fff3bf" stroke="#f08c00" stroke-width="2"/>
+<text x="1721.00" y="1628.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Always-on platform</text>
+<text x="1721.00" y="1648.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">fixed price</text>
+<rect x="1412" y="1680" width="198" height="60" rx="15" ry="15" fill="#fff3bf" stroke="#f08c00" stroke-width="2"/>
+<text x="1511.00" y="1700.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Usage-based</text>
+<text x="1511.00" y="1720.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">grows with use</text>
+<rect x="1622" y="1680" width="198" height="60" rx="15" ry="15" fill="#fff3bf" stroke="#f08c00" stroke-width="2"/>
+<text x="1721.00" y="1700.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Budget alert</text>
+<text x="1721.00" y="1720.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">an alert, not a cap</text>
+<rect x="1412" y="1752" width="198" height="60" rx="15" ry="15" fill="#c5f6fa" stroke="#0b7285" stroke-width="2"/>
+<text x="1511.00" y="1772.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Tokens, last 24 h</text>
+<text x="1511.00" y="1792.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">from the front door</text>
+<rect x="1622" y="1752" width="198" height="60" rx="15" ry="15" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="1721.00" y="1772.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Per-user cap</text>
+<text x="1721.00" y="1792.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">tokens/hour, calls/min</text>
+<rect x="1412" y="1826" width="408" height="60" rx="15" ry="15" fill="#fff3bf" stroke="#f08c00" stroke-width="2"/>
+<text x="1616.00" y="1846.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Spend by service. API Management is the biggest line:</text>
+<text x="1616.00" y="1866.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">a fixed price, not a per-call cost.</text>
+<rect x="1412" y="1896" width="408" height="60" rx="15" ry="15" fill="#c5f6fa" stroke="#0b7285" stroke-width="2"/>
+<text x="1616.01" y="1916.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">LLM tokens per user and agent, with the share of this</text>
+<text x="1616.01" y="1936.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">hour's budget used (AbwTokenUsage).</text>
+<rect x="1412" y="1966" width="408" height="60" rx="15" ry="15" fill="#c5f6fa" stroke="#0b7285" stroke-width="2"/>
+<text x="1616.01" y="1986.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Calls per user for 7 days, as the MCP servers logged</text>
+<text x="1616.01" y="2006.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">them (AbwUsageByUser).</text>
+<rect x="1872" y="1608" width="36" height="60" rx="9" ry="9" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1890.00" y="1638.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">1</text>
+<rect x="1916" y="1608" width="392" height="60" rx="15" ry="15" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="2112.01" y="1628.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">One real agent call through the front door; its tokens</text>
+<text x="2112.01" y="1648.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">are counted</text>
+<rect x="1872" y="1708" width="36" height="60" rx="9" ry="9" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1890.00" y="1738.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">2</text>
+<rect x="1916" y="1708" width="392" height="60" rx="15" ry="15" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="2112.00" y="1728.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">abw-agent-token-quota is cut to 1 token (an APIM</text>
+<text x="2112.00" y="1748.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">named value)</text>
+<rect x="1872" y="1808" width="36" height="60" rx="9" ry="9" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1890.00" y="1838.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">3</text>
+<rect x="1916" y="1808" width="392" height="60" rx="15" ry="15" fill="#ffe3e3" stroke="#e03131" stroke-width="2"/>
+<text x="2112.01" y="1828.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">The next call: HTTP 403 token_quota_exceeded, 0</text>
+<text x="2112.01" y="1848.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">model rounds, 0 tokens spent</text>
+<rect x="1872" y="1908" width="36" height="60" rx="9" ry="9" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1890.00" y="1938.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">4</text>
+<rect x="1916" y="1908" width="392" height="60" rx="15" ry="15" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="2111.99" y="1928.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">The value is restored: a finally block, and again by</text>
+<text x="2111.99" y="1948.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Reset demo</text>
+<rect x="76" y="2204" width="72" height="30" rx="7.5" ry="7.5" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="111.99" y="2219.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Proves</text>
+<rect x="76" y="2246" width="72" height="30" rx="7.5" ry="7.5" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="112.00" y="2261.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Walls</text>
+<rect x="160" y="2246" width="115.58" height="30" rx="7.5" ry="7.5" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="217.79" y="2261.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">W1 Gateway</text>
+<rect x="283.58" y="2246" width="136.9" height="30" rx="7.5" ry="7.5" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="352.03" y="2261.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">W2 MCP server</text>
+<rect x="428.48" y="2246" width="129.82" height="30" rx="7.5" ry="7.5" fill="#ffe8cc" stroke="#e8590c" stroke-width="2"/>
+<text x="493.39" y="2261.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">W3 Data plane</text>
+<rect x="60" y="2332" width="1500" height="279" rx="32" ry="32" fill="#f8f9fa" stroke="#343a40" stroke-width="2"/>
+<rect x="1620" y="2332" width="720" height="279" rx="32" ry="32" fill="#f8f9fa" stroke="#343a40" stroke-width="2"/>
+<rect x="1636" y="2381" width="150" height="30" rx="7.5" ry="7.5" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="1711.00" y="2396.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">W0 Guardrail</text>
+<rect x="1636" y="2417" width="150" height="30" rx="7.5" ry="7.5" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="1711.00" y="2432.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">W1 Gateway</text>
+<rect x="1636" y="2453" width="150" height="30" rx="7.5" ry="7.5" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="1711.00" y="2468.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">W2 MCP server</text>
+<rect x="1636" y="2489" width="150" height="30" rx="7.5" ry="7.5" fill="#ffe8cc" stroke="#e8590c" stroke-width="2"/>
+<text x="1711.00" y="2504.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">W3 Data plane</text>
+<rect x="1636" y="2525" width="150" height="30" rx="7.5" ry="7.5" fill="#fff3bf" stroke="#f08c00" stroke-width="2"/>
+<text x="1710.99" y="2540.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Azure Policy</text>
+<rect x="1636" y="2561" width="74" height="30" rx="7.5" ry="7.5" fill="#ffe3e3" stroke="#e03131" stroke-width="2"/>
+<text x="1673.00" y="2576.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Refused</text>
+<rect x="1718" y="2561" width="74" height="30" rx="7.5" ry="7.5" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="1755.00" y="2576.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Allowed</text>
+<path d="M 308.00 294.50 L 338.00 294.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 324.63 287.69 L 338.00 294.50 L 324.63 301.31" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 534.00 294.50 L 564.00 294.50" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 550.63 287.69 L 564.00 294.50 L 550.63 301.31" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 308.00 378.50 L 338.00 378.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 324.63 371.69 L 338.00 378.50 L 324.63 385.31" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 534.00 378.50 L 564.00 378.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 550.63 371.69 L 564.00 378.50 L 550.63 385.31" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 308.00 452.50 L 338.00 452.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 324.63 445.69 L 338.00 452.50 L 324.63 459.31" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 534.00 452.50 L 564.00 452.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 550.63 445.69 L 564.00 452.50 L 550.63 459.31" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 308.00 536.50 L 338.00 536.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 324.63 529.69 L 338.00 536.50 L 324.63 543.31" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 534.00 536.50 L 564.00 536.50" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 550.63 529.69 L 564.00 536.50 L 550.63 543.31" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1078.00 304.50 L 1108.00 304.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1094.63 297.69 L 1108.00 304.50 L 1094.63 311.31" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1304.00 304.50 L 1334.00 304.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1320.63 297.69 L 1334.00 304.50 L 1320.63 311.31" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1078.00 408.50 L 1108.00 408.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1094.63 401.69 L 1108.00 408.50 L 1094.63 415.31" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1304.00 408.50 L 1334.00 408.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1320.63 401.69 L 1334.00 408.50 L 1320.63 415.31" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1078.00 502.50 L 1108.00 502.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1094.63 495.69 L 1108.00 502.50 L 1094.63 509.31" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1304.00 502.50 L 1334.00 502.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1320.63 495.69 L 1334.00 502.50 L 1320.63 509.31" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1848.00 294.50 L 1878.00 294.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1864.63 287.69 L 1878.00 294.50 L 1864.63 301.31" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2074.00 294.50 L 2104.00 294.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2090.63 287.69 L 2104.00 294.50 L 2090.63 301.31" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1848.00 378.50 L 1878.00 378.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1864.63 371.69 L 1878.00 378.50 L 1864.63 385.31" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2074.00 378.50 L 2104.00 378.50" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2090.63 371.69 L 2104.00 378.50 L 2090.63 385.31" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1848.00 462.50 L 1878.00 462.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1864.63 455.69 L 1878.00 462.50 L 1864.63 469.31" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2074.00 462.50 L 2104.00 462.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2090.63 455.69 L 2104.00 462.50 L 2090.63 469.31" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 308.00 843.00 L 338.00 843.00" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 324.63 836.19 L 338.00 843.00 L 324.63 849.81" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 534.00 843.00 L 564.00 843.00" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 550.63 836.19 L 564.00 843.00 L 550.63 849.81" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 308.00 927.00 L 338.00 927.00" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 324.63 920.19 L 338.00 927.00 L 324.63 933.81" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 534.00 927.00 L 564.00 927.00" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 550.63 920.19 L 564.00 927.00 L 550.63 933.81" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 308.00 1021.00 L 338.00 1021.00" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 324.63 1014.19 L 338.00 1021.00 L 324.63 1027.81" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 534.00 1021.00 L 564.00 1021.00" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 550.63 1014.19 L 564.00 1021.00 L 550.63 1027.81" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 308.00 1115.00 L 338.00 1115.00" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 324.63 1108.19 L 338.00 1115.00 L 324.63 1121.81" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 534.00 1115.00 L 564.00 1115.00" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 550.63 1108.19 L 564.00 1115.00 L 550.63 1121.81" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 308.00 1209.00 L 338.00 1209.00" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 324.63 1202.19 L 338.00 1209.00 L 324.63 1215.81" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 534.00 1209.00 L 564.00 1209.00" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 550.63 1202.19 L 564.00 1209.00 L 550.63 1215.81" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1078.00 853.00 L 1108.00 853.00" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1094.63 846.19 L 1108.00 853.00 L 1094.63 859.81" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1304.00 853.00 L 1334.00 853.00" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1320.63 846.19 L 1334.00 853.00 L 1320.63 859.81" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1078.00 947.00 L 1108.00 947.00" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1094.63 940.19 L 1108.00 947.00 L 1094.63 953.81" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1304.00 947.00 L 1334.00 947.00" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1320.63 940.19 L 1334.00 947.00 L 1320.63 953.81" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1704.00 893.00 L 1736.80 893.00" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1723.43 886.19 L 1736.80 893.00 L 1723.43 899.81" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1828.80 893.00 L 1861.60 893.00" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1848.23 886.19 L 1861.60 893.00 L 1848.23 899.81" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1953.60 893.00 L 1986.40 893.00" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1973.03 886.19 L 1986.40 893.00 L 1973.03 899.81" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2078.40 893.00 L 2111.20 893.00" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2097.83 886.19 L 2111.20 893.00 L 2097.83 899.81" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2203.20 893.00 L 2236.00 893.00" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2222.63 886.19 L 2236.00 893.00 L 2222.63 899.81" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2112.00 1672.00 L 2112.00 1704.00" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2118.81 1690.63 L 2112.00 1704.00 L 2105.19 1690.63" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2112.00 1772.00 L 2112.00 1804.00" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2118.81 1790.63 L 2112.00 1804.00 L 2105.19 1790.63" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2112.00 1872.00 L 2112.00 1904.00" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2118.81 1890.63 L 2112.00 1904.00 L 2105.19 1890.63" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="60.00" y="56.50" font-size="36" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Scenarios: Acts 1-7 and the wall each one proves</text>
+<text x="60.00" y="98.50" font-size="20" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">Seven acts, each a short flow: what it proves and which walls it exercises</text>
+<text x="60.00" y="2666.00" font-size="16" fill="#868e96" text-anchor="start" dominant-baseline="central" xml:space="preserve">Agents Behind the Wall - diagram 08 of 13 - generated by docs/diagrams/build_diagrams.py</text>
+<text x="1186.00" y="43.25" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Legend</text>
+<rect x="1186" y="61" width="36" height="22" rx="5.5" ry="5.5" fill="#e5dbff" stroke="#6741d9" stroke-width="2"/>
+<text x="1232.00" y="71.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Identity (Entra ID)</text>
+<rect x="1186" y="91" width="36" height="22" rx="5.5" ry="5.5" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="1232.00" y="101.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Network, API gateway (APIM)</text>
+<rect x="1186" y="121" width="36" height="22" rx="5.5" ry="5.5" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="1232.00" y="131.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Compute (agents, MCP servers)</text>
+<rect x="1476" y="61" width="36" height="22" rx="5.5" ry="5.5" fill="#ffe8cc" stroke="#e8590c" stroke-width="2"/>
+<text x="1522.00" y="71.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Data stores</text>
+<rect x="1476" y="91" width="36" height="22" rx="5.5" ry="5.5" fill="#c5f6fa" stroke="#0b7285" stroke-width="2"/>
+<text x="1522.00" y="101.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Observability</text>
+<rect x="1476" y="121" width="36" height="22" rx="5.5" ry="5.5" fill="#ffe3e3" stroke="#e03131" stroke-width="2"/>
+<text x="1522.00" y="131.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Deny, risk, kill switch</text>
+<rect x="1766" y="61" width="36" height="22" rx="5.5" ry="5.5" fill="#f1f3f5" stroke="#868e96" stroke-width="2" stroke-dasharray="10 7"/>
+<text x="1812.00" y="71.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Human / optional (dashed)</text>
+<rect x="1766" y="91" width="36" height="22" rx="5.5" ry="5.5" fill="#fff3bf" stroke="#f08c00" stroke-width="2"/>
+<text x="1812.00" y="101.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Azure Policy, governance</text>
+<rect x="1766" y="121" width="36" height="22" rx="5.5" ry="5.5" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="1812.00" y="131.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">People, client tools</text>
+<path d="M 2056.00 72.00 L 2092.00 72.00" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2078.63 65.19 L 2092.00 72.00 L 2078.63 78.81" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="2102.00" y="71.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Allowed flow</text>
+<path d="M 2056.00 102.00 L 2092.00 102.00" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2078.63 95.19 L 2092.00 102.00 L 2078.63 108.81" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="2102.00" y="101.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Denied exit / risk path</text>
+<path d="M 2056.00 132.00 L 2092.00 132.00" fill="none" stroke="#868e96" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="10 7"/>
+<path d="M 2078.63 125.19 L 2092.00 132.00 L 2078.63 138.81" fill="none" stroke="#868e96" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="2102.00" y="131.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Manual step (dashed)</text>
+<text x="846.00" y="566.50" font-size="16" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">2.1 takes 4-6 min and deletes its throw-away resources. CORRECTED means an organisation</text>
+<text x="846.00" y="586.50" font-size="16" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">Modify policy rewrote the change to a safe value first.</text>
+<text x="1616.00" y="526.50" font-size="16" fill="#c92a2a" text-anchor="start" dominant-baseline="central" xml:space="preserve">No gateway in front of the private server: the kill switch and rate limit do not cover it. W1 applies to</text>
+<text x="1616.00" y="546.50" font-size="16" fill="#c92a2a" text-anchor="start" dominant-baseline="central" xml:space="preserve">the vendor path only.</text>
+<text x="160.00" y="631.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">The answer comes from the token, not the prompt. 1.2 is the model being polite; 1.4 is</text>
+<text x="160.00" y="651.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">the enforced stop.</text>
+<text x="930.00" y="631.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Keys are off everywhere, and the platform rejects or rewrites unsafe changes, shown</text>
+<text x="930.00" y="651.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">with real requests.</text>
+<text x="1700.00" y="631.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Private by design: data is reached as the user over private paths, and the vendor key</text>
+<text x="1700.00" y="651.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">never leaves the gateway.</text>
+<text x="76.00" y="1273.00" font-size="16" fill="#c92a2a" text-anchor="start" dominant-baseline="central" xml:space="preserve">The kill switch and allow-list are APIM named values: they reach the four governed servers, not the</text>
+<text x="76.00" y="1293.00" font-size="16" fill="#c92a2a" text-anchor="start" dominant-baseline="central" xml:space="preserve">private server (it checks the token itself) or the legacy server.</text>
+<text x="914.00" y="1016.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">AbwUsageByUser(7d): calls, allowed, denied and tools per user</text>
+<text x="914.00" y="1056.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">AbwDenials(24h): denials by layer and reason</text>
+<text x="914.00" y="1096.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">AbwAgentActivity(24h): the agent's tool calls, with obo and request id</text>
+<text x="914.00" y="1136.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">AbwMcpAudit by jti: how long one token keeps serving calls</text>
+<text x="846.00" y="1171.00" font-size="16" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">Governance tour: 12 cards that open the real portal blades. Logs reach Log Analytics 5-10 min after</text>
+<text x="846.00" y="1191.00" font-size="16" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">a call.</text>
+<text x="1616.00" y="823.00" font-size="16" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">The layers on the path, in order (Conditional Access, report-only, sits beside Entra ID). The console</text>
+<text x="1616.00" y="843.00" font-size="16" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">board has 12 rows: seven path layers and five watchtowers. A red tag marks where that beat stops.</text>
+<text x="1684.00" y="1036.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Wrong password: Entra refuses it (AADSTS50126)</text>
+<text x="1684.00" y="1076.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Keys instead of Entra: 401 at the gateway and at Foundry</text>
+<text x="1684.00" y="1116.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Valid token, no Wall role: 403 at the gateway</text>
+<text x="1684.00" y="1156.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Right door, wrong deal: the MCP server refuses, Storage untouched</text>
+<text x="1684.00" y="1196.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Storage RBAC denial: replayed from the logs</text>
+<text x="1684.00" y="1236.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Jailbreak: the guardrail stops it before the model answers</text>
+<text x="1684.00" y="1276.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Cleared user reads Falcon: allowed end to end (Conditional Access is report-only)</text>
+<text x="1684.00" y="1316.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">The same read through the agent: allowed end to end</text>
+<text x="160.00" y="1382.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Each control stops the call on its own, and the agent fails closed when one says no.</text>
+<text x="930.00" y="1362.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">One request id joins the agent, gateway, MCP server and data plane, with the user</text>
+<text x="930.00" y="1382.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">named at every hop.</text>
+<text x="1700.00" y="1362.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Each refusal stops at the first layer that can say no, and the layers behind it never see</text>
+<text x="1700.00" y="1382.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">the request. The two allowed beats pass them all.</text>
+<text x="92.00" y="1928.00" font-size="16" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">Behind the door, in order: validate the token, kill switch, per-user rate</text>
+<text x="92.00" y="1948.00" font-size="16" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">limit, per-user token budget, token metric.</text>
+<text x="92.00" y="1980.00" font-size="16" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">Agent beats enter here by default. The legacy PoC agent stays</text>
+<text x="92.00" y="2000.00" font-size="16" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">direct, as the before picture.</text>
+<text x="632.00" y="1658.00" font-size="16" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">Overview runs all six lanes at once. Each person's own tab replays their beats one at a time.</text>
+<text x="642.00" y="1739.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Priya</text>
+<text x="642.00" y="1759.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Research analyst</text>
+<text x="642.00" y="1797.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Wes</text>
+<text x="642.00" y="1817.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Investment banking</text>
+<text x="642.00" y="1855.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Tara</text>
+<text x="642.00" y="1875.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Equity trader</text>
+<text x="642.00" y="1919.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Carla</text>
+<text x="642.00" y="1939.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Compliance</text>
+<text x="642.00" y="1983.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Ian</text>
+<text x="642.00" y="2003.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Security analyst</text>
+<text x="642.00" y="2041.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Admin</text>
+<text x="642.00" y="2061.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Operator and</text>
+<text x="642.00" y="2081.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">agents</text>
+<text x="632.00" y="2122.00" font-size="16" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">Each cell carries an evidence chip: live (a request just made), rbac (role assignment read live), logs</text>
+<text x="632.00" y="2142.00" font-size="16" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">(read back from Log Analytics) or design (not run). A person who has not signed in once (key P)</text>
+<text x="632.00" y="2162.00" font-size="16" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">shows design.</text>
+<text x="1412.00" y="2048.00" font-size="16" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">The budget mails the resource-group Owners at 50, 80</text>
+<text x="1412.00" y="2068.00" font-size="16" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">and 100 % of actual spend and at 100 % forecast. Azure</text>
+<text x="1412.00" y="2088.00" font-size="16" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">bills hours late. No price per token is shown.</text>
+<text x="1872.00" y="1992.00" font-size="16" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">Alternate: abw-agent-rpm set to 1 gives HTTP 429</text>
+<text x="1872.00" y="2012.00" font-size="16" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">rate_limited with Retry-After of about 100 s. Both are global</text>
+<text x="1872.00" y="2032.00" font-size="16" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">settings: use a demo tenant only.</text>
+<text x="160.00" y="2219.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Different person, different answer, read from the token. The agent enters through the same gateway, and spend and a per-user token ceiling are visible and enforced.</text>
+<text x="76.00" y="2360.50" font-size="20" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">What to notice</text>
+<text x="76.00" y="2392.25" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">- Each act reads left to right: what is tried, the control that decides, and the result. Red results are refusals (or the legacy leak); the chips under each panel name the walls it exercises.</text>
+<text x="76.00" y="2414.75" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">- Different acts stop the request at different walls: the gateway (W1), the MCP server (W2), the data plane (W3) and the guardrail (W0). Act 2 proves keys are off, and Act 5 shows how</text>
+<text x="76.00" y="2437.25" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">  the evidence joins up.</text>
+<text x="76.00" y="2459.75" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">- Act 7 runs as real people: a different answer per persona, the agent's front door, the bill and a live token budget. A persona that has not signed in once shows design, a predicted</text>
+<text x="76.00" y="2482.25" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">  result and not a run.</text>
+<text x="1636.00" y="2358.50" font-size="20" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Chip key</text>
+<text x="1798.00" y="2396.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Foundry guardrail: preview, best effort</text>
+<text x="1798.00" y="2432.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">APIM gateway: token, role, client, rate, kill switch</text>
+<text x="1798.00" y="2468.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">MCP server: per-tool rules, on-behalf-of</text>
+<text x="1798.00" y="2504.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Data plane: its own roles, on the user's own token</text>
+<text x="1798.00" y="2540.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Azure Policy: rules on the Azure resources</text>
+<text x="1798.00" y="2576.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Result colour: red = refused or leaked, white = allowed</text>
+</svg>

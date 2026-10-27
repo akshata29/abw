@@ -1,0 +1,352 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1640" viewBox="0 0 2400 1640" font-family="Helvetica, Arial, sans-serif">
+<rect x="0" y="0" width="2400" height="1640" fill="#ffffff"/>
+<rect x="1620" y="290" width="720" height="580.5" rx="32" ry="32" fill="#f3f0ff" stroke="#6741d9" stroke-width="2"/>
+<rect x="1620" y="890.5" width="720" height="395.5" rx="32" ry="32" fill="#f8f9fa" stroke="#868e96" stroke-width="2" stroke-dasharray="10 7"/>
+<rect x="60" y="557" width="1494" height="50" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1"/>
+<rect x="60" y="607" width="1494" height="50" fill="#ffffff" stroke="#dee2e6" stroke-width="1"/>
+<rect x="60" y="657" width="1494" height="50" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1"/>
+<rect x="60" y="707" width="1494" height="50" fill="#ffffff" stroke="#dee2e6" stroke-width="1"/>
+<rect x="60" y="757" width="1494" height="50" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1"/>
+<rect x="60" y="1029" width="1494" height="50" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1"/>
+<rect x="60" y="1079" width="1494" height="50" fill="#ffffff" stroke="#dee2e6" stroke-width="1"/>
+<rect x="60" y="1129" width="1494" height="50" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1"/>
+<rect x="60" y="1179" width="1494" height="50" fill="#ffffff" stroke="#dee2e6" stroke-width="1"/>
+<rect x="60" y="1229" width="1494" height="50" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1"/>
+<rect x="1636" y="302" width="524.21" height="36.5" rx="9.125" ry="9.125" fill="#6741d9" stroke="#6741d9" stroke-width="1"/>
+<text x="1898.11" y="320.25" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">With a federated credential: the server acts for the user (OBO)</text>
+<rect x="1636" y="902.5" width="520.25" height="36.5" rx="9.125" ry="9.125" fill="#495057" stroke="#495057" stroke-width="1"/>
+<text x="1896.12" y="920.75" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">No federated credential: nothing in the server acts as the user</text>
+<rect x="1172" y="22" width="1168" height="138" rx="32" ry="32" fill="#ffffff" stroke="#adb5bd" stroke-width="1"/>
+<rect x="60" y="226" width="288" height="181" rx="32" ry="32" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<rect x="363" y="226" width="288" height="181" rx="32" ry="32" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<rect x="666" y="226" width="288" height="181" rx="32" ry="32" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<rect x="969" y="226" width="288" height="181" rx="32" ry="32" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<rect x="1272" y="226" width="288" height="181" rx="32" ry="32" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<rect x="60" y="477" width="150" height="80" rx="20" ry="20" fill="#6741d9" stroke="#6741d9" stroke-width="1"/>
+<text x="135.00" y="517.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Persona</text>
+<rect x="210" y="477" width="192" height="80" rx="20" ry="20" fill="#6741d9" stroke="#6741d9" stroke-width="1"/>
+<text x="306.00" y="507.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">research</text>
+<text x="306.00" y="527.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Research.Read</text>
+<rect x="402" y="477" width="192" height="80" rx="20" ry="20" fill="#6741d9" stroke="#6741d9" stroke-width="1"/>
+<text x="498.00" y="507.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">wall: Falcon</text>
+<text x="498.00" y="527.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Wall.Falcon</text>
+<rect x="594" y="477" width="192" height="80" rx="20" ry="20" fill="#6741d9" stroke="#6741d9" stroke-width="1"/>
+<text x="690.00" y="507.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">wall: Orion</text>
+<text x="690.00" y="527.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Wall.Orion</text>
+<rect x="786" y="477" width="192" height="80" rx="20" ry="20" fill="#6741d9" stroke="#6741d9" stroke-width="1"/>
+<text x="882.00" y="497.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">actions: read</text>
+<text x="882.00" y="517.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Trade.Read or</text>
+<text x="882.00" y="537.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Trade.Execute</text>
+<rect x="978" y="477" width="192" height="80" rx="20" ry="20" fill="#6741d9" stroke="#6741d9" stroke-width="1"/>
+<text x="1074.00" y="507.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">actions: place_order</text>
+<text x="1074.00" y="527.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Trade.Execute</text>
+<rect x="1170" y="477" width="192" height="80" rx="20" ry="20" fill="#6741d9" stroke="#6741d9" stroke-width="1"/>
+<text x="1266.00" y="507.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">private (direct)</text>
+<text x="1266.00" y="527.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Positions.Read</text>
+<rect x="1362" y="477" width="192" height="80" rx="20" ry="20" fill="#6741d9" stroke="#6741d9" stroke-width="1"/>
+<text x="1458.00" y="507.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">vendor</text>
+<text x="1458.00" y="527.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">MarketData.Read</text>
+<rect x="216" y="562" width="180" height="40" rx="10" ry="10" fill="#d3f9d8" stroke="#2f9e44" stroke-width="1"/>
+<text x="306.00" y="582.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">allowed</text>
+<rect x="408" y="562" width="180" height="40" rx="10" ry="10" fill="#ffe3e3" stroke="#e03131" stroke-width="1"/>
+<text x="498.00" y="582.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">refused at Wall 1</text>
+<rect x="600" y="562" width="180" height="40" rx="10" ry="10" fill="#ffe3e3" stroke="#e03131" stroke-width="1"/>
+<text x="690.00" y="582.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">refused at Wall 1</text>
+<rect x="792" y="562" width="180" height="40" rx="10" ry="10" fill="#ffe3e3" stroke="#e03131" stroke-width="1"/>
+<text x="882.00" y="582.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">refused at Wall 1</text>
+<rect x="984" y="562" width="180" height="40" rx="10" ry="10" fill="#ffe3e3" stroke="#e03131" stroke-width="1"/>
+<text x="1074.01" y="582.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">refused at Wall 1</text>
+<rect x="1176" y="562" width="180" height="40" rx="10" ry="10" fill="#ffe3e3" stroke="#e03131" stroke-width="1"/>
+<text x="1266.01" y="582.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">refused at Wall 2</text>
+<rect x="1368" y="562" width="180" height="40" rx="10" ry="10" fill="#d3f9d8" stroke="#2f9e44" stroke-width="1"/>
+<text x="1458.00" y="582.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">allowed</text>
+<rect x="216" y="612" width="180" height="40" rx="10" ry="10" fill="#d3f9d8" stroke="#2f9e44" stroke-width="1"/>
+<text x="306.00" y="632.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">allowed</text>
+<rect x="408" y="612" width="180" height="40" rx="10" ry="10" fill="#d3f9d8" stroke="#2f9e44" stroke-width="1"/>
+<text x="498.00" y="632.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">allowed</text>
+<rect x="600" y="612" width="180" height="40" rx="10" ry="10" fill="#ffe3e3" stroke="#e03131" stroke-width="1"/>
+<text x="690.00" y="632.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">refused at Wall 2</text>
+<rect x="792" y="612" width="180" height="40" rx="10" ry="10" fill="#ffe3e3" stroke="#e03131" stroke-width="1"/>
+<text x="882.00" y="632.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">refused at Wall 1</text>
+<rect x="984" y="612" width="180" height="40" rx="10" ry="10" fill="#ffe3e3" stroke="#e03131" stroke-width="1"/>
+<text x="1074.01" y="632.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">refused at Wall 1</text>
+<rect x="1176" y="612" width="180" height="40" rx="10" ry="10" fill="#ffe3e3" stroke="#e03131" stroke-width="1"/>
+<text x="1266.01" y="632.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">refused at Wall 2</text>
+<rect x="1368" y="612" width="180" height="40" rx="10" ry="10" fill="#d3f9d8" stroke="#2f9e44" stroke-width="1"/>
+<text x="1458.00" y="632.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">allowed</text>
+<rect x="216" y="662" width="180" height="40" rx="10" ry="10" fill="#d3f9d8" stroke="#2f9e44" stroke-width="1"/>
+<text x="306.00" y="682.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">allowed</text>
+<rect x="408" y="662" width="180" height="40" rx="10" ry="10" fill="#ffe3e3" stroke="#e03131" stroke-width="1"/>
+<text x="498.00" y="682.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">refused at Wall 1</text>
+<rect x="600" y="662" width="180" height="40" rx="10" ry="10" fill="#ffe3e3" stroke="#e03131" stroke-width="1"/>
+<text x="690.00" y="682.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">refused at Wall 1</text>
+<rect x="792" y="662" width="180" height="40" rx="10" ry="10" fill="#d3f9d8" stroke="#2f9e44" stroke-width="1"/>
+<text x="882.00" y="682.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">allowed</text>
+<rect x="984" y="662" width="180" height="40" rx="10" ry="10" fill="#d3f9d8" stroke="#2f9e44" stroke-width="1"/>
+<text x="1074.00" y="682.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">allowed + approval</text>
+<rect x="1176" y="662" width="180" height="40" rx="10" ry="10" fill="#d3f9d8" stroke="#2f9e44" stroke-width="1"/>
+<text x="1266.00" y="682.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">allowed</text>
+<rect x="1368" y="662" width="180" height="40" rx="10" ry="10" fill="#d3f9d8" stroke="#2f9e44" stroke-width="1"/>
+<text x="1458.00" y="682.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">allowed</text>
+<rect x="216" y="712" width="180" height="40" rx="10" ry="10" fill="#d3f9d8" stroke="#2f9e44" stroke-width="1"/>
+<text x="306.00" y="732.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">allowed</text>
+<rect x="408" y="712" width="180" height="40" rx="10" ry="10" fill="#d3f9d8" stroke="#2f9e44" stroke-width="1"/>
+<text x="498.00" y="732.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">allowed</text>
+<rect x="600" y="712" width="180" height="40" rx="10" ry="10" fill="#ffe3e3" stroke="#e03131" stroke-width="1"/>
+<text x="690.00" y="732.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">refused at Wall 2</text>
+<rect x="792" y="712" width="180" height="40" rx="10" ry="10" fill="#d3f9d8" stroke="#2f9e44" stroke-width="1"/>
+<text x="882.00" y="732.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">allowed</text>
+<rect x="984" y="712" width="180" height="40" rx="10" ry="10" fill="#ffe3e3" stroke="#e03131" stroke-width="1"/>
+<text x="1074.01" y="732.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">refused at Wall 2</text>
+<rect x="1176" y="712" width="180" height="40" rx="10" ry="10" fill="#d3f9d8" stroke="#2f9e44" stroke-width="1"/>
+<text x="1266.00" y="732.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">allowed</text>
+<rect x="1368" y="712" width="180" height="40" rx="10" ry="10" fill="#d3f9d8" stroke="#2f9e44" stroke-width="1"/>
+<text x="1458.00" y="732.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">allowed</text>
+<rect x="216" y="762" width="180" height="40" rx="10" ry="10" fill="#ffe3e3" stroke="#e03131" stroke-width="1"/>
+<text x="306.00" y="782.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">refused at Wall 1</text>
+<rect x="408" y="762" width="180" height="40" rx="10" ry="10" fill="#ffe3e3" stroke="#e03131" stroke-width="1"/>
+<text x="498.00" y="782.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">refused at Wall 1</text>
+<rect x="600" y="762" width="180" height="40" rx="10" ry="10" fill="#ffe3e3" stroke="#e03131" stroke-width="1"/>
+<text x="690.00" y="782.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">refused at Wall 1</text>
+<rect x="792" y="762" width="180" height="40" rx="10" ry="10" fill="#ffe3e3" stroke="#e03131" stroke-width="1"/>
+<text x="882.00" y="782.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">refused at Wall 1</text>
+<rect x="984" y="762" width="180" height="40" rx="10" ry="10" fill="#ffe3e3" stroke="#e03131" stroke-width="1"/>
+<text x="1074.01" y="782.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">refused at Wall 1</text>
+<rect x="1176" y="762" width="180" height="40" rx="10" ry="10" fill="#ffe3e3" stroke="#e03131" stroke-width="1"/>
+<text x="1266.01" y="782.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">refused at Wall 2</text>
+<rect x="1368" y="762" width="180" height="40" rx="10" ry="10" fill="#ffe3e3" stroke="#e03131" stroke-width="1"/>
+<text x="1458.01" y="782.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">refused at Wall 1</text>
+<rect x="60" y="949" width="150" height="80" rx="20" ry="20" fill="#d9480f" stroke="#d9480f" stroke-width="1"/>
+<text x="135.00" y="989.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Persona</text>
+<rect x="210" y="949" width="220" height="80" rx="20" ry="20" fill="#d9480f" stroke="#d9480f" stroke-width="1"/>
+<text x="320.00" y="969.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">research-public blob and</text>
+<text x="320.00" y="989.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Search index</text>
+<text x="320.00" y="1009.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">sg-abw-research</text>
+<rect x="430" y="949" width="220" height="80" rx="20" ry="20" fill="#d9480f" stroke="#d9480f" stroke-width="1"/>
+<text x="540.00" y="979.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">wall-falcon blob</text>
+<text x="540.00" y="999.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">sg-abw-wall-falcon</text>
+<rect x="650" y="949" width="190" height="80" rx="20" ry="20" fill="#d9480f" stroke="#d9480f" stroke-width="1"/>
+<text x="745.00" y="979.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">wall-orion blob</text>
+<text x="745.00" y="999.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">no group</text>
+<rect x="840" y="949" width="250" height="80" rx="20" ry="20" fill="#d9480f" stroke="#d9480f" stroke-width="1"/>
+<text x="965.00" y="969.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Cosmos DB orders</text>
+<text x="965.00" y="989.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">sg-abw-traders,</text>
+<text x="965.00" y="1009.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">sg-abw-compliance</text>
+<rect x="1090" y="949" width="250" height="80" rx="20" ry="20" fill="#d9480f" stroke="#d9480f" stroke-width="1"/>
+<text x="1215.00" y="969.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Cosmos DB positions</text>
+<text x="1215.00" y="989.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">sg-abw-traders,</text>
+<text x="1215.00" y="1009.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">sg-abw-compliance</text>
+<rect x="1340" y="949" width="214" height="80" rx="20" ry="20" fill="#d9480f" stroke="#d9480f" stroke-width="1"/>
+<text x="1447.00" y="979.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Control plane</text>
+<text x="1447.00" y="999.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">sg-abw-infosec</text>
+<rect x="216" y="1034" width="208" height="40" rx="10" ry="10" fill="#ffe8cc" stroke="#e8590c" stroke-width="1"/>
+<text x="320.00" y="1054.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">read</text>
+<rect x="216" y="1084" width="208" height="40" rx="10" ry="10" fill="#ffe8cc" stroke="#e8590c" stroke-width="1"/>
+<text x="320.00" y="1104.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">read</text>
+<rect x="436" y="1084" width="208" height="40" rx="10" ry="10" fill="#ffe8cc" stroke="#e8590c" stroke-width="1"/>
+<text x="540.00" y="1104.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">read</text>
+<rect x="216" y="1134" width="208" height="40" rx="10" ry="10" fill="#ffe8cc" stroke="#e8590c" stroke-width="1"/>
+<text x="320.00" y="1154.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">read</text>
+<rect x="846" y="1134" width="238" height="40" rx="10" ry="10" fill="#ffe8cc" stroke="#e8590c" stroke-width="1"/>
+<text x="965.00" y="1154.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">read, write</text>
+<rect x="1096" y="1134" width="238" height="40" rx="10" ry="10" fill="#ffe8cc" stroke="#e8590c" stroke-width="1"/>
+<text x="1215.00" y="1154.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">read</text>
+<rect x="216" y="1184" width="208" height="40" rx="10" ry="10" fill="#ffe8cc" stroke="#e8590c" stroke-width="1"/>
+<text x="320.00" y="1204.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">read</text>
+<rect x="436" y="1184" width="208" height="40" rx="10" ry="10" fill="#ffe8cc" stroke="#e8590c" stroke-width="1"/>
+<text x="540.00" y="1204.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">read</text>
+<rect x="846" y="1184" width="238" height="40" rx="10" ry="10" fill="#ffe8cc" stroke="#e8590c" stroke-width="1"/>
+<text x="965.00" y="1204.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">read</text>
+<rect x="1096" y="1184" width="238" height="40" rx="10" ry="10" fill="#ffe8cc" stroke="#e8590c" stroke-width="1"/>
+<text x="1215.00" y="1204.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">read</text>
+<rect x="1346" y="1234" width="202" height="40" rx="10" ry="10" fill="#c5f6fa" stroke="#0b7285" stroke-width="1"/>
+<text x="1447.00" y="1254.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">read-only: RG, logs</text>
+<rect x="1640" y="226" width="320" height="44" rx="11" ry="11" fill="#343a40" stroke="#343a40" stroke-width="1"/>
+<text x="1800.00" y="248.00" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Entra API app (audience of T2)</text>
+<rect x="2040" y="226" width="280" height="44" rx="11" ry="11" fill="#343a40" stroke="#343a40" stroke-width="1"/>
+<text x="2180.00" y="248.00" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Server identity (UAMI)</text>
+<rect x="1640" y="354.5" width="320" height="118.5" rx="29.625" ry="29.625" fill="#e5dbff" stroke="#6741d9" stroke-width="2"/>
+<rect x="2040" y="354.5" width="280" height="118.5" rx="29.625" ry="29.625" fill="#f3f0ff" stroke="#6741d9" stroke-width="2"/>
+<rect x="1640" y="487" width="320" height="98.5" rx="24.625" ry="24.625" fill="#e5dbff" stroke="#6741d9" stroke-width="2"/>
+<rect x="2040" y="487" width="280" height="98.5" rx="24.625" ry="24.625" fill="#f3f0ff" stroke="#6741d9" stroke-width="2"/>
+<rect x="1640" y="599.5" width="320" height="138.5" rx="32" ry="32" fill="#e5dbff" stroke="#6741d9" stroke-width="2"/>
+<rect x="2040" y="599.5" width="280" height="138.5" rx="32" ry="32" fill="#f3f0ff" stroke="#6741d9" stroke-width="2"/>
+<rect x="1640" y="752" width="320" height="98.5" rx="24.625" ry="24.625" fill="#e5dbff" stroke="#6741d9" stroke-width="2"/>
+<rect x="2040" y="752" width="280" height="98.5" rx="24.625" ry="24.625" fill="#f3f0ff" stroke="#6741d9" stroke-width="2"/>
+<rect x="1640" y="955" width="320" height="138.5" rx="32" ry="32" fill="#e5dbff" stroke="#6741d9" stroke-width="2"/>
+<rect x="2040" y="955" width="280" height="138.5" rx="32" ry="32" fill="#f3f0ff" stroke="#6741d9" stroke-width="2"/>
+<rect x="2040" y="1107.5" width="280" height="158.5" rx="32" ry="32" fill="#ffe3e3" stroke="#e03131" stroke-width="2"/>
+<rect x="1620" y="1306" width="720" height="80" rx="20" ry="20" fill="#f3f0ff" stroke="#6741d9" stroke-width="2"/>
+<text x="1980.01" y="1326.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">FIC = federated identity credential on the API app. It trusts the UAMI's token (issuer: the tenant's</text>
+<text x="1980.01" y="1346.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">v2.0 endpoint, subject: the UAMI's principal, audience api://AzureADTokenExchange), so the</text>
+<text x="1980.01" y="1366.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">server proves itself for OBO with no client secret. Names: id-abw-mcp-&lt;server&gt;-&lt;region&gt;-001.</text>
+<rect x="60" y="1436" width="1500" height="132.5" rx="32" ry="32" fill="#f8f9fa" stroke="#343a40" stroke-width="2"/>
+<path d="M 2036.00 413.75 L 1964.00 413.75" fill="none" stroke="#6741d9" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1977.37 420.56 L 1964.00 413.75 L 1977.37 406.94" fill="none" stroke="#6741d9" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2036.00 536.25 L 1964.00 536.25" fill="none" stroke="#6741d9" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1977.37 543.06 L 1964.00 536.25 L 1977.37 529.44" fill="none" stroke="#6741d9" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2036.00 668.75 L 1964.00 668.75" fill="none" stroke="#6741d9" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1977.37 675.56 L 1964.00 668.75 L 1977.37 661.94" fill="none" stroke="#6741d9" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2036.00 801.25 L 1964.00 801.25" fill="none" stroke="#6741d9" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1977.37 808.06 L 1964.00 801.25 L 1977.37 794.44" fill="none" stroke="#6741d9" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="60.00" y="56.50" font-size="36" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Identity and entitlements: who can reach what</text>
+<text x="60.00" y="98.50" font-size="20" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">Personas, groups and app roles, the five MCP API apps, data RBAC and the server identities</text>
+<text x="60.00" y="1616.00" font-size="16" fill="#868e96" text-anchor="start" dominant-baseline="central" xml:space="preserve">Agents Behind the Wall - diagram 06 of 13 - generated by docs/diagrams/build_diagrams.py</text>
+<text x="1186.00" y="43.25" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Legend</text>
+<rect x="1186" y="61" width="36" height="22" rx="5.5" ry="5.5" fill="#e5dbff" stroke="#6741d9" stroke-width="2"/>
+<text x="1232.00" y="71.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Identity (Entra ID)</text>
+<rect x="1186" y="91" width="36" height="22" rx="5.5" ry="5.5" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="1232.00" y="101.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Network, API gateway (APIM)</text>
+<rect x="1186" y="121" width="36" height="22" rx="5.5" ry="5.5" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="1232.00" y="131.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Compute (agents, MCP servers)</text>
+<rect x="1476" y="61" width="36" height="22" rx="5.5" ry="5.5" fill="#ffe8cc" stroke="#e8590c" stroke-width="2"/>
+<text x="1522.00" y="71.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Data stores</text>
+<rect x="1476" y="91" width="36" height="22" rx="5.5" ry="5.5" fill="#c5f6fa" stroke="#0b7285" stroke-width="2"/>
+<text x="1522.00" y="101.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Observability</text>
+<rect x="1476" y="121" width="36" height="22" rx="5.5" ry="5.5" fill="#ffe3e3" stroke="#e03131" stroke-width="2"/>
+<text x="1522.00" y="131.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Deny, risk, kill switch</text>
+<rect x="1766" y="61" width="36" height="22" rx="5.5" ry="5.5" fill="#f1f3f5" stroke="#868e96" stroke-width="2" stroke-dasharray="10 7"/>
+<text x="1812.00" y="71.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Human / optional (dashed)</text>
+<rect x="1766" y="91" width="36" height="22" rx="5.5" ry="5.5" fill="#fff3bf" stroke="#f08c00" stroke-width="2"/>
+<text x="1812.00" y="101.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Azure Policy, governance</text>
+<rect x="1766" y="121" width="36" height="22" rx="5.5" ry="5.5" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="1812.00" y="131.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">People, client tools</text>
+<path d="M 2056.00 72.00 L 2092.00 72.00" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2078.63 65.19 L 2092.00 72.00 L 2078.63 78.81" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="2102.00" y="71.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Allowed flow</text>
+<path d="M 2056.00 102.00 L 2092.00 102.00" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2078.63 95.19 L 2092.00 102.00 L 2078.63 108.81" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="2102.00" y="101.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Denied exit / risk path</text>
+<path d="M 2056.00 132.00 L 2092.00 132.00" fill="none" stroke="#868e96" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="10 7"/>
+<path d="M 2078.63 125.19 L 2092.00 132.00 L 2078.63 138.81" fill="none" stroke="#868e96" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="2102.00" y="131.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Manual step (dashed)</text>
+<text x="60.00" y="202.50" font-size="20" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Five personas (abw.&lt;persona&gt;@&lt;tenant-domain&gt;): app roles sit on the user, groups carry the data access</text>
+<text x="74.00" y="252.50" font-size="20" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Priya</text>
+<text x="74.00" y="283.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Research Analyst</text>
+<text x="74.00" y="303.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Groups (sg-abw-*): demo-all,</text>
+<text x="74.00" y="323.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">research</text>
+<text x="74.00" y="343.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">App roles: Research.Read,</text>
+<text x="74.00" y="363.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">MarketData.Read</text>
+<text x="377.00" y="252.50" font-size="20" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Wes</text>
+<text x="377.00" y="283.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">IB Associate</text>
+<text x="377.00" y="303.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Groups (sg-abw-*): demo-all,</text>
+<text x="377.00" y="323.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">research, wall-falcon</text>
+<text x="377.00" y="343.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">App roles: Research.Read,</text>
+<text x="377.00" y="363.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Wall.Falcon, MarketData.Read</text>
+<text x="680.00" y="252.50" font-size="20" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Tara</text>
+<text x="680.00" y="283.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Equity Trader</text>
+<text x="680.00" y="303.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Groups (sg-abw-*): demo-all,</text>
+<text x="680.00" y="323.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">research, traders</text>
+<text x="680.00" y="343.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">App roles: Research.Read,</text>
+<text x="680.00" y="363.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Trade.Execute, Positions.Read,</text>
+<text x="680.00" y="383.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">MarketData.Read</text>
+<text x="983.00" y="252.50" font-size="20" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Carla</text>
+<text x="983.00" y="283.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Compliance Officer</text>
+<text x="983.00" y="303.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Groups (sg-abw-*): demo-all,</text>
+<text x="983.00" y="323.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">research, wall-falcon, compliance</text>
+<text x="983.00" y="343.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">App roles: Research.Read,</text>
+<text x="983.00" y="363.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Wall.Falcon, Trade.Read,</text>
+<text x="983.00" y="383.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Positions.Read, MarketData.Read</text>
+<text x="1286.00" y="252.50" font-size="20" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Ian</text>
+<text x="1286.00" y="283.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">InfoSec Analyst</text>
+<text x="1286.00" y="303.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Groups (sg-abw-*): demo-all,</text>
+<text x="1286.00" y="323.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">infosec</text>
+<text x="1286.00" y="343.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">App roles: none</text>
+<text x="60.00" y="455.50" font-size="20" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Walls 1 and 2: the app roles in the token decide which tools a person may call</text>
+<text x="70.00" y="582.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Priya</text>
+<text x="70.00" y="632.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Wes</text>
+<text x="70.00" y="682.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Tara</text>
+<text x="70.00" y="732.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Carla</text>
+<text x="70.00" y="782.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Ian</text>
+<text x="60.00" y="829.00" font-size="16" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">Tools. research: search_research, get_research_note. wall: list_my_wall_crossings, search_deal_documents, get_deal_document. actions: check_restricted_list and list_my_orders (Trade.Read or</text>
+<text x="60.00" y="849.00" font-size="16" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">Trade.Execute), place_order (Trade.Execute and the Tools.Execute scope; the governed agent also asks a human to approve). private: get_firm_positions, get_credit_limit. vendor: get_market_quote,</text>
+<text x="60.00" y="869.00" font-size="16" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">get_headlines. The private server is not behind the gateway, so it is Wall 2 that refuses.</text>
+<text x="60.00" y="927.50" font-size="20" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Wall 3: group membership decides what the user's own token can read</text>
+<text x="70.00" y="1054.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Priya</text>
+<text x="440.00" y="1054.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">no role</text>
+<text x="660.00" y="1054.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">no role</text>
+<text x="850.00" y="1054.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">no role</text>
+<text x="1100.00" y="1054.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">no role</text>
+<text x="1350.00" y="1054.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">no role</text>
+<text x="70.00" y="1104.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Wes</text>
+<text x="660.00" y="1104.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">no role</text>
+<text x="850.00" y="1104.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">no role</text>
+<text x="1100.00" y="1104.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">no role</text>
+<text x="1350.00" y="1104.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">no role</text>
+<text x="70.00" y="1154.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Tara</text>
+<text x="440.00" y="1154.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">no role</text>
+<text x="660.00" y="1154.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">no role</text>
+<text x="1350.00" y="1154.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">no role</text>
+<text x="70.00" y="1204.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Carla</text>
+<text x="660.00" y="1204.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">no role</text>
+<text x="1350.00" y="1204.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">no role</text>
+<text x="70.00" y="1254.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Ian</text>
+<text x="220.00" y="1254.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">no role</text>
+<text x="440.00" y="1254.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">no role</text>
+<text x="660.00" y="1254.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">no role</text>
+<text x="850.00" y="1254.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">no role</text>
+<text x="1100.00" y="1254.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">no role</text>
+<text x="60.00" y="1301.00" font-size="16" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">Cells follow the app roles and tool rules in the code and the group RBAC in the platform template. Priya, Ian and the operator were run live; Wes, Tara and Carla are designed behaviour until each has signed in</text>
+<text x="60.00" y="1321.00" font-size="16" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">once. The Search role covers the whole index: the public/wall split inside it is a server-side filter in the MCP server (Wall 2). sg-abw-demo-all holds Foundry Agent Consumer on the project, so every persona can</text>
+<text x="60.00" y="1341.00" font-size="16" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">talk to the agents. The operator holds no data-plane role: Owner is not data access.</text>
+<text x="1620.00" y="202.50" font-size="20" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Server identities: the five API apps and the six managed identities</text>
+<text x="1654.00" y="379.75" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">abw-mcp-research</text>
+<text x="1654.00" y="409.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Scope Tools.Read. Role</text>
+<text x="1654.00" y="429.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Research.Read. OBO to Storage and</text>
+<text x="1654.00" y="449.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Search.</text>
+<text x="2054.00" y="379.75" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">id-abw-mcp-research</text>
+<text x="2054.00" y="409.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">AcrPull. Blob Data Contributor on</text>
+<text x="2054.00" y="429.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">worm-audit (audit append).</text>
+<text x="1654.00" y="512.25" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">abw-mcp-wall</text>
+<text x="1654.00" y="541.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Scope Tools.Read. Roles Wall.Falcon,</text>
+<text x="1654.00" y="561.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Wall.Orion. OBO to Storage and Search.</text>
+<text x="2054.00" y="512.25" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">id-abw-mcp-wall</text>
+<text x="2054.00" y="541.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">AcrPull. Blob Data Contributor on</text>
+<text x="2054.00" y="561.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">worm-audit (audit append).</text>
+<text x="1654.00" y="624.75" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">abw-mcp-actions</text>
+<text x="1654.00" y="654.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Scopes Tools.Read, Tools.Execute.</text>
+<text x="1654.00" y="674.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Roles Trade.Read, Trade.Execute. OBO</text>
+<text x="1654.00" y="694.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">to Cosmos DB.</text>
+<text x="2054.00" y="624.75" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">id-abw-mcp-actions</text>
+<text x="2054.00" y="654.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">AcrPull. Audit append. Reads the</text>
+<text x="2054.00" y="674.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">restricted list as the service:</text>
+<text x="2054.00" y="694.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Cosmos DB data reader on that</text>
+<text x="2054.00" y="714.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">one container.</text>
+<text x="1654.00" y="777.25" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">abw-mcp-private</text>
+<text x="1654.00" y="806.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Scope Tools.Read. Role Positions.Read.</text>
+<text x="1654.00" y="826.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">OBO to Cosmos DB.</text>
+<text x="2054.00" y="777.25" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">id-abw-mcp-private</text>
+<text x="2054.00" y="806.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">AcrPull. Blob Data Contributor on</text>
+<text x="2054.00" y="826.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">worm-audit (audit append).</text>
+<text x="1654.00" y="980.25" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">abw-mcp-vendorgw</text>
+<text x="1654.00" y="1009.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Scope Tools.Read. Role</text>
+<text x="1654.00" y="1029.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">MarketData.Read. No OBO: checked at</text>
+<text x="1654.00" y="1049.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">the gateway only.</text>
+<text x="2054.00" y="980.25" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">id-abw-mcp-vendor</text>
+<text x="2054.00" y="1009.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">AcrPull. Key Vault Secrets User,</text>
+<text x="2054.00" y="1029.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">granted but not used: the vendor</text>
+<text x="2054.00" y="1049.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">app holds its own copy of the key</text>
+<text x="2054.00" y="1069.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">as a Container Apps secret.</text>
+<text x="1640.00" y="1121.50" font-size="16" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">The gateway checks the user's token for</text>
+<text x="1640.00" y="1141.50" font-size="16" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">vendor and injects the vendor key. Legacy is</text>
+<text x="1640.00" y="1161.50" font-size="16" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">the before picture: one broad identity and no</text>
+<text x="1640.00" y="1181.50" font-size="16" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">user context.</text>
+<text x="2054.00" y="1132.75" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">id-abw-mcp-legacy</text>
+<text x="2054.00" y="1162.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Deliberately broad, the typical</text>
+<text x="2054.00" y="1182.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">POC. Read on all of Storage and</text>
+<text x="2054.00" y="1202.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Search, Cosmos DB data</text>
+<text x="2054.00" y="1222.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">contributor on the account, plus</text>
+<text x="2054.00" y="1242.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">audit append and AcrPull.</text>
+<text x="76.00" y="1464.50" font-size="20" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">What to notice</text>
+<text x="76.00" y="1496.25" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">- App roles on the user open the gateway and the MCP server (Walls 1 and 2). Group membership opens the data plane (Wall 3). A person needs both to reach data.</text>
+<text x="76.00" y="1518.75" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">- Orion is open to nobody: no persona holds Wall.Orion and no group has a role on wall-orion. Ian has no app role, so the gateway refuses every tool call he makes.</text>
+<text x="76.00" y="1541.25" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">- Each server has its own managed identity and no Entra client secret. Four have a federated credential for OBO; the legacy identity is broad on purpose.</text>
+<rect x="1978.11" y="375.75" width="43.78" height="30" rx="7.5" ry="7.5" fill="#ffffff" stroke="none" stroke-width="1"/>
+<text x="2000.00" y="390.75" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">FIC</text>
+<rect x="1978.11" y="498.25" width="43.78" height="30" rx="7.5" ry="7.5" fill="#ffffff" stroke="none" stroke-width="1"/>
+<text x="2000.00" y="513.25" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">FIC</text>
+<rect x="1978.11" y="630.75" width="43.78" height="30" rx="7.5" ry="7.5" fill="#ffffff" stroke="none" stroke-width="1"/>
+<text x="2000.00" y="645.75" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">FIC</text>
+<rect x="1978.11" y="763.25" width="43.78" height="30" rx="7.5" ry="7.5" fill="#ffffff" stroke="none" stroke-width="1"/>
+<text x="2000.00" y="778.25" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">FIC</text>
+</svg>

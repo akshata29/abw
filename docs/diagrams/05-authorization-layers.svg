@@ -1,0 +1,205 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1600" viewBox="0 0 2400 1600" font-family="Helvetica, Arial, sans-serif">
+<rect x="0" y="0" width="2400" height="1600" fill="#ffffff"/>
+<rect x="1172" y="22" width="1168" height="138" rx="32" ry="32" fill="#ffffff" stroke="#adb5bd" stroke-width="1"/>
+<rect x="60" y="190" width="1870" height="56" rx="14" ry="14" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="995.00" y="218.00" font-size="18" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">The request: the agent's tools/call with the user's own token (T2) and the tool arguments. Every governed call meets the four walls in this order (the private MCP server has no Wall 1).</text>
+<rect x="300" y="262" width="420" height="44" rx="11" ry="11" fill="#343a40" stroke="#343a40" stroke-width="1"/>
+<text x="510.00" y="284.00" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">What it checks</text>
+<rect x="730" y="262" width="370" height="44" rx="11" ry="11" fill="#343a40" stroke="#343a40" stroke-width="1"/>
+<text x="915.00" y="284.00" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Decision inputs</text>
+<rect x="1110" y="262" width="430" height="44" rx="11" ry="11" fill="#343a40" stroke="#343a40" stroke-width="1"/>
+<text x="1325.01" y="284.00" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Deny shape</text>
+<rect x="1550" y="262" width="380" height="44" rx="11" ry="11" fill="#343a40" stroke="#343a40" stroke-width="1"/>
+<text x="1740.00" y="284.00" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Where the denial is logged</text>
+<rect x="1990" y="262" width="350" height="44" rx="11" ry="11" fill="#343a40" stroke="#343a40" stroke-width="1"/>
+<text x="2165.01" y="284.00" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Controls that change the answer</text>
+<rect x="300" y="322" width="420" height="120" rx="30" ry="30" fill="#ebfbee" stroke="#2f9e44" stroke-width="2"/>
+<text x="510.00" y="342.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">The prompt, the model's output and the tool result,</text>
+<text x="510.00" y="362.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">against content-safety classes: jailbreak, indirect attack</text>
+<text x="510.00" y="382.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">(in the prompt and after a tool call), hate, sexual,</text>
+<text x="510.00" y="402.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">violence and self-harm at Medium. Protected material is</text>
+<text x="510.00" y="422.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">flagged, not blocked.</text>
+<rect x="730" y="322" width="370" height="120" rx="30" ry="30" fill="#ebfbee" stroke="#2f9e44" stroke-width="2"/>
+<text x="915.00" y="362.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">The text, and the guardrail's categories and</text>
+<text x="915.00" y="382.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">severity thresholds. Not the user's token or</text>
+<text x="915.00" y="402.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">roles.</text>
+<rect x="1110" y="322" width="430" height="120" rx="30" ry="30" fill="#ffe3e3" stroke="#e03131" stroke-width="2"/>
+<text x="1325.00" y="362.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">The run stops, and the Foundry span carries error.type =</text>
+<text x="1325.00" y="382.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">content_filter. A preview control that fires on only some</text>
+<text x="1325.00" y="402.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">attacks, so the walls below never rely on it.</text>
+<rect x="1550" y="322" width="380" height="120" rx="30" ry="30" fill="#c5f6fa" stroke="#0b7285" stroke-width="2"/>
+<text x="1740.01" y="362.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Application Insights spans (invoke_agent, chat).</text>
+<text x="1740.01" y="382.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Sentinel ABW-008 when it stops a run. Join key:</text>
+<text x="1740.01" y="402.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">the trace id only, no request_id.</text>
+<rect x="60" y="322" width="230" height="120" rx="30" ry="30" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="175.00" y="369.50" font-size="20" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Wall 0: Foundry</text>
+<text x="175.00" y="394.50" font-size="20" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">guardrail (detective)</text>
+<rect x="1990" y="322" width="350" height="120" rx="30" ry="30" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="2164.99" y="352.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Tool allow-list. allowed_tools names the only</text>
+<text x="2164.99" y="372.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">tools the model may call on each server, and</text>
+<text x="2164.99" y="392.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">require_approval is always on for</text>
+<text x="2164.99" y="412.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">actions.place_order.</text>
+<rect x="300" y="522" width="420" height="120" rx="30" ry="30" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/>
+<text x="510.00" y="552.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">A valid Entra token for this MCP server: signature,</text>
+<text x="510.00" y="572.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">audience, tenant. Then who and what: kill switch, client</text>
+<text x="510.00" y="592.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">allow-list, scope, role. Then volume: 120 calls a minute</text>
+<text x="510.00" y="612.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">per user.</text>
+<rect x="730" y="522" width="370" height="120" rx="30" ry="30" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/>
+<text x="915.01" y="552.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Token claims: aud, tid, oid, azp, scp, roles. The</text>
+<text x="915.01" y="572.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">named values abw-deny-oids and</text>
+<text x="915.01" y="592.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">abw-allowed-azp. A counter per oid; the</text>
+<text x="915.01" y="612.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">JSON-RPC method.</text>
+<rect x="1110" y="522" width="430" height="120" rx="30" ry="30" fill="#ffe3e3" stroke="#e03131" stroke-width="2"/>
+<text x="1325.00" y="552.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">401 unauthorized with a fixed message. 403 forbidden</text>
+<text x="1325.00" y="572.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">with a reason (revoked, client_not_allowed,</text>
+<text x="1325.00" y="592.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">missing_scope or missing_role) plus the request_id. 429</text>
+<text x="1325.00" y="612.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">when rate limited.</text>
+<rect x="1550" y="522" width="380" height="120" rx="30" ry="30" fill="#c5f6fa" stroke="#0b7285" stroke-width="2"/>
+<text x="1740.01" y="552.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">ApiManagementGatewayLogs (RequestId), the</text>
+<text x="1740.01" y="572.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">abw-gateway trace and the</text>
+<text x="1740.01" y="592.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">abw-gateway-decisions metric. Sentinel</text>
+<text x="1740.01" y="612.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">ABW-004, ABW-005, ABW-009.</text>
+<rect x="60" y="522" width="230" height="120" rx="30" ry="30" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="175.00" y="582.00" font-size="20" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Wall 1: APIM gateway</text>
+<rect x="1990" y="522" width="350" height="120" rx="30" ry="30" fill="#ffe3e3" stroke="#e03131" stroke-width="2"/>
+<text x="2165.00" y="542.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Kill switch. Put a user's oid in abw-deny-oids</text>
+<text x="2165.00" y="562.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">and the gateway refuses that person on every</text>
+<text x="2165.00" y="582.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">gateway API within 45-90 s. The private MCP</text>
+<text x="2165.00" y="602.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">server is outside the gateway, so outside the</text>
+<text x="2165.00" y="622.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">kill switch.</text>
+<rect x="300" y="722" width="420" height="100" rx="25" ry="25" fill="#ebfbee" stroke="#2f9e44" stroke-width="2"/>
+<text x="510.00" y="742.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">The token again, because the server does not rely on</text>
+<text x="510.00" y="762.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">the gateway: signature, audience, issuer, tenant, azp,</text>
+<text x="510.00" y="782.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">scope. Then the tool: tools/list is filtered by role, and</text>
+<text x="510.00" y="802.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">tools/call needs the role and passes the tool's own rule.</text>
+<rect x="730" y="722" width="370" height="100" rx="25" ry="25" fill="#ebfbee" stroke="#2f9e44" stroke-width="2"/>
+<text x="915.00" y="742.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Token claims (roles, scp, azp, oid), the tool</text>
+<text x="915.00" y="762.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">arguments, and the rule: the project must be in</text>
+<text x="915.00" y="782.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">the roles, the ticker must not be on the restricted</text>
+<text x="915.00" y="802.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">list.</text>
+<rect x="1110" y="722" width="430" height="100" rx="25" ry="25" fill="#ffe3e3" stroke="#e03131" stroke-width="2"/>
+<text x="1325.00" y="742.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">401 or 403 with a reason code, or HTTP 200 with</text>
+<text x="1325.00" y="762.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">decision DENIED: a soft denial the agent reads as a</text>
+<text x="1325.00" y="782.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">result. Also NOT_FOUND, INVALID_ARGUMENT and</text>
+<text x="1325.00" y="802.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">obo_failed.</text>
+<rect x="1550" y="722" width="380" height="100" rx="25" ry="25" fill="#c5f6fa" stroke="#0b7285" stroke-width="2"/>
+<text x="1740.01" y="742.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">An audit event (tool_denied, auth_failed,</text>
+<text x="1740.01" y="762.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">wall_violation_attempt, order_blocked): console</text>
+<text x="1740.01" y="782.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">JSON, Application Insights and the WORM audit</text>
+<text x="1740.01" y="802.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">blob. Sentinel ABW-001, ABW-002.</text>
+<rect x="60" y="722" width="230" height="100" rx="25" ry="25" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="175.00" y="772.00" font-size="20" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Wall 2: MCP server</text>
+<rect x="1990" y="722" width="350" height="100" rx="25" ry="25" fill="#e5dbff" stroke="#6741d9" stroke-width="2"/>
+<text x="2165.00" y="742.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Client allow-list. abw-allowed-azp admits only</text>
+<text x="2165.00" y="762.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">the agent client, the test client and the Azure</text>
+<text x="2165.00" y="782.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">CLI client at the gateway, and the MCP</text>
+<text x="2165.00" y="802.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">server checks azp again.</text>
+<rect x="300" y="902" width="420" height="120" rx="30" ry="30" fill="#fff4e6" stroke="#e8590c" stroke-width="2"/>
+<text x="510.00" y="932.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">The data plane's own roles, on the user's own token T4</text>
+<text x="510.00" y="952.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">rather than the server's identity: Azure RBAC for the</text>
+<text x="510.00" y="972.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">blob container and the Search index, Cosmos DB's</text>
+<text x="510.00" y="992.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">data-plane roles for the Cosmos DB container.</text>
+<rect x="730" y="902" width="370" height="120" rx="30" ry="30" fill="#fff4e6" stroke="#e8590c" stroke-width="2"/>
+<text x="915.00" y="942.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">T4 (oid = the user) and the user's groups:</text>
+<text x="915.00" y="962.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">sg-abw-wall-falcon, sg-abw-traders,</text>
+<text x="915.00" y="982.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">sg-abw-compliance, sg-abw-research.</text>
+<rect x="1110" y="902" width="430" height="120" rx="30" ry="30" fill="#ffe3e3" stroke="#e03131" stroke-width="2"/>
+<text x="1325.01" y="952.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">403 from the data service. For Storage the MCP server</text>
+<text x="1325.01" y="972.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">reports storage_rbac_denied.</text>
+<rect x="1550" y="902" width="380" height="120" rx="30" ry="30" fill="#c5f6fa" stroke="#0b7285" stroke-width="2"/>
+<text x="1740.00" y="932.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">StorageBlobLogs (ClientRequestId). Search and</text>
+<text x="1740.00" y="952.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Cosmos DB logs are matched by time. Sentinel</text>
+<text x="1740.00" y="972.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">ABW-007: gateway and MCP allowed, storage</text>
+<text x="1740.00" y="992.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">denied.</text>
+<rect x="60" y="902" width="230" height="120" rx="30" ry="30" fill="#ffe8cc" stroke="#e8590c" stroke-width="2"/>
+<text x="175.00" y="962.00" font-size="20" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Wall 3: data plane</text>
+<rect x="1990" y="902" width="350" height="120" rx="30" ry="30" fill="#e5dbff" stroke="#6741d9" stroke-width="2"/>
+<text x="2165.01" y="922.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Group membership. People get data access</text>
+<text x="2165.01" y="942.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">only through groups, and the operator holds</text>
+<text x="2165.01" y="962.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">no data role of its own. Leave the group and</text>
+<text x="2165.01" y="982.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Wall 3 refuses, even while the token still</text>
+<text x="2165.01" y="1002.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">carries the role (the drift ABW-007 watches).</text>
+<rect x="60" y="1102" width="230" height="110" rx="27.5" ry="27.5" fill="#ffe8cc" stroke="#e8590c" stroke-width="2"/>
+<text x="175.00" y="1145.75" font-size="18" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Data: reached only when</text>
+<text x="175.00" y="1168.25" font-size="18" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">all four walls say yes</text>
+<rect x="300" y="1102" width="673.33" height="110" rx="27.5" ry="27.5" fill="#fff5f5" stroke="#e03131" stroke-width="2"/>
+<text x="636.66" y="1147.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Stops at Wall 1. Ian has no app roles: the gateway answers 403 missing_role to every</text>
+<text x="636.66" y="1167.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">tools/call behind it, and no tool runs.</text>
+<rect x="983.33" y="1102" width="673.33" height="110" rx="27.5" ry="27.5" fill="#fff5f5" stroke="#e03131" stroke-width="2"/>
+<text x="1319.99" y="1147.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Stops at Wall 2. Wes asks for an Orion memo: the gateway lets Wall.Falcon through, the</text>
+<text x="1319.99" y="1167.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">MCP server answers project_not_in_token_roles, and Storage is never touched.</text>
+<rect x="1666.67" y="1102" width="673.33" height="110" rx="27.5" ry="27.5" fill="#fff5f5" stroke="#e03131" stroke-width="2"/>
+<text x="2003.34" y="1147.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Stops at Wall 3. A user holds the Wall.Falcon role but is not in sg-abw-wall-falcon: the</text>
+<text x="2003.34" y="1167.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">gateway and the MCP server allow it, Storage answers 403 (Sentinel ABW-007).</text>
+<rect x="60" y="1242" width="2280" height="65" rx="16.25" ry="16.25" fill="#fff3bf" stroke="#f08c00" stroke-width="2"/>
+<text x="1200.00" y="1263.25" font-size="18" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Azure Policy (initiative abw-agent-platform-controls) is not a wall: it decides what may exist, not what a request may do. Five control families: no keys, private data planes, approved tools and models, guardrails attached, hygiene. A custom Deny refuses Foundry connections to MCP</text>
+<text x="1200.00" y="1285.75" font-size="18" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">targets that are not approved.</text>
+<rect x="60" y="1357" width="1100" height="165" rx="32" ry="32" fill="#f8f9fa" stroke="#343a40" stroke-width="2"/>
+<rect x="1190" y="1357" width="1150" height="165" rx="32" ry="32" fill="#f8f9fa" stroke="#343a40" stroke-width="2"/>
+<path d="M 1990.00 382.00 L 1930.00 382.00" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1990.00 582.00 L 1930.00 582.00" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1990.00 772.00 L 1930.00 772.00" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1990.00 962.00 L 1930.00 962.00" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 175.00 250.00 L 175.00 318.00" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 181.81 304.63 L 175.00 318.00 L 168.19 304.63" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 175.00 446.00 L 175.00 518.00" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 181.81 504.63 L 175.00 518.00 L 168.19 504.63" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 175.00 646.00 L 175.00 718.00" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 181.81 704.63 L 175.00 718.00 L 168.19 704.63" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 175.00 826.00 L 175.00 898.00" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 181.81 884.63 L 175.00 898.00 L 168.19 884.63" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 175.00 1026.00 L 175.00 1098.00" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 181.81 1084.63 L 175.00 1098.00 L 168.19 1084.63" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="60.00" y="56.50" font-size="36" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Authorization layers: four walls, each with its own deny</text>
+<text x="60.00" y="98.50" font-size="20" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">What each wall checks, what it decides on, what a denial looks like, where it is logged</text>
+<text x="60.00" y="1576.00" font-size="16" fill="#868e96" text-anchor="start" dominant-baseline="central" xml:space="preserve">Agents Behind the Wall - diagram 05 of 13 - generated by docs/diagrams/build_diagrams.py</text>
+<text x="1186.00" y="43.25" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Legend</text>
+<rect x="1186" y="61" width="36" height="22" rx="5.5" ry="5.5" fill="#e5dbff" stroke="#6741d9" stroke-width="2"/>
+<text x="1232.00" y="71.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Identity (Entra ID)</text>
+<rect x="1186" y="91" width="36" height="22" rx="5.5" ry="5.5" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="1232.00" y="101.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Network, API gateway (APIM)</text>
+<rect x="1186" y="121" width="36" height="22" rx="5.5" ry="5.5" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="1232.00" y="131.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Compute (agents, MCP servers)</text>
+<rect x="1476" y="61" width="36" height="22" rx="5.5" ry="5.5" fill="#ffe8cc" stroke="#e8590c" stroke-width="2"/>
+<text x="1522.00" y="71.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Data stores</text>
+<rect x="1476" y="91" width="36" height="22" rx="5.5" ry="5.5" fill="#c5f6fa" stroke="#0b7285" stroke-width="2"/>
+<text x="1522.00" y="101.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Observability</text>
+<rect x="1476" y="121" width="36" height="22" rx="5.5" ry="5.5" fill="#ffe3e3" stroke="#e03131" stroke-width="2"/>
+<text x="1522.00" y="131.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Deny, risk, kill switch</text>
+<rect x="1766" y="61" width="36" height="22" rx="5.5" ry="5.5" fill="#f1f3f5" stroke="#868e96" stroke-width="2" stroke-dasharray="10 7"/>
+<text x="1812.00" y="71.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Human / optional (dashed)</text>
+<rect x="1766" y="91" width="36" height="22" rx="5.5" ry="5.5" fill="#fff3bf" stroke="#f08c00" stroke-width="2"/>
+<text x="1812.00" y="101.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Azure Policy, governance</text>
+<rect x="1766" y="121" width="36" height="22" rx="5.5" ry="5.5" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="1812.00" y="131.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">People, client tools</text>
+<path d="M 2056.00 72.00 L 2092.00 72.00" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2078.63 65.19 L 2092.00 72.00 L 2078.63 78.81" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="2102.00" y="71.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Allowed flow</text>
+<path d="M 2056.00 102.00 L 2092.00 102.00" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2078.63 95.19 L 2092.00 102.00 L 2078.63 108.81" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="2102.00" y="101.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Denied exit / risk path</text>
+<path d="M 2056.00 132.00 L 2092.00 132.00" fill="none" stroke="#868e96" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="10 7"/>
+<path d="M 2078.63 125.19 L 2092.00 132.00 L 2078.63 138.81" fill="none" stroke="#868e96" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="2102.00" y="131.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Manual step (dashed)</text>
+<text x="76.00" y="1385.50" font-size="20" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">What to notice</text>
+<text x="76.00" y="1417.25" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">- Each wall is a different system with its own deny, so getting past one still meets the next.</text>
+<text x="76.00" y="1439.75" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">- Wall 2 checks the token again instead of trusting the gateway, and Wall 3 decides on the user's own token T4, never on the server's</text>
+<text x="76.00" y="1462.25" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">  identity for user data (the restricted-list read and the audit append use it).</text>
+<text x="76.00" y="1484.75" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">- Wall 0 is detective and best effort (a preview control). The three identity walls, 1, 2 and 3, make a call safe.</text>
+<text x="1206.00" y="1385.50" font-size="20" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Numbered flow</text>
+<text x="1206.00" y="1416.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">1. Request reaches Wall 0: the Foundry guardrail screens the content.</text>
+<text x="1206.00" y="1436.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">2. It passes to Wall 1: the gateway checks token, role, rate and kill switch.</text>
+<text x="1206.00" y="1456.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">3. It passes to Wall 2: the MCP server re-checks the token and applies the tool's rule.</text>
+<text x="1206.00" y="1476.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">4. It passes to Wall 3: the data plane's own roles answer for the user.</text>
+<text x="1206.00" y="1496.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">5. Only when all four walls say yes does the call reach the data.</text>
+<ellipse cx="175" cy="284" rx="18" ry="18" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="175.00" y="284.00" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">1</text>
+<ellipse cx="175" cy="482" rx="18" ry="18" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="175.00" y="482.00" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">2</text>
+<ellipse cx="175" cy="682" rx="18" ry="18" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="175.00" y="682.00" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">3</text>
+<ellipse cx="175" cy="862" rx="18" ry="18" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="175.00" y="862.00" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">4</text>
+<ellipse cx="175" cy="1062" rx="18" ry="18" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="175.00" y="1062.00" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">5</text>
+</svg>

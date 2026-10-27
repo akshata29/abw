@@ -1,0 +1,13 @@
+// @id client-not-allowed
+// @name ABW-004 Gateway rejected a token from an unapproved client application
+// @severity High
+// @tactics InitialAccess
+// @frequency PT5M
+// @period PT30M
+// @group Account
+// @entity Account.AadUserId=UserOid IP.Address=CallerIp
+// @details Server=Server Url=Url RequestId=RequestId
+// @description APIM validated the Entra token but the calling application (azp) is not on the approved client list. A valid user token minted for another application was replayed against an MCP API.
+AbwGateway(30m)
+| where Reason == 'client_not_allowed'
+| project TimeGenerated, RequestId, Server, UserOid, CallerIp, Method, Url

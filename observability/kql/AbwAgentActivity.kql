@@ -1,0 +1,134 @@
+// @function AbwAgentActivity
+// @params lookback:timespan = 24h
+// @description Which agent called which MCP tool for which user and what was decided, plus every agent run the Foundry guardrail stopped. Foundry traces carry the agent and tool; the MCP audit and the APIM gateway carry the human. request_id (echoed in every tool result) is the join key; the user is resolved from the MCP audit, else from the gateway-validated Entra object id. RunBy is who started the agent run (the caller of the agent, which can differ from the identity the tool saw). Guardrail says what the Foundry content filter caught and where: prompt, tool call, tool result or model output. A run stopped before any tool was called is one row with no Tool and RequestId = the trace id.
+let oidToUpn = AbwMcpAudit(lookback)
+    | where isnotempty(UserOid) and isnotempty(UserUpn)
+    | summarize MappedUpn = take_any(UserUpn) by GatewayUserOid = UserOid;
+let calls = AppGenAIContent
+    | where TimeGenerated > ago(lookback)
+    | where isnotempty(tostring(ToolCallResult)) or isnotempty(tostring(ToolCallArguments))
+    | extend RequestId = extract(@'"request_id"\s*:\s*"([0-9a-fA-F-]{36})"', 1, tostring(ToolCallResult))
+    | summarize
+        TimeGenerated = min(TimeGenerated),
+        ToolArguments = take_any(tostring(ToolCallArguments)),
+        RequestId = take_anyif(RequestId, isnotempty(RequestId))
+        by AgentName, TraceId, SpanId;
+let spans = AppDependencies
+    | where TimeGenerated > ago(lookback)
+    | where Name startswith 'execute_tool'
+    | project
+        TraceId = OperationId,
+        SpanId = Id,
+        Tool = substring(Name, strlen('execute_tool ')),
+        DurationMs,
+        SpanSucceeded = Success,
+        AgentVersion = tostring(Properties['gen_ai.agent.version']),
+        ToolCallId = tostring(Properties['gen_ai.tool.call.id']);
+let audit = AbwMcpAudit(lookback)
+    | summarize arg_max(TimeGenerated, UserUpn, Decision, Reason, Server, DataClass, OnBehalfOf) by RequestId;
+let gateway = AbwGateway(lookback)
+    | summarize arg_max(TimeGenerated, UserOid) by RequestId
+    | project RequestId, GatewayUserOid = UserOid;
+// one row per agent run (the invoke_agent span): who started it and, for runs the guardrail stopped, the content-filter verdicts
+let runs = AppDependencies
+    | where TimeGenerated > ago(lookback)
+    | where Name startswith 'invoke_agent'
+    | extend IsBlock = tostring(Properties['error.type']) == 'content_filter'
+    | summarize
+        RunTime = min(TimeGenerated),
+        RunAgent = take_any(tostring(Properties['gen_ai.agent.name'])),
+        RunAgentVersion = take_any(tostring(Properties['gen_ai.agent.version'])),
+        RunOid = take_any(tostring(Properties['user.id'])),
+        RunDurationMs = max(DurationMs),
+        Blocks = countif(IsBlock),
+        Verdicts = take_anyif(tostring(Properties['microsoft.foundry.content_filter.results']), IsBlock)
+        by TraceId = OperationId
+    | extend Stopped = Blocks > 0
+    | join kind=leftouter oidToUpn on $left.RunOid == $right.GatewayUserOid
+    | project TraceId, RunTime, RunAgent, RunAgentVersion, RunDurationMs, Stopped, Verdicts, RunBy = coalesce(MappedUpn, RunOid);
+// every point where the filter blocked: the stage, what it flagged and, for tool stages, which tool call it was
+let points = runs
+    | where Stopped
+    | extend verdicts = parse_json(Verdicts)
+    | mv-expand entry = verdicts
+    | where tobool(entry.blocked) == true
+    | extend res = entry.content_filter_results
+    | mv-apply k = bag_keys(res) to typeof(string) on (
+        where tobool(res[k].filtered) == true or tobool(res[k].detected) == true
+        | summarize flagged = make_list(k))
+    | project
+        TraceId,
+        CallId = tostring(entry.tool_call_id),
+        Point = strcat(
+            iff(array_length(flagged) > 0, strcat_array(flagged, ', '), 'blocked'),
+            ' on ',
+            case(
+                tostring(entry.source_type) == 'prompt', 'prompt',
+                tostring(entry.source_type) == 'pre_tool', 'tool call',
+                tostring(entry.source_type) == 'post_tool', 'tool result',
+                tostring(entry.source_type) == 'completion', 'model output',
+                'run'));
+let pointsByCall = points
+    | where isnotempty(CallId)
+    | summarize GuardrailCall = strcat_array(make_set(Point), '; ') by TraceId, ToolCallId = CallId;
+let pointsByRun = points
+    | summarize
+        GuardrailAll = strcat_array(make_set(Point), '; '),
+        GuardrailRun = strcat_array(make_set_if(Point, isempty(CallId)), '; '),
+        CallLevel = countif(isnotempty(CallId))
+        by TraceId;
+// a stopped run always gets text: when the verdicts cannot be read it degrades to 'content_filter' instead of vanishing
+let guardRuns = runs
+    | where Stopped
+    | lookup kind=leftouter pointsByRun on TraceId
+    | extend
+        GuardrailAll = coalesce(GuardrailAll, 'content_filter'),
+        GuardrailRun = case(isnotempty(GuardrailRun), GuardrailRun, CallLevel > 0, '', 'content_filter');
+let activity = calls
+    | join kind=leftouter spans on TraceId, SpanId
+    | join kind=leftouter audit on RequestId
+    | join kind=leftouter gateway on RequestId
+    | join kind=leftouter oidToUpn on GatewayUserOid
+    | lookup kind=leftouter (runs | project TraceId, RunBy) on TraceId
+    | lookup kind=leftouter (guardRuns | project TraceId, GuardrailRun) on TraceId
+    | lookup kind=leftouter pointsByCall on TraceId, ToolCallId
+    | extend Guardrail = case(isnotempty(GuardrailCall), GuardrailCall, isnotempty(GuardrailRun), GuardrailRun, '')
+    | project
+        TimeGenerated,
+        Agent = AgentName,
+        AgentVersion,
+        Tool,
+        User = coalesce(iff(isnotempty(UserUpn), UserUpn, ''), iff(isnotempty(MappedUpn), MappedUpn, ''), iff(isnotempty(GatewayUserOid), GatewayUserOid, ''), '(not resolved)'),
+        Decision = case(isnotempty(Decision), Decision, isnotempty(Guardrail), 'guardrail_blocked', ''),
+        Reason = case(isnotempty(Reason), Reason, isnotempty(Guardrail), 'content_filter', ''),
+        Server,
+        DataClass,
+        OnBehalfOf,
+        DurationMs,
+        ToolArguments,
+        RequestId,
+        TraceId,
+        RunBy = coalesce(RunBy, ''),
+        Guardrail;
+// runs stopped before any tool was called have no tool-call row; without this they would be invisible here
+let guardrailOnly = guardRuns
+    | join kind=leftanti (calls | distinct TraceId) on TraceId
+    | project
+        TimeGenerated = RunTime,
+        Agent = RunAgent,
+        AgentVersion = RunAgentVersion,
+        Tool = '',
+        User = iff(isnotempty(RunBy), RunBy, '(not resolved)'),
+        Decision = 'guardrail_blocked',
+        Reason = 'content_filter',
+        Server = '',
+        DataClass = '',
+        OnBehalfOf = bool(null),
+        DurationMs = RunDurationMs,
+        ToolArguments = '',
+        RequestId = TraceId,
+        TraceId,
+        RunBy = coalesce(RunBy, ''),
+        Guardrail = GuardrailAll;
+union activity, guardrailOnly
+| order by TimeGenerated desc

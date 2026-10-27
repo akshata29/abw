@@ -1,0 +1,290 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1810" viewBox="0 0 2400 1810" font-family="Helvetica, Arial, sans-serif">
+<rect x="0" y="0" width="2400" height="1810" fill="#ffffff"/>
+<rect x="60" y="270" width="380" height="872.5" rx="32" ry="32" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<rect x="520" y="270" width="700" height="872.5" rx="32" ry="32" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/>
+<rect x="1300" y="270" width="470" height="872.5" rx="32" ry="32" fill="#ebfbee" stroke="#2f9e44" stroke-width="2"/>
+<rect x="1890" y="270" width="450" height="872.5" rx="32" ry="32" fill="#ebfbee" stroke="#2f9e44" stroke-width="2"/>
+<rect x="60" y="1222.5" width="440" height="276.5" rx="32" ry="32" fill="#fff9db" stroke="#f08c00" stroke-width="2"/>
+<rect x="540" y="1222.5" width="1800" height="276.5" rx="32" ry="32" fill="#e3fafc" stroke="#0b7285" stroke-width="2"/>
+<rect x="76" y="282" width="182.06" height="36.5" rx="9.125" ry="9.125" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="167.03" y="300.25" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Caller and operator</text>
+<rect x="536" y="282" width="348.18" height="36.5" rx="9.125" ry="9.125" fill="#1971c2" stroke="#1971c2" stroke-width="1"/>
+<text x="710.09" y="300.25" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">API Management: the /agents front door</text>
+<rect x="1316" y="282" width="238.11" height="36.5" rx="9.125" ry="9.125" fill="#2b8a3e" stroke="#2b8a3e" stroke-width="1"/>
+<text x="1435.06" y="300.25" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Foundry project and agent</text>
+<rect x="1906" y="282" width="372.14" height="36.5" rx="9.125" ry="9.125" fill="#2b8a3e" stroke="#2b8a3e" stroke-width="1"/>
+<text x="2092.07" y="300.25" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Tool calls: same APIM, then MCP and data</text>
+<rect x="76" y="1234.5" width="272.13" height="36.5" rx="9.125" ry="9.125" fill="#ffd43b" stroke="#ffd43b" stroke-width="1"/>
+<text x="212.06" y="1252.75" font-size="18" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Money: Azure cost and budget</text>
+<rect x="556" y="1234.5" width="286.08" height="36.5" rx="9.125" ry="9.125" fill="#0b7285" stroke="#0b7285" stroke-width="1"/>
+<text x="699.04" y="1252.75" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Tokens: from meter to workbook</text>
+<rect x="1172" y="22" width="1168" height="138" rx="32" ry="32" fill="#ffffff" stroke="#adb5bd" stroke-width="1"/>
+<rect x="584" y="362.5" width="402" height="60" rx="15" ry="15" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="594.00" y="382.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">validate-jwt: audience https://ai.azure.com, issuer v1</text>
+<text x="594.00" y="402.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">or v2.0 of this tenant, tid required, 60 s skew</text>
+<rect x="998" y="362.5" width="202" height="60" rx="15" ry="15" fill="#c92a2a" stroke="#c92a2a" stroke-width="2"/>
+<text x="1099.00" y="382.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">401</text>
+<text x="1099.00" y="402.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">unauthorized</text>
+<rect x="584" y="462.5" width="402" height="60" rx="15" ry="15" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="594.00" y="492.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Kill switch: the caller's oid is in abw-deny-oids</text>
+<rect x="998" y="462.5" width="202" height="60" rx="15" ry="15" fill="#c92a2a" stroke="#c92a2a" stroke-width="2"/>
+<text x="1098.99" y="482.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">403</text>
+<text x="1098.99" y="502.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">revoked</text>
+<rect x="584" y="562.5" width="402" height="60" rx="15" ry="15" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="594.00" y="582.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Call rate: abw-agent-rpm calls per minute per user</text>
+<text x="594.00" y="602.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">(default 60)</text>
+<rect x="998" y="562.5" width="202" height="60" rx="15" ry="15" fill="#c92a2a" stroke="#c92a2a" stroke-width="2"/>
+<text x="1099.01" y="582.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">429</text>
+<text x="1099.01" y="602.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">rate_limited</text>
+<rect x="584" y="662.5" width="402" height="80" rx="20" ry="20" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="594.00" y="682.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Token budget: abw-agent-token-quota per user per</text>
+<text x="594.00" y="702.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">hour (default 250000), counted after the response, so</text>
+<text x="594.00" y="722.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">one call can overshoot</text>
+<rect x="998" y="662.5" width="202" height="80" rx="20" ry="20" fill="#c92a2a" stroke="#c92a2a" stroke-width="2"/>
+<text x="1099.00" y="692.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">403</text>
+<text x="1099.00" y="712.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">token_quota_exceeded</text>
+<rect x="584" y="782.5" width="402" height="60" rx="15" ry="15" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="594.00" y="802.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Token meter: tokens by user, upn and agent</text>
+<text x="594.00" y="822.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">(namespace abw-agent)</text>
+<rect x="998" y="782.5" width="202" height="60" rx="15" ry="15" fill="#0b7285" stroke="#0b7285" stroke-width="2"/>
+<text x="1099.00" y="802.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">no refusal</text>
+<text x="1099.00" y="822.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">metric only</text>
+<rect x="584" y="882.5" width="616" height="60" rx="15" ry="15" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="594.00" y="902.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Forward to the Foundry project endpoint (timeout 240 s). The user's token passes</text>
+<text x="594.00" y="922.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">on UNCHANGED; APIM adds x-abw-request-id.</text>
+<rect x="80" y="334.5" width="340" height="60" rx="15" ry="15" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="90.00" y="354.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Caller: a user's client, or the Demo Console</text>
+<text x="90.00" y="374.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">running Act 7 as the operator</text>
+<rect x="80" y="406.5" width="340" height="80" rx="20" ry="20" fill="#e5dbff" stroke="#6741d9" stroke-width="2"/>
+<text x="90.00" y="426.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">T1: the user's Entra token for Foundry</text>
+<text x="90.00" y="446.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">(audience https://ai.azure.com), sent as a</text>
+<text x="90.00" y="466.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">bearer token</text>
+<rect x="80" y="526.5" width="340" height="100" rx="25" ry="25" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="90.00" y="546.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Console agent beats enter here by default.</text>
+<text x="90.00" y="566.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Act 7.1 tests the door: no token, a</text>
+<text x="90.00" y="586.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">wrong-audience token, a valid token. Act 7.4</text>
+<text x="90.00" y="606.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">shows the token-budget refusal.</text>
+<rect x="80" y="862.5" width="340" height="100" rx="25" ry="25" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="90.00" y="882.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Answer, plus the headers</text>
+<text x="90.00" y="902.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">x-abw-tokens-consumed,</text>
+<text x="90.00" y="922.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">x-abw-tokens-remaining, x-abw-request-id</text>
+<text x="90.00" y="942.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">and x-abw-gateway</text>
+<rect x="540" y="982.5" width="660" height="140" rx="32" ry="32" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/>
+<text x="550.00" y="1002.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Named values the checks read. An operator changes them with no redeploy; APIM</text>
+<text x="550.00" y="1022.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">applies a change within seconds to about a minute.</text>
+<text x="550.00" y="1042.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">abw-tenant-id: the tenant for the issuer and tid checks</text>
+<text x="550.00" y="1062.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">abw-deny-oids: the users the kill switch refuses</text>
+<text x="550.00" y="1082.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">abw-agent-rpm: calls per minute per user, default 60</text>
+<text x="550.00" y="1102.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">abw-agent-token-quota: tokens per user per hour, default 250000</text>
+<rect x="80" y="982.5" width="340" height="140" rx="32" ry="32" fill="#f1f3f5" stroke="#868e96" stroke-width="2" stroke-dasharray="10 7"/>
+<text x="90.00" y="1002.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Operator in the Demo Console. 7.3 reads</text>
+<text x="90.00" y="1022.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Cost Management, the budget and the</text>
+<text x="90.00" y="1042.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">token meter. 7.4 lowers</text>
+<text x="90.00" y="1062.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">abw-agent-token-quota or abw-agent-rpm</text>
+<text x="90.00" y="1082.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">for about a minute, then restores them</text>
+<text x="90.00" y="1102.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">(global: demo tenant only).</text>
+<rect x="1320" y="334.5" width="430" height="80" rx="20" ry="20" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="1330.00" y="354.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Responses endpoint of the Foundry project: authorises</text>
+<text x="1330.00" y="374.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">the person (Foundry Agent Consumer on the project),</text>
+<text x="1330.00" y="394.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">then runs the agent</text>
+<rect x="1320" y="454.5" width="430" height="100" rx="25" ry="25" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="1330.00" y="484.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Agent abw-wall-desk (model gpt-54-mini): picks the tools</text>
+<text x="1330.00" y="504.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">and calls each with the user's own token, T2b. Approval</text>
+<text x="1330.00" y="524.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">is required only for place_order.</text>
+<rect x="1320" y="566.5" width="430" height="60" rx="15" ry="15" fill="#ffe3e3" stroke="#e03131" stroke-width="2"/>
+<text x="1330.00" y="586.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Guardrail abw-agent-guardrails (Wall 0): detective,</text>
+<text x="1330.00" y="606.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">preview, probabilistic</text>
+<rect x="1320" y="638.5" width="430" height="80" rx="20" ry="20" fill="#e5dbff" stroke="#6741d9" stroke-width="2"/>
+<text x="1330.00" y="658.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">T2b: the user's token for each MCP API, minted for</text>
+<text x="1330.00" y="678.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Foundry after the one-time consent and reused until it</text>
+<text x="1330.00" y="698.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">expires (60-90 min)</text>
+<rect x="1320" y="758.5" width="430" height="80" rx="20" ry="20" fill="#f1f3f5" stroke="#868e96" stroke-width="2" stroke-dasharray="10 7"/>
+<text x="1330.00" y="778.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">First use per person and tool connection: Foundry</text>
+<text x="1330.00" y="798.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">returns an oauth_consent_request with a link that lives</text>
+<text x="1330.00" y="818.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">about 10 min; a person opens it once (diagram 04).</text>
+<rect x="1910" y="454.5" width="410" height="100" rx="25" ry="25" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="1920.00" y="484.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">API Management again: the MCP APIs /research,</text>
+<text x="1920.00" y="504.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">/wall, /actions and /vendor (Wall 1). validate-jwt,</text>
+<text x="1920.00" y="524.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">abw-deny, 120 calls per minute per user.</text>
+<rect x="1910" y="634.5" width="410" height="80" rx="20" ry="20" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="1920.00" y="654.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">MCP servers on Container Apps (Wall 2): check the</text>
+<text x="1920.00" y="674.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">token again and the per-tool role rules, then swap T2b</text>
+<text x="1920.00" y="694.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">for a data token with the managed identity (OBO).</text>
+<rect x="1910" y="794.5" width="410" height="80" rx="20" ry="20" fill="#ffe8cc" stroke="#e8590c" stroke-width="2"/>
+<text x="1920.00" y="814.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Data planes (Wall 3): Storage, Cosmos DB and AI</text>
+<text x="1920.00" y="834.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Search. Each service's own roles decide on the user's</text>
+<text x="1920.00" y="854.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">own data token, T4a/b/c.</text>
+<rect x="1320" y="1002.5" width="430" height="120" rx="30" ry="30" fill="#fff5f5" stroke="#e03131" stroke-width="2"/>
+<text x="1330.00" y="1022.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Direct calls skip the front door. The legacy PoC agent is</text>
+<text x="1330.00" y="1042.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">called this way on purpose (the before picture: a shared</text>
+<text x="1330.00" y="1062.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">key, no user). A valid Entra token also works here</text>
+<text x="1330.00" y="1082.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">because public network access is on; in production a</text>
+<text x="1330.00" y="1102.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">private endpoint makes APIM the only way in.</text>
+<rect x="1910" y="1042.5" width="410" height="80" rx="20" ry="20" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="1920.00" y="1062.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">mcp-private: reached directly from Foundry over the</text>
+<text x="1920.00" y="1082.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">agent subnet, outside APIM, so outside this kill switch</text>
+<text x="1920.00" y="1102.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">and rate limit.</text>
+<rect x="80" y="1287" width="400" height="80" rx="20" ry="20" fill="#fff3bf" stroke="#f08c00" stroke-width="2"/>
+<text x="90.00" y="1307.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Azure Cost Management: ActualCost, month to date,</text>
+<text x="90.00" y="1327.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">by service, for the resource group. Data arrives</text>
+<text x="90.00" y="1347.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">hours late; no dollars in the workbook.</text>
+<rect x="80" y="1379" width="400" height="100" rx="25" ry="25" fill="#fff3bf" stroke="#f08c00" stroke-width="2"/>
+<text x="90.00" y="1399.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Budget budget-abw-demo-&lt;region&gt;-001: USD 1,200</text>
+<text x="90.00" y="1419.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">a month by default. Mails the resource group</text>
+<text x="90.00" y="1439.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Owners at 50, 80 and 100 % actual and 100 %</text>
+<text x="90.00" y="1459.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">forecast. An alert, not a cap.</text>
+<rect x="560" y="1287" width="440" height="192" rx="32" ry="32" fill="#c5f6fa" stroke="#0b7285" stroke-width="2"/>
+<text x="570.00" y="1333.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Two meters in the front-door policy.</text>
+<text x="570.00" y="1353.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Token meter (llm-emit-token-metric, namespace</text>
+<text x="570.00" y="1373.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">abw-agent): tokens by user oid, upn and agent.</text>
+<text x="570.00" y="1393.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Decision meter and trace (emit-metric</text>
+<text x="570.00" y="1413.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">abw-gateway-decisions, trace abw-gateway): allow or</text>
+<text x="570.00" y="1433.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">deny, reason, user oid, request_id.</text>
+<rect x="1053.33" y="1287" width="360" height="192" rx="32" ry="32" fill="#c5f6fa" stroke="#0b7285" stroke-width="2"/>
+<text x="1063.33" y="1343.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Log Analytics workspace</text>
+<text x="1063.33" y="1363.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">log-abw-demo-&lt;region&gt;-001. AppMetrics holds</text>
+<text x="1063.33" y="1383.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">the token metric (through Application Insights);</text>
+<text x="1063.33" y="1403.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">ApiManagementGatewayLogs holds the</text>
+<text x="1063.33" y="1423.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">abw-gateway trace.</text>
+<rect x="1466.67" y="1287" width="440" height="192" rx="32" ry="32" fill="#c5f6fa" stroke="#0b7285" stroke-width="2"/>
+<text x="1476.67" y="1353.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">KQL functions. AbwTokenUsage: runs, input, output and</text>
+<text x="1476.67" y="1373.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">total tokens per hour, user and agent. AbwDenials:</text>
+<text x="1476.67" y="1393.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">refusals, including Control llm-token-limit. AbwGateway:</text>
+<text x="1476.67" y="1413.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">the gateway decisions.</text>
+<rect x="1960" y="1287" width="360" height="192" rx="32" ry="32" fill="#c5f6fa" stroke="#0b7285" stroke-width="2"/>
+<text x="1970.00" y="1353.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Workbook Agent Wall - Cockpit, tab 'Cost &amp;</text>
+<text x="1970.00" y="1373.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">tokens': tokens per user and hour, tokens per</text>
+<text x="1970.00" y="1393.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">agent, refusals at the front door. Dollars per</text>
+<text x="1970.00" y="1413.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">service live in Cost Management.</text>
+<rect x="60" y="1539" width="860" height="200" rx="32" ry="32" fill="#f8f9fa" stroke="#343a40" stroke-width="2"/>
+<rect x="950" y="1539" width="1390" height="200" rx="32" ry="32" fill="#f8f9fa" stroke="#343a40" stroke-width="2"/>
+<path d="M 785.00 426.50 L 785.00 458.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 791.81 445.13 L 785.00 458.50 L 778.19 445.13" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 785.00 526.50 L 785.00 558.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 791.81 545.13 L 785.00 558.50 L 778.19 545.13" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 785.00 626.50 L 785.00 658.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 791.81 645.13 L 785.00 658.50 L 778.19 645.13" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 785.00 746.50 L 785.00 778.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 791.81 765.13 L 785.00 778.50 L 778.19 765.13" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 785.00 846.50 L 785.00 878.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 791.81 865.13 L 785.00 878.50 L 778.19 865.13" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1535.00 418.50 L 1535.00 450.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1541.81 437.13 L 1535.00 450.50 L 1528.19 437.13" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 424.00 364.50 L 516.00 364.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 502.63 357.69 L 516.00 364.50 L 502.63 371.31" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1204.00 912.50 L 1260.00 912.50 L 1260.00 374.50 L 1316.00 374.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1302.63 367.69 L 1316.00 374.50 L 1302.63 381.31" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1754.00 504.50 L 1906.00 504.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1892.63 497.69 L 1906.00 504.50 L 1892.63 511.31" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2115.00 558.50 L 2115.00 630.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2121.81 617.13 L 2115.00 630.50 L 2108.19 617.13" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2115.00 718.50 L 2115.00 790.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2121.81 777.13 L 2115.00 790.50 L 2108.19 777.13" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 516.00 912.50 L 424.00 912.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 437.37 919.31 L 424.00 912.50 L 437.37 905.69" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 424.00 1052.50 L 536.00 1052.50" fill="none" stroke="#868e96" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="10 7"/>
+<path d="M 522.63 1045.69 L 536.00 1052.50 L 522.63 1059.31" fill="none" stroke="#868e96" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1754.00 536.50 L 1830.00 536.50 L 1830.00 1082.50 L 1906.00 1082.50" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="10 7"/>
+<path d="M 1892.63 1075.69 L 1906.00 1082.50 L 1892.63 1089.31" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 400.00 266.00 L 400.00 222.00 L 1690.00 222.00 L 1690.00 330.50" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="10 7"/>
+<path d="M 1696.81 317.13 L 1690.00 330.50 L 1683.19 317.13" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1004.00 1357.00 L 1049.33 1357.00" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1035.96 1350.19 L 1049.33 1357.00 L 1035.96 1363.81" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1417.33 1357.00 L 1462.67 1357.00" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1449.30 1350.19 L 1462.67 1357.00 L 1449.30 1363.81" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1910.67 1357.00 L 1956.00 1357.00" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1942.63 1350.19 L 1956.00 1357.00 L 1942.63 1363.81" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 950.00 1146.50 L 950.00 1283.00" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 956.81 1269.63 L 950.00 1283.00 L 943.19 1269.63" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 400.00 1126.50 L 400.00 1283.00" fill="none" stroke="#868e96" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="10 7"/>
+<path d="M 406.81 1269.63 L 400.00 1283.00 L 393.19 1269.63" fill="none" stroke="#868e96" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="60.00" y="56.50" font-size="36" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Agent front door: APIM in front of agent and tools</text>
+<text x="60.00" y="98.50" font-size="20" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">Act 7 path: every governed agent call is checked, metered and revocable per user</text>
+<text x="60.00" y="1786.00" font-size="16" fill="#868e96" text-anchor="start" dominant-baseline="central" xml:space="preserve">Agents Behind the Wall - diagram 11 of 13 - generated by docs/diagrams/build_diagrams.py</text>
+<text x="1186.00" y="43.25" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Legend</text>
+<rect x="1186" y="61" width="36" height="22" rx="5.5" ry="5.5" fill="#e5dbff" stroke="#6741d9" stroke-width="2"/>
+<text x="1232.00" y="71.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Identity (Entra ID)</text>
+<rect x="1186" y="91" width="36" height="22" rx="5.5" ry="5.5" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="1232.00" y="101.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Network, API gateway (APIM)</text>
+<rect x="1186" y="121" width="36" height="22" rx="5.5" ry="5.5" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="1232.00" y="131.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Compute (agents, MCP servers)</text>
+<rect x="1476" y="61" width="36" height="22" rx="5.5" ry="5.5" fill="#ffe8cc" stroke="#e8590c" stroke-width="2"/>
+<text x="1522.00" y="71.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Data stores</text>
+<rect x="1476" y="91" width="36" height="22" rx="5.5" ry="5.5" fill="#c5f6fa" stroke="#0b7285" stroke-width="2"/>
+<text x="1522.00" y="101.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Observability</text>
+<rect x="1476" y="121" width="36" height="22" rx="5.5" ry="5.5" fill="#ffe3e3" stroke="#e03131" stroke-width="2"/>
+<text x="1522.00" y="131.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Deny, risk, kill switch</text>
+<rect x="1766" y="61" width="36" height="22" rx="5.5" ry="5.5" fill="#f1f3f5" stroke="#868e96" stroke-width="2" stroke-dasharray="10 7"/>
+<text x="1812.00" y="71.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Human / optional (dashed)</text>
+<rect x="1766" y="91" width="36" height="22" rx="5.5" ry="5.5" fill="#fff3bf" stroke="#f08c00" stroke-width="2"/>
+<text x="1812.00" y="101.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Azure Policy, governance</text>
+<rect x="1766" y="121" width="36" height="22" rx="5.5" ry="5.5" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="1812.00" y="131.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">People, client tools</text>
+<path d="M 2056.00 72.00 L 2092.00 72.00" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2078.63 65.19 L 2092.00 72.00 L 2078.63 78.81" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="2102.00" y="71.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Allowed flow</text>
+<path d="M 2056.00 102.00 L 2092.00 102.00" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2078.63 95.19 L 2092.00 102.00 L 2078.63 108.81" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="2102.00" y="101.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Denied exit / risk path</text>
+<path d="M 2056.00 132.00 L 2092.00 132.00" fill="none" stroke="#868e96" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="10 7"/>
+<path d="M 2078.63 125.19 L 2092.00 132.00 L 2078.63 138.81" fill="none" stroke="#868e96" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="2102.00" y="131.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Manual step (dashed)</text>
+<text x="584.00" y="344.50" font-size="16" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">Check, in order</text>
+<text x="998.00" y="344.50" font-size="16" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">If it fails</text>
+<text x="1910.00" y="344.50" font-size="16" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">Tool path in detail: diagram 03 (data flow) and diagram 05</text>
+<text x="1910.00" y="364.50" font-size="16" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">(the four walls).</text>
+<text x="76.00" y="1567.50" font-size="20" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">What to notice</text>
+<text x="76.00" y="1599.25" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">- The caller's own token goes through unchanged: the front door adds control and attribution, it never</text>
+<text x="76.00" y="1621.75" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">  swaps who is calling. Foundry still authorises the person and the tools still get the user's identity.</text>
+<text x="76.00" y="1644.25" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">- The limits are APIM named values, so an operator can change them in seconds. The token budget</text>
+<text x="76.00" y="1666.75" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">  counts after the response, so one call can overshoot it.</text>
+<text x="76.00" y="1689.25" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">- The Azure budget is an alert, not a cap. The per-user token budget (check d) is the control that stops a</text>
+<text x="76.00" y="1711.75" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">  runaway agent; the private MCP server sits outside this gateway.</text>
+<text x="966.00" y="1567.50" font-size="20" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Main flow (numbers on the arrows)</text>
+<text x="966.00" y="1598.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">1. The caller sends a Responses API request to APIM /agents with T1.</text>
+<text x="966.00" y="1618.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">2. APIM runs checks a to e in order. The first failure returns the red refusal on its row (a JSON</text>
+<text x="966.00" y="1638.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">    body with a request_id) and is logged. If all pass, APIM forwards to the Foundry project</text>
+<text x="966.00" y="1658.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">    endpoint with the token unchanged.</text>
+<text x="966.00" y="1678.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">3. Foundry authorises the person, runs the agent and, for a tool, sends the user's own token</text>
+<text x="966.00" y="1698.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">    T2b to the MCP API on the same APIM.</text>
+<text x="1659.00" y="1598.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">4. The tool call crosses Wall 1 (APIM), Wall 2 (MCP server) and Wall 3 (data plane), as in</text>
+<text x="1659.00" y="1618.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">    diagrams 03 and 05.</text>
+<text x="1659.00" y="1638.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">5. The answer returns through Foundry and APIM; the front door adds the token headers.</text>
+<text x="1659.00" y="1658.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">6. The meters flow to Application Insights and Log Analytics; the KQL functions and the</text>
+<text x="1659.00" y="1678.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">    workbook tab read them.</text>
+<rect x="451.66" y="388.5" width="36.67" height="30" rx="7.5" ry="7.5" fill="#ffffff" stroke="none" stroke-width="1"/>
+<text x="470.00" y="403.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">T1</text>
+<rect x="1807.22" y="450.5" width="45.57" height="30" rx="7.5" ry="7.5" fill="#ffffff" stroke="none" stroke-width="1"/>
+<text x="1830.01" y="465.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">T2b</text>
+<rect x="2141" y="579.5" width="166.91" height="30" rx="7.5" ry="7.5" fill="#ffffff" stroke="none" stroke-width="1"/>
+<text x="2146.00" y="594.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">T2b: the user's token</text>
+<rect x="2131" y="739.5" width="194.99" height="30" rx="7.5" ry="7.5" fill="#ffffff" stroke="none" stroke-width="1"/>
+<text x="2136.00" y="754.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">T4a/b/c: OBO data token</text>
+<rect x="1773.42" y="784.5" width="113.15" height="50" rx="12.5" ry="12.5" fill="#ffffff" stroke="none" stroke-width="1"/>
+<text x="1830.00" y="799.50" font-size="16" fill="#c92a2a" text-anchor="middle" dominant-baseline="central" xml:space="preserve">direct, not via</text>
+<text x="1830.00" y="819.50" font-size="16" fill="#c92a2a" text-anchor="middle" dominant-baseline="central" xml:space="preserve">APIM</text>
+<rect x="895.49" y="184" width="299.02" height="30" rx="7.5" ry="7.5" fill="#ffffff" stroke="none" stroke-width="1"/>
+<text x="1045.00" y="199.00" font-size="16" fill="#c92a2a" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Direct to Foundry, around the front door</text>
+<ellipse cx="556" cy="392.5" rx="15" ry="15" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="556.00" y="392.50" font-size="18" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">a</text>
+<ellipse cx="556" cy="492.5" rx="15" ry="15" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="556.00" y="492.50" font-size="18" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">b</text>
+<ellipse cx="556" cy="592.5" rx="15" ry="15" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="556.00" y="592.50" font-size="18" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">c</text>
+<ellipse cx="556" cy="702.5" rx="15" ry="15" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="556.00" y="702.50" font-size="18" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">d</text>
+<ellipse cx="556" cy="812.5" rx="15" ry="15" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="556.00" y="812.50" font-size="18" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">e</text>
+<ellipse cx="470" cy="364.5" rx="18" ry="18" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="470.00" y="364.50" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">1</text>
+<ellipse cx="1260" cy="643.5" rx="18" ry="18" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1260.01" y="643.50" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">2</text>
+<ellipse cx="1830" cy="504.5" rx="18" ry="18" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1830.01" y="504.50" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">3</text>
+<ellipse cx="2115" cy="580.1" rx="18" ry="18" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="2115.01" y="580.10" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">4</text>
+<ellipse cx="470" cy="912.5" rx="18" ry="18" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="470.00" y="912.50" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">5</text>
+<ellipse cx="950" cy="1187.45" rx="18" ry="18" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="950.00" y="1187.45" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">6</text>
+</svg>

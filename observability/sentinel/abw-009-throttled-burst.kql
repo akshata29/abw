@@ -1,0 +1,15 @@
+// @id throttled-burst
+// @name ABW-009 Burst of throttled MCP calls from one identity
+// @severity Low
+// @tactics Impact
+// @frequency PT5M
+// @period PT30M
+// @group AnyAlert
+// @entity Account.AadUserId=UserOid IP.Address=CallerIp
+// @details Throttled=Throttled Servers=Servers
+// @description Five or more calls were rejected by the per-user rate limit (120 calls / minute). A runaway agent loop or scripted abuse.
+AbwGateway(30m)
+| where Outcome == 'rate_limited'
+| summarize Throttled = count(), Servers = make_set(Server, 10), FirstSeen = min(TimeGenerated), LastSeen = max(TimeGenerated) by UserOid, CallerIp
+| where Throttled >= 5
+| extend TimeGenerated = LastSeen

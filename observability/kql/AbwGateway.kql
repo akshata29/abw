@@ -1,0 +1,33 @@
+// @function AbwGateway
+// @params lookback:timespan = 24h
+// @description API Management gateway view of every MCP request and every agent front-door request (Server 'agents'). Decision comes from the abw-gateway trace record emitted by the validate-jwt / abw-deny policy; Outcome folds in 401 / 429 / 5xx that never reach the policy trace and the front door's late refusals (token budget).
+ApiManagementGatewayLogs
+| where TimeGenerated > ago(lookback)
+| where ApiId startswith 'abw-'
+| extend gw = parse_json(TraceRecords)[0]
+| extend GatewayDecision = extract(@'decision=([a-z_]+)', 1, tostring(gw.message))
+// the agent front door can refuse after its first trace record (token budget used up): the second record carries the real reason
+| extend LateDeny = extract(@'decision=deny:([a-z_]+)', 1, tostring(parse_json(TraceRecords)[1].message))
+| extend ResponseCode = toint(ResponseCode)
+| project
+    TimeGenerated,
+    RequestId = CorrelationId,
+    Api = ApiId,
+    Server = coalesce(tostring(gw.metadata.server), tostring(split(ApiId, '-')[2])),
+    Method,
+    Url,
+    ResponseCode,
+    BackendResponseCode = toint(BackendResponseCode),
+    TotalTimeMs = TotalTime,
+    CallerIp = CallerIpAddress,
+    Decision = iff(isnotempty(LateDeny), 'deny', GatewayDecision),
+    Reason = coalesce(LateDeny, tostring(gw.metadata.reason)),
+    UserOid = tostring(gw.metadata.oid),
+    Outcome = case(
+        ResponseCode == 401, 'unauthenticated',
+        ResponseCode == 429, 'rate_limited',
+        ResponseCode >= 500, 'gateway_or_backend_error',
+        GatewayDecision == 'deny' or isnotempty(LateDeny), 'denied',
+        GatewayDecision == 'allow', 'allowed',
+        'other'),
+    ApimSubscription = ApimSubscriptionId

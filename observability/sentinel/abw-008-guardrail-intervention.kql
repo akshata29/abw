@@ -1,0 +1,13 @@
+// @id guardrail-intervention
+// @name ABW-008 Foundry guardrail stopped an agent run (prompt-injection indicator)
+// @severity High
+// @tactics Execution
+// @frequency PT5M
+// @period PT30M
+// @group AnyAlert
+// @entity CloudApplication.Name=Agent
+// @details Agent=Agent Control=Control Target=Target RequestId=RequestId
+// @description The Foundry guardrail blocked a prompt (jailbreak) or content a tool returned (indirect prompt injection) and ended the agent run. Control says where it was caught and what it flagged. For tool-returned content, review the tool that produced it and its data source.
+AbwDenials(30m)
+| where Layer == '0-agent-guardrail'
+| project TimeGenerated, Agent = Principal, Control, Target, Reason, RequestId

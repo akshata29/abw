@@ -1,0 +1,8 @@
+// @function AbwZeroKeys
+// @params lookback:timespan = 30d
+// @description Evidence that nothing authenticates with a shared secret: every Storage data-plane request by authentication type. KeyBased must stay at zero (Entra OAuth and the service-to-service TrustedAccess path are keyless).
+StorageBlobLogs
+| where TimeGenerated > ago(lookback)
+| summarize Requests = count(), Denied = countif(StatusCode in (401, 403)), LastSeen = max(TimeGenerated) by Account = AccountName, AuthType = AuthenticationType
+| extend KeyBased = AuthType in ('AccountKey', 'SAS', 'AccountSas', 'ServiceSas', 'DelegationSas')
+| order by Account asc, Requests desc

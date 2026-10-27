@@ -1,0 +1,34 @@
+// @function AbwMcpAudit
+// @params lookback:timespan = 24h
+// @description MCP server audit trail, one row per tool listing / call / denial. Who (Entra user + client app), what (server, tool, data class), the decision and reason, the downstream call status, and the request_id that joins every layer.
+ContainerAppConsoleLogs
+| where TimeGenerated > ago(lookback)
+| where Log startswith '{' and Log has '"event"' and Log has '"request_id"'
+| extend a = parse_json(Log)
+| where isnotempty(tostring(a.event))
+| project
+    TimeGenerated,
+    EventTime = todatetime(a.ts),
+    Server = tostring(a.server),
+    Event = tostring(a.event),
+    Tool = tostring(a.tool),
+    Decision = tostring(a.decision),
+    Reason = tostring(a.reason),
+    UserUpn = tostring(a.user_upn),
+    UserOid = tostring(a.user_oid),
+    ClientAppId = tostring(a.azp),
+    Audience = tostring(a.aud),
+    Roles = a.roles,
+    Scope = tostring(a.scp),
+    OnBehalfOf = tobool(a.obo),
+    DataClass = tostring(a.data_class),
+    DownstreamService = tostring(a.downstream.service),
+    DownstreamStatus = toint(a.downstream.status),
+    DownstreamTarget = tostring(a.downstream.target),
+    ArgsSha256 = tostring(a.args_sha256),
+    ResultBytes = tolong(a.result_bytes),
+    RequestId = tostring(a.request_id),
+    TraceId = tostring(a.trace_id),
+    TokenId = tostring(a.jti),
+    TenantId = tostring(a.tid),
+    App = ContainerAppName

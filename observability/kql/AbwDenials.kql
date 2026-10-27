@@ -1,0 +1,79 @@
+// @function AbwDenials
+// @params lookback:timespan = 24h
+// @description Every refusal across all four defence layers in one stream: 0 Foundry guardrail, 1 APIM gateway, 2 MCP server policy, 3 data-plane RBAC on the signed-in user (Storage). Same columns everywhere so an investigator can read it top to bottom.
+let guardRuns = AppDependencies
+    | where TimeGenerated > ago(lookback)
+    | where Name startswith 'invoke_agent' and tostring(Properties['error.type']) == 'content_filter'
+    | project
+        TimeGenerated,
+        Name,
+        OperationId,
+        Agent = tostring(Properties['gen_ai.agent.name']),
+        Verdicts = tostring(Properties['microsoft.foundry.content_filter.results']);
+// where the filter caught it (prompt, tool call, tool result, model output) and what it flagged; a run whose verdicts cannot be read keeps a plain Control
+let guardCaught = guardRuns
+    | extend verdicts = parse_json(Verdicts)
+    | mv-expand entry = verdicts
+    | where tobool(entry.blocked) == true
+    | extend res = entry.content_filter_results
+    | mv-apply k = bag_keys(res) to typeof(string) on (
+        where tobool(res[k].filtered) == true or tobool(res[k].detected) == true
+        | summarize flagged = make_list(k))
+    | extend Point = strcat(
+        iff(array_length(flagged) > 0, strcat_array(flagged, ', '), 'blocked'),
+        ' on ',
+        case(
+            tostring(entry.source_type) == 'prompt', 'prompt',
+            tostring(entry.source_type) == 'pre_tool', 'tool call',
+            tostring(entry.source_type) == 'post_tool', 'tool result',
+            tostring(entry.source_type) == 'completion', 'model output',
+            'run'))
+    | summarize Caught = strcat_array(make_set(Point), '; ') by OperationId;
+let guardrail = guardRuns
+    | lookup kind=leftouter guardCaught on OperationId
+    | project
+        TimeGenerated,
+        Layer = '0-agent-guardrail',
+        Control = iff(isnotempty(Caught), strcat('Foundry guardrail: ', Caught), 'Foundry guardrail'),
+        Principal = Agent,
+        Target = Name,
+        Reason = 'content_filter',
+        RequestId = OperationId;
+// the gateway only sees the token's oid; map it to the UPN the MCP servers log so one person is one Principal across layers
+let oidToUpn = AbwMcpAudit(lookback)
+    | where isnotempty(UserOid) and isnotempty(UserUpn)
+    | summarize MappedUpn = take_any(UserUpn) by UserOid;
+let gateway = AbwGateway(lookback)
+    | where Outcome in ('denied', 'unauthenticated', 'rate_limited')
+    | lookup kind=leftouter oidToUpn on UserOid
+    | project
+        TimeGenerated,
+        Layer = '1-gateway',
+        Control = case(Outcome == 'unauthenticated', 'validate-jwt', Outcome == 'rate_limited', 'rate-limit-by-key', Reason == 'token_quota', 'llm-token-limit', 'abw-deny claim policy'),
+        Principal = coalesce(MappedUpn, UserOid, ''),
+        Target = strcat(Server, ' ', Method),
+        Reason = case(Outcome == 'unauthenticated', 'no_valid_token', Outcome == 'rate_limited', 'rate_limit', Reason),
+        RequestId;
+let mcp = AbwMcpAudit(lookback)
+    | where Decision == 'deny'
+    | project
+        TimeGenerated,
+        Layer = '2-mcp-server',
+        Control = Event,
+        Principal = UserUpn,
+        Target = strcat(Server, '.', Tool),
+        Reason,
+        RequestId;
+let dataplane = StorageBlobLogs
+    | where TimeGenerated > ago(lookback)
+    | where StatusCode in (401, 403)
+    | project
+        TimeGenerated,
+        Layer = '3-data-plane',
+        Control = strcat('Storage ', AuthenticationType, ' / Azure RBAC'),
+        Principal = coalesce(RequesterUpn, RequesterObjectId, '(anonymous)'),
+        Target = strcat(AccountName, ' ', OperationName),
+        Reason = tostring(StatusText),
+        RequestId = ClientRequestId;
+union guardrail, gateway, mcp, dataplane
+| order by TimeGenerated desc

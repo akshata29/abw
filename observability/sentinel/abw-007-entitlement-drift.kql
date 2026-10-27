@@ -1,0 +1,13 @@
+// @id entitlement-drift
+// @name ABW-007 Entitlement drift: gateway and MCP allowed, storage RBAC denied the user
+// @severity High
+// @tactics PrivilegeEscalation
+// @frequency PT5M
+// @period PT1H
+// @group Account
+// @entity Account.FullName=UserUpn
+// @details Control=Control Target=Target Reason=Reason RequestId=RequestId
+// @description The request passed the gateway and the MCP server (the token carries the role) but Azure Storage refused the signed-in user: the user lost the Azure RBAC data permission while the token (or the app role) still says yes. Fix the group membership or role assignment; the data-plane layer caught the drift.
+AbwDenials(1h)
+| where Layer == '3-data-plane' and Principal != '(anonymous)'
+| project TimeGenerated, UserUpn = Principal, Control, Target, Reason, RequestId

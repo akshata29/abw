@@ -1,0 +1,17 @@
+// @function AbwUsageByUser
+// @params lookback:timespan = 7d
+// @description How people actually use agents: calls, denials, servers and tools touched per Entra user. Rows with no user are calls that arrived without a user identity (shared-key legacy path).
+AbwMcpAudit(lookback)
+| where Event != 'tool_listed'
+| extend User = iff(isempty(UserUpn), '(no user context)', UserUpn)
+| summarize
+    Calls = count(),
+    Allowed = countif(Decision == 'allow'),
+    Denied = countif(Decision == 'deny'),
+    Servers = make_set(Server, 10),
+    DistinctTools = dcount(Tool),
+    FirstSeen = min(TimeGenerated),
+    LastSeen = max(TimeGenerated)
+    by User
+| extend DenyRatePct = round(100.0 * Denied / Calls, 1)
+| order by Calls desc

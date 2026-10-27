@@ -1,0 +1,14 @@
+// @id legacy-no-identity
+// @name ABW-003 Tool call on the legacy shared-key path (no user identity)
+// @severity Medium
+// @tactics CredentialAccess
+// @frequency PT5M
+// @period PT30M
+// @group AnyAlert
+// @entity CloudApplication.Name=ServerApp
+// @details Server=Server Tool=Tools Calls=Calls RequestId=RequestId
+// @description A tool call was served by the legacy MCP server, which authenticates with a shared subscription key. There is no user, no on-behalf-of and no per-user authorization on this path. Move the consumer to the governed gateway APIs.
+AbwMcpAudit(30m)
+| where Event == 'tool_call' and Server == 'legacy' and isempty(UserUpn) and isempty(UserOid)
+| summarize Calls = count(), Tools = make_set(Tool, 10), FirstSeen = min(TimeGenerated), LastSeen = max(TimeGenerated), RequestId = take_any(RequestId) by Server
+| extend TimeGenerated = LastSeen, ServerApp = strcat('ca-abw-mcp-', Server)

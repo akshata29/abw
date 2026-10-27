@@ -1,0 +1,35 @@
+<!--
+  Protected Resource Metadata (RFC 9728) for one MCP server. Anonymous by design (clients need it BEFORE they have a token).
+  Tokens replaced by Bicep: __SERVER__  __PATH__  __AUDIENCE__  __TITLE__
+-->
+<policies>
+  <inbound>
+    <return-response>
+      <set-status code="200" reason="OK" />
+      <set-header name="Content-Type" exists-action="override">
+        <value>application/json</value>
+      </set-header>
+      <set-header name="Cache-Control" exists-action="override">
+        <value>public, max-age=300</value>
+      </set-header>
+      <set-body>@{
+        return JsonConvert.SerializeObject(new {
+          resource = "{{abw-gateway-url}}/__PATH__/mcp",
+          resource_name = "__TITLE__",
+          authorization_servers = new[] { "https://login.microsoftonline.com/{{abw-tenant-id}}/v2.0" },
+          bearer_methods_supported = new[] { "header" },
+          scopes_supported = new[] { "api://__AUDIENCE__/Tools.Read" }
+        });
+      }</set-body>
+    </return-response>
+  </inbound>
+  <backend>
+    <base />
+  </backend>
+  <outbound>
+    <base />
+  </outbound>
+  <on-error>
+    <base />
+  </on-error>
+</policies>

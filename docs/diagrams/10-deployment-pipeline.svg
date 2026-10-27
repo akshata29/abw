@@ -1,0 +1,617 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="3200" viewBox="0 0 2400 3200" font-family="Helvetica, Arial, sans-serif">
+<rect x="0" y="0" width="2400" height="3200" fill="#ffffff"/>
+<rect x="60" y="190" width="2280" height="2116.5" rx="32" ry="32" fill="#f8f9fa" stroke="#1e1e1e" stroke-width="2"/>
+<rect x="60" y="2346.5" width="1370" height="556.5" rx="32" ry="32" fill="#f8f9fa" stroke="#868e96" stroke-width="2" stroke-dasharray="10 7"/>
+<rect x="1470" y="2346.5" width="870" height="556.5" rx="32" ry="32" fill="#fff5f5" stroke="#e03131" stroke-width="2"/>
+<rect x="76" y="202" width="763.21" height="36.5" rx="9.125" ry="9.125" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="457.61" y="220.25" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">scripts\Deploy-AgentWall.ps1 - one command, resumable. Start with -CheckOnly (read-only)</text>
+<rect x="76" y="2358.5" width="397.14" height="36.5" rx="9.125" ry="9.125" fill="#495057" stroke="#495057" stroke-width="1"/>
+<text x="274.57" y="2376.75" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Human-only steps (outside the one command)</text>
+<rect x="1486" y="2358.5" width="530.22" height="36.5" rx="9.125" ry="9.125" fill="#c92a2a" stroke="#c92a2a" stroke-width="1"/>
+<text x="1751.11" y="2376.75" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Teardown: scripts\teardown.ps1 (not part of the one command)</text>
+<rect x="1172" y="22" width="1168" height="138" rx="32" ry="32" fill="#ffffff" stroke="#adb5bd" stroke-width="1"/>
+<rect x="85" y="254.5" width="406" height="40" rx="10" ry="10" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="2"/>
+<text x="288.00" y="274.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Check and plan</text>
+<rect x="85" y="298.5" width="406" height="180" rx="32" ry="32" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="95.00" y="318.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Prerequisites, az sign-in, configuration and name</text>
+<text x="95.00" y="338.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">checks, permissions, model capacity. Then the plan</text>
+<text x="95.00" y="358.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">table (run, done or skip per step, with estimates) and</text>
+<text x="95.00" y="378.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">what the run will change. -CheckOnly (alias -DryRun)</text>
+<text x="95.00" y="398.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">stops here: strictly read-only, it also compiles the</text>
+<text x="95.00" y="418.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">templates when Bicep is installed; exit 3 if blocked,</text>
+<text x="95.00" y="438.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">else 0.</text>
+<rect x="541" y="254.5" width="406" height="40" rx="10" ry="10" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="2"/>
+<text x="744.00" y="274.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Confirm</text>
+<rect x="541" y="298.5" width="406" height="180" rx="32" ry="32" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="551.00" y="318.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Type the resource group name to start; anything else</text>
+<text x="551.00" y="338.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">cancels. -Yes skips the prompt, and a non-interactive</text>
+<text x="551.00" y="358.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">session needs it.</text>
+<rect x="997" y="254.5" width="406" height="40" rx="10" ry="10" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="2"/>
+<text x="1200.00" y="274.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Run the steps in order</text>
+<rect x="997" y="298.5" width="406" height="180" rx="32" ry="32" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="1007.00" y="318.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">A plain loop over the plan, never parallel. A step</text>
+<text x="1007.00" y="338.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">starts only when its needed files exist (otherwise a</text>
+<text x="1007.00" y="358.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">required step stops the run and an optional one is</text>
+<text x="1007.00" y="378.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">skipped). Up to 3 attempts, only for transient errors,</text>
+<text x="1007.00" y="398.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">60 s apart (90 s for governance). Exit 0 with its file</text>
+<text x="1007.00" y="418.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">missing counts as failed. A failed required step (1-17)</text>
+<text x="1007.00" y="438.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">stops the run; a failed optional step (18-26) only</text>
+<text x="1007.00" y="458.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">warns.</text>
+<rect x="1453" y="254.5" width="406" height="224" rx="32" ry="32" fill="#f8f9fa" stroke="#343a40" stroke-width="2"/>
+<rect x="1909" y="254.5" width="406" height="224" rx="32" ry="32" fill="#f8f9fa" stroke="#343a40" stroke-width="2"/>
+<rect x="85" y="538.5" width="406" height="40" rx="10" ry="10" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="2"/>
+<text x="288.00" y="558.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">preflight</text>
+<rect x="85" y="582.5" width="406" height="180" rx="32" ry="32" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="95.00" y="602.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">scripts\deploy.ps1 -Stage preflight</text>
+<text x="95.00" y="622.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Tagged resource group, resource providers</text>
+<text x="95.00" y="642.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">registered, operator public IP noted (informational).</text>
+<text x="95.00" y="662.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">needs: nothing</text>
+<text x="95.00" y="682.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">writes: preflight.json</text>
+<text x="95.00" y="702.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">est. 1-3 min</text>
+<rect x="541" y="538.5" width="406" height="40" rx="10" ry="10" fill="#6741d9" stroke="#6741d9" stroke-width="2"/>
+<text x="744.00" y="558.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">entra1</text>
+<rect x="541" y="582.5" width="406" height="180" rx="32" ry="32" fill="#f3f0ff" stroke="#6741d9" stroke-width="2"/>
+<text x="551.00" y="602.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">identity\Setup-Entra.ps1 -Phase 1</text>
+<text x="551.00" y="622.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">6 groups, 5 persona users, 5 MCP API apps (scopes,</text>
+<text x="551.00" y="642.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">app roles), 2 client apps, admin consent including the</text>
+<text x="551.00" y="662.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">OBO consent to Storage, Cosmos DB and AI Search.</text>
+<text x="551.00" y="682.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">needs: nothing</text>
+<text x="551.00" y="702.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">writes: entra.json; the agent-client secret goes to</text>
+<text x="551.00" y="722.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">.secrets</text>
+<text x="551.00" y="742.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">est. 3-5 min</text>
+<rect x="997" y="538.5" width="406" height="40" rx="10" ry="10" fill="#1971c2" stroke="#1971c2" stroke-width="2"/>
+<text x="1200.00" y="558.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">network</text>
+<rect x="997" y="582.5" width="406" height="180" rx="32" ry="32" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/>
+<text x="1007.00" y="602.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">scripts\deploy.ps1 -Stage network</text>
+<text x="1007.00" y="622.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">VNet, 4 subnets, NAT gateway, NSG on the APIM</text>
+<text x="1007.00" y="642.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">subnet, 14 private DNS zones (01-network.bicep).</text>
+<text x="1007.00" y="662.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">needs: nothing</text>
+<text x="1007.00" y="682.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">writes: network.json</text>
+<text x="1007.00" y="702.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">est. 2-4 min</text>
+<rect x="1453" y="538.5" width="406" height="40" rx="10" ry="10" fill="#2b8a3e" stroke="#2b8a3e" stroke-width="2"/>
+<text x="1656.00" y="558.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">foundry</text>
+<rect x="1453" y="582.5" width="406" height="180" rx="32" ry="32" fill="#ebfbee" stroke="#2f9e44" stroke-width="2"/>
+<text x="1463.00" y="602.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">scripts\deploy.ps1 -Stage foundry</text>
+<text x="1463.00" y="622.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Foundry account, project, model deployment, agent</text>
+<text x="1463.00" y="642.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">subnet injection, bring-your-own agent stores,</text>
+<text x="1463.00" y="662.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">AMPLS, Log Analytics, App Insights (vendored</text>
+<text x="1463.00" y="682.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">template).</text>
+<text x="1463.00" y="702.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">needs: network.json</text>
+<text x="1463.00" y="722.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">writes: foundry.json</text>
+<text x="1463.00" y="742.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">est. 15-20 min</text>
+<rect x="1909" y="538.5" width="406" height="40" rx="10" ry="10" fill="#6741d9" stroke="#6741d9" stroke-width="2"/>
+<text x="2112.00" y="558.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">foundryrbac</text>
+<rect x="1909" y="582.5" width="406" height="180" rx="32" ry="32" fill="#f3f0ff" stroke="#6741d9" stroke-width="2"/>
+<text x="1919.00" y="602.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">scripts\deploy.ps1 -Stage foundryrbac</text>
+<text x="1919.00" y="622.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Foundry User for the operator on the account;</text>
+<text x="1919.00" y="642.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Foundry Agent Consumer for the persona group on</text>
+<text x="1919.00" y="662.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">the project (02-foundry-rbac.bicep).</text>
+<text x="1919.00" y="682.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">needs: foundry.json, entra.json</text>
+<text x="1919.00" y="702.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">writes: foundryrbac.json</text>
+<text x="1919.00" y="722.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">est. 1-3 min</text>
+<rect x="85" y="822.5" width="406" height="40" rx="10" ry="10" fill="#d9480f" stroke="#d9480f" stroke-width="2"/>
+<text x="288.00" y="842.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">platform</text>
+<rect x="85" y="866.5" width="406" height="180" rx="32" ry="32" fill="#fff4e6" stroke="#e8590c" stroke-width="2"/>
+<text x="95.00" y="886.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">scripts\deploy.ps1 -Stage platform</text>
+<text x="95.00" y="906.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">6 managed identities, Key Vault, ACR, Storage with</text>
+<text x="95.00" y="926.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">WORM audit, Cosmos DB, AI Search, 2 Container</text>
+<text x="95.00" y="946.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Apps environments, RBAC, private endpoints</text>
+<text x="95.00" y="966.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">(03-platform.bicep).</text>
+<text x="95.00" y="986.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">needs: network.json, entra.json</text>
+<text x="95.00" y="1006.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">writes: platform.json</text>
+<text x="95.00" y="1026.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">est. 10-15 min</text>
+<rect x="541" y="822.5" width="406" height="40" rx="10" ry="10" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="2"/>
+<text x="744.00" y="842.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">images</text>
+<rect x="541" y="866.5" width="406" height="180" rx="32" ry="32" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="551.00" y="886.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">scripts\build-images.ps1 -Target mcp</text>
+<text x="551.00" y="906.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">ACR Tasks builds the abw-mcp image (az acr build,</text>
+<text x="551.00" y="926.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">no local Docker).</text>
+<text x="551.00" y="946.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">needs: platform.json (the ACR)</text>
+<text x="551.00" y="966.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">writes: images.json</text>
+<text x="551.00" y="986.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">est. 5-8 min</text>
+<rect x="997" y="822.5" width="406" height="40" rx="10" ry="10" fill="#2b8a3e" stroke="#2b8a3e" stroke-width="2"/>
+<text x="1200.01" y="842.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">apps</text>
+<rect x="997" y="866.5" width="406" height="180" rx="32" ry="32" fill="#ebfbee" stroke="#2f9e44" stroke-width="2"/>
+<text x="1007.00" y="886.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">scripts\deploy.ps1 -Stage apps</text>
+<text x="1007.00" y="906.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">6 MCP servers as Container Apps from one image</text>
+<text x="1007.00" y="926.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">(04-apps.bicep); creates the vendor key secret.</text>
+<text x="1007.00" y="946.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">needs: platform.json, entra.json, images.json</text>
+<text x="1007.00" y="966.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">writes: apps.json</text>
+<text x="1007.00" y="986.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">est. 5-8 min</text>
+<rect x="1453" y="822.5" width="406" height="40" rx="10" ry="10" fill="#6741d9" stroke="#6741d9" stroke-width="2"/>
+<text x="1656.00" y="842.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">entra2</text>
+<rect x="1453" y="866.5" width="406" height="180" rx="32" ry="32" fill="#f3f0ff" stroke="#6741d9" stroke-width="2"/>
+<text x="1463.00" y="886.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">identity\Setup-Entra.ps1 -Phase 2</text>
+<text x="1463.00" y="906.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Federated credentials let 4 managed identities</text>
+<text x="1463.00" y="926.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">(research, wall, actions, private) act as their API</text>
+<text x="1463.00" y="946.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">apps: OBO without a secret.</text>
+<text x="1463.00" y="966.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">needs: platform.json, entra.json</text>
+<text x="1463.00" y="986.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">writes: no file of its own (recorded in</text>
+<text x="1463.00" y="1006.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">deploy-state.json)</text>
+<text x="1463.00" y="1026.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">est. 1-2 min</text>
+<rect x="1909" y="822.5" width="406" height="40" rx="10" ry="10" fill="#1971c2" stroke="#1971c2" stroke-width="2"/>
+<text x="2111.99" y="842.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">apim</text>
+<rect x="1909" y="866.5" width="406" height="180" rx="32" ry="32" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/>
+<text x="1919.00" y="886.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">scripts\deploy.ps1 -Stage apim</text>
+<text x="1919.00" y="906.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">API Management StandardV2 with outbound VNet</text>
+<text x="1919.00" y="926.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">integration and a private endpoint, named values,</text>
+<text x="1919.00" y="946.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">logger, API Center (05-apim.bicep). The long one.</text>
+<text x="1919.00" y="966.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">needs: network.json, entra.json, foundry.json</text>
+<text x="1919.00" y="986.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">writes: apim.json</text>
+<text x="1919.00" y="1006.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">est. 35-50 min</text>
+<rect x="85" y="1106.5" width="406" height="40" rx="10" ry="10" fill="#1971c2" stroke="#1971c2" stroke-width="2"/>
+<text x="288.00" y="1126.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">apis</text>
+<rect x="85" y="1150.5" width="406" height="180" rx="32" ry="32" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/>
+<text x="95.00" y="1170.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">scripts\deploy.ps1 -Stage apis</text>
+<text x="95.00" y="1190.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">MCP APIs for research, wall, actions and vendor with</text>
+<text x="95.00" y="1210.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">the mcp-jwt policy, the /legacy API with a subscription</text>
+<text x="95.00" y="1230.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">key, protected-resource metadata</text>
+<text x="95.00" y="1250.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">(05-apim-apis.bicep).</text>
+<text x="95.00" y="1270.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">needs: apps.json, entra.json, apim.json</text>
+<text x="95.00" y="1290.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">writes: apis.json</text>
+<text x="95.00" y="1310.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">est. 3-6 min</text>
+<rect x="541" y="1106.5" width="406" height="40" rx="10" ry="10" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="2"/>
+<text x="744.00" y="1126.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">images-seed</text>
+<rect x="541" y="1150.5" width="406" height="180" rx="32" ry="32" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="551.00" y="1170.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">scripts\build-images.ps1 -Target seed</text>
+<text x="551.00" y="1190.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">ACR Tasks builds the abw-seed image.</text>
+<text x="551.00" y="1210.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">needs: platform.json</text>
+<text x="551.00" y="1230.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">writes: images-seed.json</text>
+<text x="551.00" y="1250.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">est. 3-6 min</text>
+<rect x="997" y="1106.5" width="406" height="40" rx="10" ry="10" fill="#d9480f" stroke="#d9480f" stroke-width="2"/>
+<text x="1200.01" y="1126.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">seed</text>
+<rect x="997" y="1150.5" width="406" height="180" rx="32" ry="32" fill="#fff4e6" stroke="#e8590c" stroke-width="2"/>
+<text x="1007.00" y="1170.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">scripts\deploy.ps1 -Stage seed</text>
+<text x="1007.00" y="1190.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">An in-VNet Container Apps job loads the synthetic</text>
+<text x="1007.00" y="1210.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">data over private endpoints; the stage polls it for up to</text>
+<text x="1007.00" y="1230.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">12 min (04b-seed-job.bicep).</text>
+<text x="1007.00" y="1250.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">needs: platform.json, images-seed.json</text>
+<text x="1007.00" y="1270.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">writes: seed.json</text>
+<text x="1007.00" y="1290.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">est. 5-12 min</text>
+<rect x="1453" y="1106.5" width="406" height="40" rx="10" ry="10" fill="#6741d9" stroke="#6741d9" stroke-width="2"/>
+<text x="1656.00" y="1126.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">baseline</text>
+<rect x="1453" y="1150.5" width="406" height="180" rx="32" ry="32" fill="#f3f0ff" stroke="#6741d9" stroke-width="2"/>
+<text x="1463.00" y="1170.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">identity\Use-AdminAsPersona.ps1 -As wes -Also tara</text>
+<text x="1463.00" y="1190.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Role baseline: the signed-in admin mirrors the roles</text>
+<text x="1463.00" y="1210.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">and groups of wes and tara, so agent beats, which</text>
+<text x="1463.00" y="1230.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">run as the operator, have them before the first</text>
+<text x="1463.00" y="1250.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">consent.</text>
+<text x="1463.00" y="1270.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">needs: entra.json</text>
+<text x="1463.00" y="1290.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">writes: roles and groups in Entra, no file</text>
+<text x="1463.00" y="1310.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">est. 1-2 min</text>
+<rect x="1909" y="1106.5" width="406" height="40" rx="10" ry="10" fill="#2b8a3e" stroke="#2b8a3e" stroke-width="2"/>
+<text x="2112.00" y="1126.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">connections</text>
+<rect x="1909" y="1150.5" width="406" height="180" rx="32" ry="32" fill="#ebfbee" stroke="#2f9e44" stroke-width="2"/>
+<text x="1919.00" y="1170.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">scripts\foundry-connections.ps1</text>
+<text x="1919.00" y="1190.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">6 Foundry connections (5 OAuth, 1 legacy key), then</text>
+<text x="1919.00" y="1210.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">registers the Foundry redirect URLs on the agent</text>
+<text x="1919.00" y="1230.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">client.</text>
+<text x="1919.00" y="1250.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">needs: entra.json, apis.json, apps.json, foundry.json</text>
+<text x="1919.00" y="1270.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">and the agent-client secret</text>
+<text x="1919.00" y="1290.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">writes: connections.json</text>
+<text x="1919.00" y="1310.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">est. 5-10 min</text>
+<rect x="85" y="1390.5" width="406" height="40" rx="10" ry="10" fill="#2b8a3e" stroke="#2b8a3e" stroke-width="2"/>
+<text x="288.00" y="1410.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">agents</text>
+<rect x="85" y="1434.5" width="406" height="240" rx="32" ry="32" fill="#ebfbee" stroke="#2f9e44" stroke-width="2"/>
+<text x="95.00" y="1454.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">src\agent\create_agents.py</text>
+<text x="95.00" y="1474.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Publishes 3 agents: abw-poc-legacy, abw-wall-desk</text>
+<text x="95.00" y="1494.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">and abw-wall-desk-redteam (no guardrail yet).</text>
+<text x="95.00" y="1514.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">needs: foundry.json, connections.json</text>
+<text x="95.00" y="1534.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">writes: agents.json</text>
+<text x="95.00" y="1554.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">est. 2-4 min</text>
+<rect x="541" y="1390.5" width="406" height="40" rx="10" ry="10" fill="#ffd43b" stroke="#ffd43b" stroke-width="2"/>
+<text x="744.00" y="1410.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">governance</text>
+<rect x="541" y="1434.5" width="406" height="240" rx="32" ry="32" fill="#fff9db" stroke="#f08c00" stroke-width="2"/>
+<text x="551.00" y="1454.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">scripts\deploy.ps1 -Stage governance</text>
+<text x="551.00" y="1474.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Policy initiative and assignment, exemptions, the</text>
+<text x="551.00" y="1494.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">guardrail abw-agent-guardrails, diagnostics; then the</text>
+<text x="551.00" y="1514.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">observability pack: KQL function pack, 9 Sentinel</text>
+<text x="551.00" y="1534.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">rules, Cockpit workbook, 3 ops alerts (-Stage</text>
+<text x="551.00" y="1554.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">observability re-runs only the pack). Retries after 90 s</text>
+<text x="551.00" y="1574.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">if a role assignment has not propagated.</text>
+<text x="551.00" y="1594.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">needs: foundry.json, platform.json</text>
+<text x="551.00" y="1614.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">writes: governance.json, observability.json,</text>
+<text x="551.00" y="1634.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">policy.json</text>
+<text x="551.00" y="1654.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">est. 8-12 min</text>
+<rect x="997" y="1390.5" width="406" height="40" rx="10" ry="10" fill="#2b8a3e" stroke="#2b8a3e" stroke-width="2"/>
+<text x="1200.00" y="1410.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">guardrail (optional)</text>
+<rect x="997" y="1434.5" width="406" height="240" rx="32" ry="32" fill="#ebfbee" stroke="#2f9e44" stroke-width="2"/>
+<text x="1007.00" y="1454.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">src\agent\create_agents.py --rai abw-agent-guardrails</text>
+<text x="1007.00" y="1474.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Attaches the guardrail to abw-wall-desk and</text>
+<text x="1007.00" y="1494.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">publishes a 4th agent,</text>
+<text x="1007.00" y="1514.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">abw-wall-desk-redteam-shielded. Needs the guardrail</text>
+<text x="1007.00" y="1534.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">that step 17 creates.</text>
+<text x="1007.00" y="1554.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">needs: agents.json, governance.json</text>
+<text x="1007.00" y="1574.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">writes: agents.json (adds the shielded agent)</text>
+<text x="1007.00" y="1594.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">est. 1-3 min</text>
+<text x="1007.00" y="1614.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">off with -SkipGuardrail</text>
+<rect x="1453" y="1390.5" width="406" height="40" rx="10" ry="10" fill="#1971c2" stroke="#1971c2" stroke-width="2"/>
+<text x="1656.01" y="1410.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">frontdoor (optional)</text>
+<rect x="1453" y="1434.5" width="406" height="240" rx="32" ry="32" fill="#e7f5ff" stroke="#1971c2" stroke-width="2"/>
+<text x="1463.00" y="1454.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">scripts\deploy.ps1 -Stage frontdoor</text>
+<text x="1463.00" y="1474.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">The /agents API on APIM: JWT check, kill switch, rate</text>
+<text x="1463.00" y="1494.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">limit and per-user token budget</text>
+<text x="1463.00" y="1514.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">(08-agent-frontdoor.bicep).</text>
+<text x="1463.00" y="1534.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">needs: apim.json</text>
+<text x="1463.00" y="1554.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">writes: frontdoor.json</text>
+<text x="1463.00" y="1574.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">est. 5-10 min</text>
+<text x="1463.00" y="1594.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">off with -SkipFrontDoor</text>
+<rect x="1909" y="1390.5" width="406" height="40" rx="10" ry="10" fill="#ffd43b" stroke="#ffd43b" stroke-width="2"/>
+<text x="2112.00" y="1410.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">budget (optional)</text>
+<rect x="1909" y="1434.5" width="406" height="240" rx="32" ry="32" fill="#fff9db" stroke="#f08c00" stroke-width="2"/>
+<text x="1919.00" y="1454.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">scripts\deploy.ps1 -Stage budget</text>
+<text x="1919.00" y="1474.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">USD 1,200 a month on the resource group by default.</text>
+<text x="1919.00" y="1494.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Alerts at 50, 80 and 100 % actual and 100 %</text>
+<text x="1919.00" y="1514.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">forecast. An alert, not a cap (09-budget.bicep).</text>
+<text x="1919.00" y="1534.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">needs: nothing</text>
+<text x="1919.00" y="1554.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">writes: budget.json</text>
+<text x="1919.00" y="1574.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">est. 1-2 min</text>
+<text x="1919.00" y="1594.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">off with -SkipBudget</text>
+<rect x="85" y="1734.5" width="406" height="40" rx="10" ry="10" fill="#2b8a3e" stroke="#2b8a3e" stroke-width="2"/>
+<text x="288.00" y="1754.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">jumpbox (optional)</text>
+<rect x="85" y="1778.5" width="406" height="220" rx="32" ry="32" fill="#ebfbee" stroke="#2f9e44" stroke-width="2"/>
+<text x="95.00" y="1798.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">scripts\jumpbox.ps1</text>
+<text x="95.00" y="1818.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">snet-jump with its NSG, a Windows Server 2022 VM</text>
+<text x="95.00" y="1838.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">with no public IP, Bastion Developer, auto-shutdown.</text>
+<text x="95.00" y="1858.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">needs: network.json</text>
+<text x="95.00" y="1878.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">writes: jumpbox.json (deployedAt; no secrets)</text>
+<text x="95.00" y="1898.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">est. 10-15 min</text>
+<text x="95.00" y="1918.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">off with -SkipJumpBox</text>
+<rect x="541" y="1734.5" width="406" height="40" rx="10" ry="10" fill="#2b8a3e" stroke="#2b8a3e" stroke-width="2"/>
+<text x="744.00" y="1754.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">console (optional)</text>
+<rect x="541" y="1778.5" width="406" height="220" rx="32" ry="32" fill="#ebfbee" stroke="#2f9e44" stroke-width="2"/>
+<text x="551.00" y="1798.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">scripts\jumpbox-console.ps1</text>
+<text x="551.00" y="1818.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Installs the Demo Console on the VM: tools, package,</text>
+<text x="551.00" y="1838.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">venv, launcher, verify. Persona files only with</text>
+<text x="551.00" y="1858.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">-IncludePersonaFiles.</text>
+<text x="551.00" y="1878.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">needs: jumpbox.json</text>
+<text x="551.00" y="1898.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">writes: jumpbox.json (consoleOnVm)</text>
+<text x="551.00" y="1918.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">est. 15-25 min</text>
+<text x="551.00" y="1938.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">off with -SkipJumpBox or -SkipConsole; skipped if</text>
+<text x="551.00" y="1958.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">demo\evidence-scrubbed\scoreboard.json is missing</text>
+<rect x="997" y="1734.5" width="406" height="40" rx="10" ry="10" fill="#0b7285" stroke="#0b7285" stroke-width="2"/>
+<text x="1200.00" y="1754.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">extras-defender (optional)</text>
+<rect x="997" y="1778.5" width="406" height="220" rx="32" ry="32" fill="#e3fafc" stroke="#0b7285" stroke-width="2" stroke-dasharray="10 7"/>
+<text x="1007.00" y="1798.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">scripts\extras-defender-sentinel.ps1</text>
+<text x="1007.00" y="1818.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Sentinel connector and incident rule for Defender for</text>
+<text x="1007.00" y="1838.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Cloud, then a read-back of alerts, Sentinel rows and</text>
+<text x="1007.00" y="1858.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Purview reachability. No paid Defender plan is</text>
+<text x="1007.00" y="1878.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">enabled.</text>
+<text x="1007.00" y="1898.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">needs: platform.json</text>
+<text x="1007.00" y="1918.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">writes: trackb-defender.json</text>
+<text x="1007.00" y="1938.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">est. 2-5 min</text>
+<text x="1007.00" y="1958.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">off by default: add -WithExtras</text>
+<rect x="1453" y="1734.5" width="406" height="40" rx="10" ry="10" fill="#6741d9" stroke="#6741d9" stroke-width="2"/>
+<text x="1656.00" y="1754.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">extras-identity (optional)</text>
+<rect x="1453" y="1778.5" width="406" height="220" rx="32" ry="32" fill="#f3f0ff" stroke="#6741d9" stroke-width="2" stroke-dasharray="10 7"/>
+<text x="1463.00" y="1798.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">scripts\extras-agent-identity.ps1</text>
+<text x="1463.00" y="1818.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">-SkipConditionalAccess</text>
+<text x="1463.00" y="1838.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Records the Entra Agent ID and grants the Agent 365</text>
+<text x="1463.00" y="1858.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">gateway role on APIM. The script alone also creates</text>
+<text x="1463.00" y="1878.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">ONE report-only Conditional Access policy; the</text>
+<text x="1463.00" y="1898.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">orchestrator skips it.</text>
+<text x="1463.00" y="1918.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">needs: apim.json, entra.json</text>
+<text x="1463.00" y="1938.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">writes: trackb-identity.json</text>
+<text x="1463.00" y="1958.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">est. 1-3 min</text>
+<text x="1463.00" y="1978.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">off by default: add -WithExtras</text>
+<rect x="1909" y="1734.5" width="406" height="40" rx="10" ry="10" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="2"/>
+<text x="2112.00" y="1754.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">proofs (optional)</text>
+<rect x="1909" y="1778.5" width="406" height="220" rx="32" ry="32" fill="#ffffff" stroke="#1e1e1e" stroke-width="2" stroke-dasharray="10 7"/>
+<text x="1919.00" y="1798.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">demo\prove.py</text>
+<text x="1919.00" y="1818.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">The 18 proofs (P00-P17); they call the gateway.</text>
+<text x="1919.00" y="1838.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">needs: agents.json, governance.json</text>
+<text x="1919.00" y="1858.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">writes: demo\evidence\prove-&lt;utc&gt;.json; recorded in</text>
+<text x="1919.00" y="1878.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">deploy-state.json</text>
+<text x="1919.00" y="1898.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">est. 30-40 min</text>
+<text x="1919.00" y="1918.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">off by default: add -RunProofs</text>
+<rect x="85" y="2058.5" width="406" height="40" rx="10" ry="10" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="2"/>
+<text x="288.00" y="2078.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">scoreboard (optional)</text>
+<rect x="85" y="2102.5" width="406" height="180" rx="32" ry="32" fill="#ffffff" stroke="#1e1e1e" stroke-width="2" stroke-dasharray="10 7"/>
+<text x="95.00" y="2122.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">demo\scoreboard.py --check</text>
+<text x="95.00" y="2142.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Prints the table, writes the scoreboard and exits 1</text>
+<text x="95.00" y="2162.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">unless every proof P00-P17 has a latest PASS.</text>
+<text x="95.00" y="2182.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">needs: nothing</text>
+<text x="95.00" y="2202.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">writes: demo\evidence\SCOREBOARD.md and</text>
+<text x="95.00" y="2222.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">scoreboard.json</text>
+<text x="95.00" y="2242.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">est. 1 min</text>
+<text x="95.00" y="2262.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">off by default: add -RunProofs</text>
+<rect x="541" y="2058.5" width="406" height="40" rx="10" ry="10" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="2"/>
+<text x="744.00" y="2078.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Verify (read-only)</text>
+<rect x="541" y="2102.5" width="406" height="180" rx="32" ry="32" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="551.00" y="2122.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Resources in the group, Container Apps provisioned,</text>
+<text x="551.00" y="2142.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">API Management Succeeded, the Foundry model</text>
+<text x="551.00" y="2162.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">deployment, 3 or more agents, the policy assignment,</text>
+<text x="551.00" y="2182.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Sentinel rules, the KQL function pack, the workbook,</text>
+<text x="551.00" y="2202.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">and Entra counts (7 apps, 6 groups, 5 users). The</text>
+<text x="551.00" y="2222.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">result is saved in deploy-state.json.</text>
+<rect x="997" y="2058.5" width="406" height="40" rx="10" ry="10" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="2"/>
+<text x="1200.00" y="2078.50" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">What still needs a human</text>
+<rect x="997" y="2102.5" width="406" height="180" rx="32" ry="32" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="1007.00" y="2122.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Printed at the end: persona sign-in and Foundry</text>
+<text x="1007.00" y="2142.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">consents, the optional admin-portal switches, the</text>
+<text x="1007.00" y="2162.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">optional proof run, the jump-box sign-in and</text>
+<text x="1007.00" y="2182.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">teardown. They are the grey zone below.</text>
+<rect x="1453" y="2058.5" width="406" height="224" rx="32" ry="32" fill="#f8f9fa" stroke="#343a40" stroke-width="2"/>
+<rect x="1909" y="2058.5" width="406" height="224" rx="32" ry="32" fill="#f8f9fa" stroke="#343a40" stroke-width="2"/>
+<rect x="85" y="2411" width="645" height="40" rx="10" ry="10" fill="#495057" stroke="#495057" stroke-width="2"/>
+<text x="407.50" y="2431.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Persona MFA and TOTP secret</text>
+<rect x="85" y="2455" width="645" height="160" rx="32" ry="32" fill="#f8f9fa" stroke="#868e96" stroke-width="2" stroke-dasharray="10 7"/>
+<text x="95.00" y="2475.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">priya, wes and tara each enrol an authenticator secret once: about 12 min each; the</text>
+<text x="95.00" y="2495.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">whole one-time manual prep is about 40 min. identity\Persona-Totp.py stores the secret</text>
+<text x="95.00" y="2515.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">and produces the codes.</text>
+<text x="95.00" y="2535.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Path B needs none of it: the admin mirrors a persona</text>
+<text x="95.00" y="2555.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">(identity\Use-AdminAsPersona.ps1; step 14 does it for wes and tara).</text>
+<text x="95.00" y="2575.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">When: after step 2, once the users exist.</text>
+<rect x="760" y="2411" width="645" height="40" rx="10" ry="10" fill="#495057" stroke="#495057" stroke-width="2"/>
+<text x="1082.50" y="2431.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">OAuth consent per persona</text>
+<rect x="760" y="2455" width="645" height="160" rx="32" ry="32" fill="#f8f9fa" stroke="#868e96" stroke-width="2" stroke-dasharray="10 7"/>
+<text x="770.00" y="2475.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Each persona consents once to each of the 5 OAuth connections: the first agent call</text>
+<text x="770.00" y="2495.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">returns a consent link, valid about 10 min. Foundry then keeps the token 60-90 min, so</text>
+<text x="770.00" y="2515.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">a role change reaches the agent only with the next token.</text>
+<text x="770.00" y="2535.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Apply the role baseline (step 14) first: a role-less first consent leaves the agent with</text>
+<text x="770.00" y="2555.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">empty tool lists long after the roles are fixed (the token lives 60-90 min, the tool list</text>
+<text x="770.00" y="2575.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">about 15-20 min).</text>
+<text x="770.00" y="2595.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">When: after steps 15 and 16.</text>
+<rect x="85" y="2639" width="645" height="40" rx="10" ry="10" fill="#495057" stroke="#495057" stroke-width="2"/>
+<text x="407.50" y="2659.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Admin-portal switches (optional)</text>
+<rect x="85" y="2683" width="645" height="120" rx="30" ry="30" fill="#f8f9fa" stroke="#868e96" stroke-width="2" stroke-dasharray="10 7"/>
+<text x="95.00" y="2703.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Three admin-portal switches: the Agent 365 gateway (the tenant-level consent),</text>
+<text x="95.00" y="2723.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Defender XDR 'Security for AI agents' and Purview 'DSPM for AI'. Click-paths:</text>
+<text x="95.00" y="2743.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">docs\DEMO-GUIDE.md, section A6. Teardown does not reverse them.</text>
+<text x="95.00" y="2763.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">When: optional, no fixed place in the order.</text>
+<rect x="760" y="2639" width="645" height="40" rx="10" ry="10" fill="#495057" stroke="#495057" stroke-width="2"/>
+<text x="1082.50" y="2659.00" font-size="16" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">VM sign-in (jump box)</text>
+<rect x="760" y="2683" width="645" height="120" rx="30" ry="30" fill="#f8f9fa" stroke="#868e96" stroke-width="2" stroke-dasharray="10 7"/>
+<text x="770.00" y="2703.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Start-JumpBox.bat starts the VM, opens its portal page and copies the admin password</text>
+<text x="770.00" y="2723.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">for 120 s. Then Connect &gt; Bastion, start the 'ABW Demo Console' desktop shortcut</text>
+<text x="770.00" y="2743.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">and, on the first start, sign in once with a device code (az login) as the admin. Bastion</text>
+<text x="770.00" y="2763.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Developer allows one session at a time.</text>
+<text x="770.00" y="2783.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">When: after the console (step 22) is installed on the VM.</text>
+<rect x="1534" y="2411" width="786" height="40" rx="10" ry="10" fill="#ffe3e3" stroke="#e03131" stroke-width="2"/>
+<text x="1546.00" y="2431.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Report-only Conditional Access policy and Agent 365 role grant removed</text>
+<rect x="1534" y="2459" width="786" height="40" rx="10" ry="10" fill="#ffe3e3" stroke="#e03131" stroke-width="2"/>
+<text x="1546.00" y="2479.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Foundry agent capability hosts (they hold the agent subnet)</text>
+<rect x="1534" y="2507" width="786" height="40" rx="10" ry="10" fill="#ffe3e3" stroke="#e03131" stroke-width="2"/>
+<text x="1546.00" y="2527.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Log Analytics workspace force-deleted (else its name is held 14 days)</text>
+<rect x="1534" y="2555" width="786" height="40" rx="10" ry="10" fill="#ffe3e3" stroke="#e03131" stroke-width="2"/>
+<text x="1546.00" y="2575.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Resource group deleted, everything in it: 20-40 min</text>
+<rect x="1534" y="2603" width="786" height="40" rx="10" ry="10" fill="#ffe3e3" stroke="#e03131" stroke-width="2"/>
+<text x="1546.00" y="2623.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Soft-deleted Foundry account, Key Vault and APIM purged</text>
+<rect x="1534" y="2651" width="786" height="40" rx="10" ry="10" fill="#ffe3e3" stroke="#e03131" stroke-width="2"/>
+<text x="1546.00" y="2671.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Subscription policy: the abw-agent-platform-controls initiative and its definitions</text>
+<rect x="1534" y="2699" width="786" height="40" rx="10" ry="10" fill="#ffe3e3" stroke="#e03131" stroke-width="2"/>
+<text x="1546.00" y="2719.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Entra: demo users, sg-abw-* groups and abw-* apps</text>
+<rect x="1534" y="2747" width="786" height="40" rx="10" ry="10" fill="#ffe3e3" stroke="#e03131" stroke-width="2"/>
+<text x="1546.00" y="2767.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Local secrets and generated state (only with -CleanLocal)</text>
+<rect x="60" y="2943" width="1560" height="177.5" rx="32" ry="32" fill="#f8f9fa" stroke="#343a40" stroke-width="2"/>
+<path d="M 495.00 388.50 L 537.00 388.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 523.63 381.69 L 537.00 388.50 L 523.63 395.31" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 951.00 388.50 L 993.00 388.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 979.63 381.69 L 993.00 388.50 L 979.63 395.31" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 495.00 672.50 L 537.00 672.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 523.63 665.69 L 537.00 672.50 L 523.63 679.31" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 951.00 672.50 L 993.00 672.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 979.63 665.69 L 993.00 672.50 L 979.63 679.31" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1407.00 672.50 L 1449.00 672.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1435.63 665.69 L 1449.00 672.50 L 1435.63 679.31" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1863.00 672.50 L 1905.00 672.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1891.63 665.69 L 1905.00 672.50 L 1891.63 679.31" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 495.00 956.50 L 537.00 956.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 523.63 949.69 L 537.00 956.50 L 523.63 963.31" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 951.00 956.50 L 993.00 956.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 979.63 949.69 L 993.00 956.50 L 979.63 963.31" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1407.00 956.50 L 1449.00 956.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1435.63 949.69 L 1449.00 956.50 L 1435.63 963.31" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1863.00 956.50 L 1905.00 956.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1891.63 949.69 L 1905.00 956.50 L 1891.63 963.31" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 495.00 1240.50 L 537.00 1240.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 523.63 1233.69 L 537.00 1240.50 L 523.63 1247.31" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 951.00 1240.50 L 993.00 1240.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 979.63 1233.69 L 993.00 1240.50 L 979.63 1247.31" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1407.00 1240.50 L 1449.00 1240.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1435.63 1233.69 L 1449.00 1240.50 L 1435.63 1247.31" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1863.00 1240.50 L 1905.00 1240.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1891.63 1233.69 L 1905.00 1240.50 L 1891.63 1247.31" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 495.00 1554.50 L 537.00 1554.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 523.63 1547.69 L 537.00 1554.50 L 523.63 1561.31" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 951.00 1554.50 L 993.00 1554.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 979.63 1547.69 L 993.00 1554.50 L 979.63 1561.31" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1407.00 1554.50 L 1449.00 1554.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1435.63 1547.69 L 1449.00 1554.50 L 1435.63 1561.31" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1863.00 1554.50 L 1905.00 1554.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1891.63 1547.69 L 1905.00 1554.50 L 1891.63 1561.31" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 495.00 1888.50 L 537.00 1888.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 523.63 1881.69 L 537.00 1888.50 L 523.63 1895.31" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 951.00 1888.50 L 993.00 1888.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 979.63 1881.69 L 993.00 1888.50 L 979.63 1895.31" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1407.00 1888.50 L 1449.00 1888.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1435.63 1881.69 L 1449.00 1888.50 L 1435.63 1895.31" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1863.00 1888.50 L 1905.00 1888.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1891.63 1881.69 L 1905.00 1888.50 L 1891.63 1895.31" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 495.00 2192.50 L 537.00 2192.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 523.63 2185.69 L 537.00 2192.50 L 523.63 2199.31" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 951.00 2192.50 L 993.00 2192.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 979.63 2185.69 L 993.00 2192.50 L 979.63 2199.31" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1200.00 482.50 L 1200.00 508.50 L 288.00 508.50 L 288.00 534.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 294.81 521.13 L 288.00 534.50 L 281.19 521.13" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2112.00 766.50 L 2112.00 792.50 L 288.00 792.50 L 288.00 818.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 294.81 805.13 L 288.00 818.50 L 281.19 805.13" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2112.00 1050.50 L 2112.00 1076.50 L 288.00 1076.50 L 288.00 1102.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 294.81 1089.13 L 288.00 1102.50 L 281.19 1089.13" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2112.00 1334.50 L 2112.00 1360.50 L 288.00 1360.50 L 288.00 1386.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 294.81 1373.13 L 288.00 1386.50 L 281.19 1373.13" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2112.00 1678.50 L 2112.00 1704.50 L 288.00 1704.50 L 288.00 1730.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 294.81 1717.13 L 288.00 1730.50 L 281.19 1717.13" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2112.00 2002.50 L 2112.00 2028.50 L 288.00 2028.50 L 288.00 2054.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 294.81 2041.13 L 288.00 2054.50 L 281.19 2041.13" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="60.00" y="56.50" font-size="36" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Deployment pipeline: 26 steps, state files, human steps</text>
+<text x="60.00" y="98.50" font-size="20" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">One command wraps the machine steps and resumes after a failure; people do the consents, MFA and sign-ins</text>
+<text x="60.00" y="3176.00" font-size="16" fill="#868e96" text-anchor="start" dominant-baseline="central" xml:space="preserve">Agents Behind the Wall - diagram 10 of 13 - generated by docs/diagrams/build_diagrams.py</text>
+<text x="1186.00" y="43.25" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Legend</text>
+<rect x="1186" y="61" width="36" height="22" rx="5.5" ry="5.5" fill="#e5dbff" stroke="#6741d9" stroke-width="2"/>
+<text x="1232.00" y="71.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Identity (Entra ID)</text>
+<rect x="1186" y="91" width="36" height="22" rx="5.5" ry="5.5" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="1232.00" y="101.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Network, API gateway (APIM)</text>
+<rect x="1186" y="121" width="36" height="22" rx="5.5" ry="5.5" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="1232.00" y="131.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Compute (agents, MCP servers)</text>
+<rect x="1476" y="61" width="36" height="22" rx="5.5" ry="5.5" fill="#ffe8cc" stroke="#e8590c" stroke-width="2"/>
+<text x="1522.00" y="71.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Data stores</text>
+<rect x="1476" y="91" width="36" height="22" rx="5.5" ry="5.5" fill="#c5f6fa" stroke="#0b7285" stroke-width="2"/>
+<text x="1522.00" y="101.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Observability</text>
+<rect x="1476" y="121" width="36" height="22" rx="5.5" ry="5.5" fill="#ffe3e3" stroke="#e03131" stroke-width="2"/>
+<text x="1522.00" y="131.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Deny, risk, kill switch</text>
+<rect x="1766" y="61" width="36" height="22" rx="5.5" ry="5.5" fill="#f1f3f5" stroke="#868e96" stroke-width="2" stroke-dasharray="10 7"/>
+<text x="1812.00" y="71.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Human / optional (dashed)</text>
+<rect x="1766" y="91" width="36" height="22" rx="5.5" ry="5.5" fill="#fff3bf" stroke="#f08c00" stroke-width="2"/>
+<text x="1812.00" y="101.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Azure Policy, governance</text>
+<rect x="1766" y="121" width="36" height="22" rx="5.5" ry="5.5" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="1812.00" y="131.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">People, client tools</text>
+<path d="M 2056.00 72.00 L 2092.00 72.00" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2078.63 65.19 L 2092.00 72.00 L 2078.63 78.81" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="2102.00" y="71.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Allowed flow</text>
+<path d="M 2056.00 102.00 L 2092.00 102.00" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2078.63 95.19 L 2092.00 102.00 L 2078.63 108.81" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="2102.00" y="101.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Denied exit / risk path</text>
+<path d="M 2056.00 132.00 L 2092.00 132.00" fill="none" stroke="#868e96" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="10 7"/>
+<path d="M 2078.63 125.19 L 2092.00 132.00 L 2078.63 138.81" fill="none" stroke="#868e96" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="2102.00" y="131.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Manual step (dashed)</text>
+<text x="1467.00" y="281.00" font-size="20" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">How to read the cards</text>
+<text x="1467.00" y="311.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Chip = the step id that -From, -Only, -Until and -Skip</text>
+<text x="1467.00" y="331.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">take. Number = run order. Letters A-E = the</text>
+<text x="1467.00" y="351.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">orchestrator's own phases. est. = planning minutes,</text>
+<text x="1467.00" y="371.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">not a guarantee. Grey H = a human-only step (zone</text>
+<text x="1467.00" y="391.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">below). White chip = operator-side tooling. Dashed</text>
+<text x="1467.00" y="411.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">card = off by default. Default plan: steps 1-22.</text>
+<text x="1923.00" y="281.00" font-size="20" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Choose what runs</text>
+<text x="1923.00" y="311.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">By step id: -From, -Only, -Until, -Skip. Run again:</text>
+<text x="1923.00" y="331.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">-Force. Switches: -SkipJumpBox, -SkipConsole,</text>
+<text x="1923.00" y="351.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">-SkipFrontDoor, -SkipBudget, -SkipGuardrail; opt in</text>
+<text x="1923.00" y="371.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">with -WithExtras (23-24) and -RunProofs (25-26).</text>
+<text x="1923.00" y="391.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">-ResetState archives the local state and starts fresh;</text>
+<text x="1923.00" y="411.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">-AdoptExistingEntra lets step 2 update abw-* objects</text>
+<text x="1923.00" y="431.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">already in the tenant.</text>
+<text x="1467.00" y="2085.00" font-size="20" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">State and logs</text>
+<text x="1467.00" y="2115.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">infra\generated\deploy-state.json holds, per step,</text>
+<text x="1467.00" y="2135.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">status, time, attempts and a note, plus the last 50</text>
+<text x="1467.00" y="2155.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">runs and the verify result. Written atomically, never</text>
+<text x="1467.00" y="2175.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">by -CheckOnly.</text>
+<text x="1467.00" y="2195.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Log, one per run, in infra\generated\logs:</text>
+<text x="1467.00" y="2215.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">deploy-&lt;yyyyMMdd-HHmmss&gt;.log</text>
+<text x="1467.00" y="2235.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Each step's own result file sits beside the state file.</text>
+<text x="1923.00" y="2085.00" font-size="20" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Exit codes</text>
+<text x="1923.00" y="2115.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">0 = done</text>
+<text x="1923.00" y="2135.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">1 = a required step failed, or a blocking problem</text>
+<text x="1923.00" y="2155.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">2 = done, but an optional step failed</text>
+<text x="1923.00" y="2175.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">3 = -CheckOnly found a blocker</text>
+<text x="1923.00" y="2195.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Rerun the same command: finished steps are</text>
+<text x="1923.00" y="2215.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">skipped and the failed one is retried.</text>
+<text x="85.00" y="2829.00" font-size="16" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">Also by hand: each persona signs in once to the Demo Console with a device code (it opens a private browser window and copies the code) before the 'Acting as' beats.</text>
+<text x="1490.00" y="2809.00" font-size="16" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">-WhatIf prints everything it would remove and deletes nothing. -Yes skips the type-the-resource-group-name prompt.</text>
+<text x="1490.00" y="2829.00" font-size="16" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">-KeepEntra skips 0 and 6, -SkipPurge skips 4, -CleanLocal adds 7. It only touches objects it can prove belong to the</text>
+<text x="1490.00" y="2849.00" font-size="16" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">demo.</text>
+<text x="1490.00" y="2877.00" font-size="16" fill="#c92a2a" text-anchor="start" dominant-baseline="central" xml:space="preserve">Not reversed: the 3 admin-portal switches (H3).</text>
+<text x="76.00" y="2971.50" font-size="20" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">What to notice</text>
+<text x="76.00" y="3003.25" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">- Each step's result is a file in infra\generated. A step starts only when the files it needs exist, a failed required step (1-17) stops the run, and rerunning the same command resumes where it</text>
+<text x="76.00" y="3025.75" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">  stopped.</text>
+<text x="76.00" y="3048.25" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">- The one command wraps the machine steps only. Persona MFA, OAuth consents, the admin-portal switches and the VM sign-in stay with people (grey H markers).</text>
+<text x="76.00" y="3070.75" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">- Two ordering rules: create_agents.py runs twice, because the guardrail step (18) needs the guardrail that governance (17) creates; and the role baseline (14) must exist before the first OAuth</text>
+<text x="76.00" y="3093.25" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">  consent (H2). API Management (est. 35-50 min) dominates the run time.</text>
+<ellipse cx="109" cy="274.5" rx="16" ry="16" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="109.00" y="274.50" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">A</text>
+<ellipse cx="565" cy="274.5" rx="16" ry="16" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="565.00" y="274.50" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">B</text>
+<ellipse cx="1021" cy="274.5" rx="16" ry="16" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1021.00" y="274.50" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">C</text>
+<ellipse cx="109" cy="558.5" rx="16" ry="16" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="109.00" y="558.50" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">1</text>
+<ellipse cx="565" cy="558.5" rx="16" ry="16" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="565.00" y="558.50" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">2</text>
+<ellipse cx="921" cy="558.5" rx="17" ry="17" fill="#ffffff" stroke="#495057" stroke-width="2"/>
+<text x="921.00" y="558.50" font-size="18" fill="#495057" text-anchor="middle" dominant-baseline="central" xml:space="preserve">H1</text>
+<ellipse cx="1021" cy="558.5" rx="16" ry="16" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1021.00" y="558.50" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">3</text>
+<ellipse cx="1477" cy="558.5" rx="16" ry="16" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1477.01" y="558.50" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">4</text>
+<ellipse cx="1933" cy="558.5" rx="16" ry="16" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1933.01" y="558.50" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">5</text>
+<ellipse cx="109" cy="842.5" rx="16" ry="16" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="109.00" y="842.50" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">6</text>
+<ellipse cx="565" cy="842.5" rx="16" ry="16" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="565.00" y="842.50" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">7</text>
+<ellipse cx="1021" cy="842.5" rx="16" ry="16" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1021.00" y="842.50" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">8</text>
+<ellipse cx="1477" cy="842.5" rx="16" ry="16" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1477.01" y="842.50" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">9</text>
+<ellipse cx="1933" cy="842.5" rx="16" ry="16" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1933.00" y="842.50" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">10</text>
+<ellipse cx="109" cy="1126.5" rx="16" ry="16" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="109.00" y="1126.50" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">11</text>
+<ellipse cx="565" cy="1126.5" rx="16" ry="16" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="565.00" y="1126.50" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">12</text>
+<ellipse cx="1021" cy="1126.5" rx="16" ry="16" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1021.00" y="1126.50" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">13</text>
+<ellipse cx="1477" cy="1126.5" rx="16" ry="16" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1477.00" y="1126.50" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">14</text>
+<ellipse cx="1933" cy="1126.5" rx="16" ry="16" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1933.00" y="1126.50" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">15</text>
+<ellipse cx="2289" cy="1126.5" rx="17" ry="17" fill="#ffffff" stroke="#495057" stroke-width="2"/>
+<text x="2289.00" y="1126.50" font-size="18" fill="#495057" text-anchor="middle" dominant-baseline="central" xml:space="preserve">H2</text>
+<ellipse cx="109" cy="1410.5" rx="16" ry="16" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="109.00" y="1410.50" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">16</text>
+<ellipse cx="465" cy="1410.5" rx="17" ry="17" fill="#ffffff" stroke="#495057" stroke-width="2"/>
+<text x="465.00" y="1410.50" font-size="18" fill="#495057" text-anchor="middle" dominant-baseline="central" xml:space="preserve">H2</text>
+<ellipse cx="565" cy="1410.5" rx="16" ry="16" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="565.00" y="1410.50" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">17</text>
+<ellipse cx="1021" cy="1410.5" rx="16" ry="16" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1021.00" y="1410.50" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">18</text>
+<ellipse cx="1477" cy="1410.5" rx="16" ry="16" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1477.00" y="1410.50" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">19</text>
+<ellipse cx="1933" cy="1410.5" rx="16" ry="16" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1933.00" y="1410.50" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">20</text>
+<ellipse cx="109" cy="1754.5" rx="16" ry="16" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="109.00" y="1754.50" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">21</text>
+<ellipse cx="565" cy="1754.5" rx="16" ry="16" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="565.00" y="1754.50" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">22</text>
+<ellipse cx="921" cy="1754.5" rx="17" ry="17" fill="#ffffff" stroke="#495057" stroke-width="2"/>
+<text x="921.00" y="1754.50" font-size="18" fill="#495057" text-anchor="middle" dominant-baseline="central" xml:space="preserve">H4</text>
+<ellipse cx="1021" cy="1754.5" rx="16" ry="16" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1021.00" y="1754.50" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">23</text>
+<ellipse cx="1377" cy="1754.5" rx="17" ry="17" fill="#ffffff" stroke="#495057" stroke-width="2"/>
+<text x="1377.00" y="1754.50" font-size="18" fill="#495057" text-anchor="middle" dominant-baseline="central" xml:space="preserve">H3</text>
+<ellipse cx="1477" cy="1754.5" rx="16" ry="16" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1477.00" y="1754.50" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">24</text>
+<ellipse cx="1833" cy="1754.5" rx="17" ry="17" fill="#ffffff" stroke="#495057" stroke-width="2"/>
+<text x="1833.00" y="1754.50" font-size="18" fill="#495057" text-anchor="middle" dominant-baseline="central" xml:space="preserve">H3</text>
+<ellipse cx="1933" cy="1754.5" rx="16" ry="16" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1933.00" y="1754.50" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">25</text>
+<ellipse cx="109" cy="2078.5" rx="16" ry="16" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="109.00" y="2078.50" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">26</text>
+<ellipse cx="565" cy="2078.5" rx="16" ry="16" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="565.00" y="2078.50" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">D</text>
+<ellipse cx="1021" cy="2078.5" rx="16" ry="16" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1021.00" y="2078.50" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">E</text>
+<ellipse cx="111" cy="2431" rx="17" ry="17" fill="#ffffff" stroke="#495057" stroke-width="2"/>
+<text x="111.00" y="2431.00" font-size="18" fill="#495057" text-anchor="middle" dominant-baseline="central" xml:space="preserve">H1</text>
+<ellipse cx="786" cy="2431" rx="17" ry="17" fill="#ffffff" stroke="#495057" stroke-width="2"/>
+<text x="786.00" y="2431.00" font-size="18" fill="#495057" text-anchor="middle" dominant-baseline="central" xml:space="preserve">H2</text>
+<ellipse cx="111" cy="2659" rx="17" ry="17" fill="#ffffff" stroke="#495057" stroke-width="2"/>
+<text x="111.00" y="2659.00" font-size="18" fill="#495057" text-anchor="middle" dominant-baseline="central" xml:space="preserve">H3</text>
+<ellipse cx="786" cy="2659" rx="17" ry="17" fill="#ffffff" stroke="#495057" stroke-width="2"/>
+<text x="786.00" y="2659.00" font-size="18" fill="#495057" text-anchor="middle" dominant-baseline="central" xml:space="preserve">H4</text>
+<ellipse cx="1506" cy="2431" rx="16" ry="16" fill="#c92a2a" stroke="#c92a2a" stroke-width="1"/>
+<text x="1506.01" y="2431.00" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">0</text>
+<ellipse cx="1506" cy="2479" rx="16" ry="16" fill="#c92a2a" stroke="#c92a2a" stroke-width="1"/>
+<text x="1506.01" y="2479.00" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">1</text>
+<ellipse cx="1506" cy="2527" rx="16" ry="16" fill="#c92a2a" stroke="#c92a2a" stroke-width="1"/>
+<text x="1506.01" y="2527.00" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">2</text>
+<ellipse cx="1506" cy="2575" rx="16" ry="16" fill="#c92a2a" stroke="#c92a2a" stroke-width="1"/>
+<text x="1506.01" y="2575.00" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">3</text>
+<ellipse cx="1506" cy="2623" rx="16" ry="16" fill="#c92a2a" stroke="#c92a2a" stroke-width="1"/>
+<text x="1506.01" y="2623.00" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">4</text>
+<ellipse cx="1506" cy="2671" rx="16" ry="16" fill="#c92a2a" stroke="#c92a2a" stroke-width="1"/>
+<text x="1506.01" y="2671.00" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">5</text>
+<ellipse cx="1506" cy="2719" rx="16" ry="16" fill="#c92a2a" stroke="#c92a2a" stroke-width="1"/>
+<text x="1506.01" y="2719.00" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">6</text>
+<ellipse cx="1506" cy="2767" rx="16" ry="16" fill="#c92a2a" stroke="#c92a2a" stroke-width="1"/>
+<text x="1506.01" y="2767.00" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">7</text>
+</svg>

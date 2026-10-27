@@ -1,0 +1,323 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="2160" viewBox="0 0 2400 2160" font-family="Helvetica, Arial, sans-serif">
+<rect x="0" y="0" width="2400" height="2160" fill="#ffffff"/>
+<rect x="60" y="200" width="360" height="1059" rx="32" ry="32" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<rect x="580" y="200" width="980" height="1059" rx="32" ry="32" fill="#ebfbee" stroke="#2f9e44" stroke-width="2"/>
+<rect x="600" y="634.5" width="940" height="604.5" rx="32" ry="32" fill="#ebfbee" stroke="#2f9e44" stroke-width="2"/>
+<rect x="60" y="1359" width="2280" height="444.5" rx="32" ry="32" fill="#ebfbee" stroke="#2f9e44" stroke-width="2"/>
+<rect x="76" y="212" width="156.48" height="36.5" rx="9.125" ry="9.125" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="154.24" y="230.25" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Presenter's side</text>
+<rect x="596" y="212" width="425.15" height="36.5" rx="9.125" ry="9.125" fill="#2b8a3e" stroke="#2b8a3e" stroke-width="1"/>
+<text x="808.58" y="230.25" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Demo Console process: python console\server.py</text>
+<rect x="616" y="646.5" width="280.11" height="36.5" rx="9.125" ry="9.125" fill="#2b8a3e" stroke="#2b8a3e" stroke-width="1"/>
+<text x="756.06" y="664.75" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Modules and helpers a job calls</text>
+<rect x="76" y="1371" width="687.29" height="36.5" rx="9.125" ry="9.125" fill="#2b8a3e" stroke="#2b8a3e" stroke-width="1"/>
+<text x="419.64" y="1389.25" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Putting the console on the jump box (Deploy-JumpBox-Console.bat, safe to re-run)</text>
+<rect x="1172" y="22" width="1168" height="138" rx="32" ry="32" fill="#ffffff" stroke="#adb5bd" stroke-width="1"/>
+<rect x="600" y="264.5" width="940" height="80" rx="20" ry="20" fill="#ebfbee" stroke="#2f9e44" stroke-width="2"/>
+<text x="610.00" y="294.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Started by Start-Console.bat on the laptop, or by the ABW Demo Console desktop shortcut on the jump box. Either way the</text>
+<text x="610.00" y="314.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">operator's az login is checked first and the browser opens on the console. Closing the window stops it.</text>
+<rect x="600" y="414.5" width="430" height="140" rx="32" ry="32" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="610.00" y="454.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">server.py: Starlette and uvicorn on 127.0.0.1 only (the</text>
+<text x="610.00" y="474.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">next free port if 8787 is busy). Serves the web UI and the</text>
+<text x="610.00" y="494.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">/api routes. Sets security headers, accepts only localhost</text>
+<text x="610.00" y="514.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">host names and refuses a POST that is not same-origin.</text>
+<rect x="1110" y="414.5" width="430" height="140" rx="32" ry="32" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="1120.00" y="434.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">jobs.py (Manager): one button press is one job, in its own</text>
+<text x="1120.00" y="454.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">thread, with plain-English events the browser polls.</text>
+<text x="1120.00" y="474.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Disruptive scenes never overlap each other or anything</text>
+<text x="1120.00" y="494.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">that calls the gateway (the allow-list scene may run</text>
+<text x="1120.00" y="514.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">beside an agent run); two agent runs never overlap;</text>
+<text x="1120.00" y="534.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">read-only jobs always run.</text>
+<rect x="620" y="699" width="440" height="120" rx="30" ry="30" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="630.00" y="739.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">catalog.py: the story. Scenes (Acts 1-7), beats,</text>
+<text x="630.00" y="759.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">plain-English allow and deny reasons, architecture cards,</text>
+<text x="630.00" y="779.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">portal links for 'Prove it's real' and the KQL pack.</text>
+<rect x="1080" y="699" width="440" height="120" rx="30" ry="30" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="1090.00" y="719.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">personas.py: signs a persona in once with a device code</text>
+<text x="1090.00" y="739.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">against abw-test-client, then asks for tokens silently, so a</text>
+<text x="1090.00" y="759.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">job never prompts. Passwords stay in .secrets and reach</text>
+<text x="1090.00" y="779.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">only the clipboard; TOTP seeds never leave it (the page</text>
+<text x="1090.00" y="799.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">gets the 6-digit code).</text>
+<rect x="620" y="839" width="440" height="120" rx="30" ry="30" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="630.00" y="869.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">azure_probe.py: read-only probes of Foundry, APIM, the</text>
+<text x="630.00" y="889.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">MCP servers, data, Monitor, Sentinel, Policy, Defender,</text>
+<text x="630.00" y="909.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Entra and more. Each result is cached 120 s. Feeds the</text>
+<text x="630.00" y="929.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Control Room and 'Prove it's real'.</text>
+<rect x="1080" y="839" width="440" height="120" rx="30" ry="30" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="1090.00" y="859.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">agent_run.py: one Foundry agent turn in a child process,</text>
+<text x="1090.00" y="879.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">one JSON event per line. Approval requests go to the</text>
+<text x="1090.00" y="899.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">browser. Enters at the APIM /agents front door once it is</text>
+<text x="1090.00" y="919.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">deployed, else direct; the legacy PoC agent always goes</text>
+<text x="1090.00" y="939.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">direct.</text>
+<rect x="620" y="979" width="440" height="100" rx="25" ry="25" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="630.00" y="999.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">e2e.py (Act 6): one request through twelve layers: Entra,</text>
+<text x="630.00" y="1019.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Conditional Access, guardrails, agent, gateway, MCP</text>
+<text x="630.00" y="1039.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">server, data and five watchtowers. Boards live in memory</text>
+<text x="630.00" y="1059.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">only; every row carries an evidence tag.</text>
+<rect x="1080" y="979" width="440" height="100" rx="25" ry="25" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="1090.00" y="1009.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">act7.py (Act 7): role matrix, FinOps, token budget, agent</text>
+<text x="1090.00" y="1029.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">path and front door. Its only change is the two APIM</text>
+<text x="1090.00" y="1049.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">named values for the front-door limits, always restored.</text>
+<rect x="620" y="1099" width="440" height="120" rx="30" ry="30" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="630.00" y="1119.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">role_story.py and role_tabs.py: one tab per person plus</text>
+<text x="630.00" y="1139.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">the Administrator, each with a positive and a negative</text>
+<text x="630.00" y="1159.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">beat. A persona makes a real gateway call with their own</text>
+<text x="630.00" y="1179.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">token; the Administrator runs the agents through the front</text>
+<text x="630.00" y="1199.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">door.</text>
+<rect x="1080" y="1099" width="440" height="120" rx="30" ry="30" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="1090.00" y="1129.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Helpers and child processes: demo\mcpclient.py makes</text>
+<text x="1090.00" y="1149.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">gateway calls in process. Child processes:</text>
+<text x="1090.00" y="1169.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">scripts\kill-switch.ps1, scripts\client-allowlist.ps1,</text>
+<text x="1090.00" y="1189.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">demo\burst.py, demo\try-violations.py and demo\prove.py.</text>
+<rect x="80" y="264.5" width="320" height="80" rx="20" ry="20" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="90.00" y="284.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Presenter or operator. Signs in once with</text>
+<text x="90.00" y="304.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">their own az login, then presses the beat</text>
+<text x="90.00" y="324.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">buttons.</text>
+<rect x="80" y="414.5" width="320" height="160" rx="32" ry="32" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="90.00" y="434.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Browser at http://127.0.0.1:&lt;port&gt;/ (the</text>
+<text x="90.00" y="454.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">default browser on the laptop, Edge on</text>
+<text x="90.00" y="474.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">the jump box). Plain JavaScript, no CDN.</text>
+<text x="90.00" y="494.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Pages: Start, Acts 1-5, Act 6 boards, Act</text>
+<text x="90.00" y="514.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">7 roles and cost, Control Room,</text>
+<text x="90.00" y="534.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Scoreboard. A strip lights up the layers a</text>
+<text x="90.00" y="554.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">job touches.</text>
+<rect x="80" y="676" width="320" height="160" rx="32" ry="32" fill="#e5dbff" stroke="#6741d9" stroke-width="2"/>
+<text x="90.00" y="696.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Credentials, local only. The operator's az</text>
+<text x="90.00" y="716.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">login cache gives silent tokens for ARM,</text>
+<text x="90.00" y="736.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Graph, Log Analytics, Foundry and the</text>
+<text x="90.00" y="756.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">MCP APIs. .secrets\msal-test-&lt;id&gt;.json</text>
+<text x="90.00" y="776.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">holds one device-code sign-in per</text>
+<text x="90.00" y="796.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">persona (an MSAL cache: the refresh</text>
+<text x="90.00" y="816.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">token plus short-lived access tokens).</text>
+<rect x="80" y="937.5" width="320" height="100" rx="25" ry="25" fill="#ffe8cc" stroke="#e8590c" stroke-width="2"/>
+<text x="90.00" y="957.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Proof evidence for the Scoreboard and</text>
+<text x="90.00" y="977.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">the replay rows. The laptop holds the raw</text>
+<text x="90.00" y="997.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">files; the jump box gets only a scrubbed</text>
+<text x="90.00" y="1017.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">copy.</text>
+<rect x="80" y="1139" width="320" height="100" rx="25" ry="25" fill="#f1f3f5" stroke="#868e96" stroke-width="2" stroke-dasharray="10 7"/>
+<text x="90.00" y="1159.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Private browser window for a persona's</text>
+<text x="90.00" y="1179.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">device-code sign-in. Human step: the</text>
+<text x="90.00" y="1199.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">person enters the code and completes</text>
+<text x="90.00" y="1219.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">MFA.</text>
+<rect x="1920" y="264.5" width="420" height="80" rx="20" ry="20" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="1930.00" y="294.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Foundry project: the agents and their Responses API</text>
+<text x="1930.00" y="314.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">(audience https://ai.azure.com)</text>
+<rect x="1920" y="443.4" width="420" height="80" rx="20" ry="20" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="1930.00" y="473.40" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">API Management gateway: /research, /wall, /actions,</text>
+<text x="1930.00" y="493.40" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">/vendor, /legacy and the /agents front door</text>
+<rect x="1920" y="622.3" width="420" height="80" rx="20" ry="20" fill="#fff3bf" stroke="#f08c00" stroke-width="2"/>
+<text x="1930.00" y="642.30" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Azure Resource Manager: resources, Azure Policy,</text>
+<text x="1930.00" y="662.30" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">APIM named values, Cost Management, Defender</text>
+<text x="1930.00" y="682.30" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">alerts</text>
+<rect x="1920" y="801.2" width="420" height="80" rx="20" ry="20" fill="#c5f6fa" stroke="#0b7285" stroke-width="2"/>
+<text x="1930.00" y="831.20" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Log Analytics query API: the audit, gateway and App</text>
+<text x="1930.00" y="851.20" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Insights tables</text>
+<rect x="1920" y="980.1" width="420" height="80" rx="20" ry="20" fill="#e5dbff" stroke="#6741d9" stroke-width="2"/>
+<text x="1930.00" y="1020.10" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Microsoft Graph: the directory and the sign-in log</text>
+<rect x="1920" y="1159" width="420" height="80" rx="20" ry="20" fill="#e5dbff" stroke="#6741d9" stroke-width="2"/>
+<text x="1930.00" y="1199.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Entra ID sign-in: the device-code flow for each persona</text>
+<rect x="80" y="1423.5" width="392" height="160" rx="32" ry="32" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="90.00" y="1443.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Stage (laptop): Deploy-JumpBox-Console.bat runs</text>
+<text x="90.00" y="1463.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">scripts\jumpbox-console.ps1, which builds a</text>
+<text x="90.00" y="1483.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">whitelist package: the console, the agent and demo</text>
+<text x="90.00" y="1503.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">code, the policy XML, the KQL and Sentinel packs,</text>
+<text x="90.00" y="1523.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">the generated infra JSON (resource names and ids,</text>
+<text x="90.00" y="1543.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">no keys) and the scrubbed evidence. It scans the</text>
+<text x="90.00" y="1563.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">package for secrets before anything is sent.</text>
+<rect x="542" y="1423.5" width="392" height="160" rx="32" ry="32" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="552.00" y="1483.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Start (laptop): starts the VM if it is stopped, then</text>
+<text x="552.00" y="1503.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">reads the state of C:\abw on it with one Azure</text>
+<text x="552.00" y="1523.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">run-command probe. Safe to re-run.</text>
+<rect x="1004" y="1423.5" width="392" height="160" rx="32" ry="32" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="1014.00" y="1483.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Tools (in the VM): installs Python, Azure CLI and</text>
+<text x="1014.00" y="1503.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">PowerShell 7 when missing. Each installer must</text>
+<text x="1014.00" y="1523.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">carry a valid signature.</text>
+<rect x="1466" y="1423.5" width="392" height="160" rx="32" ry="32" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="1476.00" y="1483.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Package (in the VM): receives the zip in base64</text>
+<text x="1476.00" y="1503.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">chunks, rebuilds it, checks its SHA-256 and copies</text>
+<text x="1476.00" y="1523.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">it to C:\abw. Never overwrites demo\evidence.</text>
+<rect x="1928" y="1423.5" width="392" height="160" rx="32" ry="32" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="1938.00" y="1483.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Venv (in the VM): creates C:\abw\.venv and installs</text>
+<text x="1938.00" y="1503.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">the requirements with the constraints file, only when</text>
+<text x="1938.00" y="1523.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">either file changed.</text>
+<rect x="1928" y="1663.5" width="392" height="120" rx="30" ry="30" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="1938.00" y="1703.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Launcher: desktop shortcuts for the console and</text>
+<text x="1938.00" y="1723.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">the Azure and Foundry portals. C:\abw\.secrets is</text>
+<text x="1938.00" y="1743.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">locked to SYSTEM and the local admin.</text>
+<rect x="1466" y="1663.5" width="392" height="120" rx="30" ry="30" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="1476.00" y="1693.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Verify: a throw-away console on port 8799 (health,</text>
+<text x="1476.00" y="1713.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">UI, catalog, scoreboard, policy, personas), private</text>
+<text x="1476.00" y="1733.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">DNS, an unauthenticated APIM call and a silent</text>
+<text x="1476.00" y="1753.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">sign-in check for each persona already on the VM.</text>
+<rect x="1004" y="1663.5" width="392" height="120" rx="30" ry="30" fill="#f1f3f5" stroke="#868e96" stroke-width="2" stroke-dasharray="10 7"/>
+<text x="1014.00" y="1683.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Show day: Start-JumpBox.bat starts the VM and</text>
+<text x="1014.00" y="1703.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">copies its password. In the Azure portal: the VM,</text>
+<text x="1014.00" y="1723.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Connect, Bastion. The first run also needs a</text>
+<text x="1014.00" y="1743.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">one-time az login with a device code as the</text>
+<text x="1014.00" y="1763.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">operator.</text>
+<rect x="542" y="1663.5" width="392" height="120" rx="30" ry="30" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="552.00" y="1693.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Run: the desktop shortcut starts</text>
+<text x="552.00" y="1713.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">scripts\jumpbox-console-start.ps1, which starts the</text>
+<text x="552.00" y="1733.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">console and opens Edge at http://127.0.0.1:8787/.</text>
+<text x="552.00" y="1753.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Closing the window stops it.</text>
+<rect x="80" y="1663.5" width="392" height="120" rx="30" ry="30" fill="#ffe3e3" stroke="#e03131" stroke-width="2"/>
+<text x="90.00" y="1703.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Never copied: .secrets by default, the legacy key,</text>
+<text x="90.00" y="1723.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">raw evidence, the deck, the docs. Persona files</text>
+<text x="90.00" y="1743.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">travel only with -IncludePersonaFiles.</text>
+<rect x="60" y="1843.5" width="860" height="245" rx="32" ry="32" fill="#f8f9fa" stroke="#343a40" stroke-width="2"/>
+<rect x="950" y="1843.5" width="1390" height="245" rx="32" ry="32" fill="#f8f9fa" stroke="#343a40" stroke-width="2"/>
+<path d="M 240.00 348.50 L 240.00 410.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 246.81 397.13 L 240.00 410.50 L 233.19 397.13" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 404.00 459.50 L 596.00 459.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 582.63 452.69 L 596.00 459.50 L 582.63 466.31" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 596.00 524.50 L 404.00 524.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 417.37 531.31 L 404.00 524.50 L 417.37 517.69" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1034.00 484.50 L 1106.00 484.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1092.63 477.69 L 1106.00 484.50 L 1092.63 491.31" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1325.00 558.50 L 1325.00 630.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1331.81 617.13 L 1325.00 630.50 L 1318.19 617.13" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1564.00 304.50 L 1916.00 304.50" fill="none" stroke="#2f9e44" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1902.63 297.69 L 1916.00 304.50 L 1902.63 311.31" fill="none" stroke="#2f9e44" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1564.00 483.40 L 1916.00 483.40" fill="none" stroke="#1971c2" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1902.63 476.59 L 1916.00 483.40 L 1902.63 490.21" fill="none" stroke="#1971c2" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1564.00 662.30 L 1916.00 662.30" fill="none" stroke="#f08c00" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1902.63 655.49 L 1916.00 662.30 L 1902.63 669.11" fill="none" stroke="#f08c00" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1564.00 841.20 L 1916.00 841.20" fill="none" stroke="#0b7285" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1902.63 834.39 L 1916.00 841.20 L 1902.63 848.01" fill="none" stroke="#0b7285" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1564.00 1020.10 L 1916.00 1020.10" fill="none" stroke="#6741d9" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1902.63 1013.29 L 1916.00 1020.10 L 1902.63 1026.91" fill="none" stroke="#6741d9" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1564.00 1199.00 L 1916.00 1199.00" fill="none" stroke="#6741d9" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1902.63 1192.19 L 1916.00 1199.00 L 1902.63 1205.81" fill="none" stroke="#6741d9" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 404.00 756.00 L 576.00 756.00" fill="none" stroke="#6741d9" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 562.63 749.19 L 576.00 756.00 L 562.63 762.81" fill="none" stroke="#6741d9" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 404.00 987.50 L 576.00 987.50" fill="none" stroke="#e8590c" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 562.63 980.69 L 576.00 987.50 L 562.63 994.31" fill="none" stroke="#e8590c" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 240.00 1243.00 L 240.00 1309.00 L 2130.00 1309.00 L 2130.00 1243.00" fill="none" stroke="#868e96" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="10 7"/>
+<path d="M 2123.19 1256.37 L 2130.00 1243.00 L 2136.81 1256.37" fill="none" stroke="#868e96" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 476.00 1503.50 L 538.00 1503.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 524.63 1496.69 L 538.00 1503.50 L 524.63 1510.31" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 938.00 1503.50 L 1000.00 1503.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 986.63 1496.69 L 1000.00 1503.50 L 986.63 1510.31" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1400.00 1503.50 L 1462.00 1503.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1448.63 1496.69 L 1462.00 1503.50 L 1448.63 1510.31" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1862.00 1503.50 L 1924.00 1503.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1910.63 1496.69 L 1924.00 1503.50 L 1910.63 1510.31" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2124.00 1587.50 L 2124.00 1659.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2130.81 1646.13 L 2124.00 1659.50 L 2117.19 1646.13" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1924.00 1723.50 L 1862.00 1723.50" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1875.37 1730.31 L 1862.00 1723.50 L 1875.37 1716.69" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1462.00 1723.50 L 1400.00 1723.50" fill="none" stroke="#868e96" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="10 7"/>
+<path d="M 1413.37 1730.31 L 1400.00 1723.50 L 1413.37 1716.69" fill="none" stroke="#868e96" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1000.00 1723.50 L 938.00 1723.50" fill="none" stroke="#868e96" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="10 7"/>
+<path d="M 951.37 1730.31 L 938.00 1723.50 L 951.37 1716.69" fill="none" stroke="#868e96" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="60.00" y="56.50" font-size="36" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Demo Console: components, targets and jump-box install</text>
+<text x="60.00" y="98.50" font-size="20" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">One local web app; tokens come from the operator's az login or a persona's own sign-in</text>
+<text x="60.00" y="2136.00" font-size="16" fill="#868e96" text-anchor="start" dominant-baseline="central" xml:space="preserve">Agents Behind the Wall - diagram 12 of 13 - generated by docs/diagrams/build_diagrams.py</text>
+<text x="1186.00" y="43.25" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Legend</text>
+<rect x="1186" y="61" width="36" height="22" rx="5.5" ry="5.5" fill="#e5dbff" stroke="#6741d9" stroke-width="2"/>
+<text x="1232.00" y="71.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Identity (Entra ID)</text>
+<rect x="1186" y="91" width="36" height="22" rx="5.5" ry="5.5" fill="#d0ebff" stroke="#1971c2" stroke-width="2"/>
+<text x="1232.00" y="101.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Network, API gateway (APIM)</text>
+<rect x="1186" y="121" width="36" height="22" rx="5.5" ry="5.5" fill="#d3f9d8" stroke="#2f9e44" stroke-width="2"/>
+<text x="1232.00" y="131.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Compute (agents, MCP servers)</text>
+<rect x="1476" y="61" width="36" height="22" rx="5.5" ry="5.5" fill="#ffe8cc" stroke="#e8590c" stroke-width="2"/>
+<text x="1522.00" y="71.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Data stores</text>
+<rect x="1476" y="91" width="36" height="22" rx="5.5" ry="5.5" fill="#c5f6fa" stroke="#0b7285" stroke-width="2"/>
+<text x="1522.00" y="101.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Observability</text>
+<rect x="1476" y="121" width="36" height="22" rx="5.5" ry="5.5" fill="#ffe3e3" stroke="#e03131" stroke-width="2"/>
+<text x="1522.00" y="131.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Deny, risk, kill switch</text>
+<rect x="1766" y="61" width="36" height="22" rx="5.5" ry="5.5" fill="#f1f3f5" stroke="#868e96" stroke-width="2" stroke-dasharray="10 7"/>
+<text x="1812.00" y="71.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Human / optional (dashed)</text>
+<rect x="1766" y="91" width="36" height="22" rx="5.5" ry="5.5" fill="#fff3bf" stroke="#f08c00" stroke-width="2"/>
+<text x="1812.00" y="101.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Azure Policy, governance</text>
+<rect x="1766" y="121" width="36" height="22" rx="5.5" ry="5.5" fill="#ffffff" stroke="#1e1e1e" stroke-width="2"/>
+<text x="1812.00" y="131.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">People, client tools</text>
+<path d="M 2056.00 72.00 L 2092.00 72.00" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2078.63 65.19 L 2092.00 72.00 L 2078.63 78.81" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="2102.00" y="71.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Allowed flow</text>
+<path d="M 2056.00 102.00 L 2092.00 102.00" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2078.63 95.19 L 2092.00 102.00 L 2078.63 108.81" fill="none" stroke="#e03131" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="2102.00" y="101.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Denied exit / risk path</text>
+<path d="M 2056.00 132.00 L 2092.00 132.00" fill="none" stroke="#868e96" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="10 7"/>
+<path d="M 2078.63 125.19 L 2092.00 132.00 L 2078.63 138.81" fill="none" stroke="#868e96" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="2102.00" y="131.00" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Manual step (dashed)</text>
+<text x="1920.00" y="224.50" font-size="20" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">What the console calls</text>
+<text x="900.00" y="1383.00" font-size="16" fill="#495057" text-anchor="start" dominant-baseline="central" xml:space="preserve">In the VM, each phase is one Azure run-command call (as SYSTEM, in Windows PowerShell 5.1) that returns one JSON line. The first failing phase stops the run, and every phase can be repeated.</text>
+<text x="76.00" y="1872.00" font-size="20" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">What to notice</text>
+<text x="76.00" y="1903.75" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">- No token, password or TOTP seed is printed or sent to the browser. Every token comes from the</text>
+<text x="76.00" y="1926.25" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">  operator's az login or a persona's own device-code sign-in. The server listens on 127.0.0.1 only and</text>
+<text x="76.00" y="1948.75" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">  refuses cross-origin POSTs.</text>
+<text x="76.00" y="1971.25" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">- Every board row carries an evidence tag, so observed facts are never mixed up with replayed or</text>
+<text x="76.00" y="1993.75" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">  portal-only ones. The jump box holds only the scrubbed copy of the evidence.</text>
+<text x="76.00" y="2016.25" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">- The Act 6 and Act 7 boards change nothing in Entra except 6.1's real failed sign-ins for one demo user</text>
+<text x="76.00" y="2038.75" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">  (at most five in ten minutes). Act 7 changes only the two front-door named values and restores them;</text>
+<text x="76.00" y="2061.25" font-size="18" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">  Reset demo restores the baseline: kill switch, allow-list, limits and the operator's roles.</text>
+<text x="966.00" y="1872.00" font-size="20" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">Main flow (numbers on the arrows)</text>
+<text x="966.00" y="1902.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">1. The presenter presses a beat button in the browser.</text>
+<text x="966.00" y="1922.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">2. The browser sends POST /api/jobs to 127.0.0.1. The server refuses it unless it is</text>
+<text x="966.00" y="1942.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">    same-origin.</text>
+<text x="966.00" y="1962.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">3. jobs.py starts the job in its own thread. Scripts and agent turns run as child processes.</text>
+<text x="966.00" y="1982.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">4. The job runs the beat through a module: catalog, probe, e2e, act7, agent_run or a helper.</text>
+<text x="1659.00" y="1902.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">5. The module takes a token silently from the operator's az login, or from a persona's own</text>
+<text x="1659.00" y="1922.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">    cache, and calls the target.</text>
+<text x="1659.00" y="1942.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">6. The job emits plain-English events. The browser polls GET /api/jobs/{id}, draws the cards</text>
+<text x="1659.00" y="1962.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">    and lights the strip. Each row carries an evidence tag: live, probe, logs, graph, arm, replay</text>
+<text x="1659.00" y="1982.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">    or portal (Act 7 adds rbac and design).</text>
+<rect x="272" y="364.5" width="106.05" height="30" rx="7.5" ry="7.5" fill="#ffffff" stroke="none" stroke-width="1"/>
+<text x="277.00" y="379.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">press a beat</text>
+<rect x="437.2" y="405.5" width="125.6" height="30" rx="7.5" ry="7.5" fill="#ffffff" stroke="none" stroke-width="1"/>
+<text x="500.00" y="420.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">POST /api/jobs</text>
+<rect x="419.4" y="548.5" width="161.2" height="70" rx="17.5" ry="17.5" fill="#ffffff" stroke="none" stroke-width="1"/>
+<text x="500.00" y="563.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">poll GET</text>
+<text x="500.00" y="583.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">/api/jobs/{id}: events</text>
+<text x="500.00" y="603.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">back</text>
+<rect x="1357" y="579.5" width="111.39" height="30" rx="7.5" ry="7.5" fill="#ffffff" stroke="none" stroke-width="1"/>
+<text x="1362.00" y="594.50" font-size="16" fill="#1e1e1e" text-anchor="start" dominant-baseline="central" xml:space="preserve">runs the beat</text>
+<rect x="1589.4" y="210.5" width="301.2" height="70" rx="17.5" ry="17.5" fill="#ffffff" stroke="none" stroke-width="1"/>
+<text x="1740.00" y="225.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">agent_run.py: one agent turn with the</text>
+<text x="1740.00" y="245.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">operator's token; via APIM /agents once</text>
+<text x="1740.00" y="265.50" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">deployed, else direct</text>
+<rect x="1583.62" y="389.4" width="312.75" height="70" rx="17.5" ry="17.5" fill="#ffffff" stroke="none" stroke-width="1"/>
+<text x="1739.99" y="404.40" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">gateway beats with the operator's or a</text>
+<text x="1739.99" y="424.40" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">persona's own token; /legacy with the key</text>
+<text x="1739.99" y="444.40" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">read through ARM</text>
+<rect x="1571.83" y="568.3" width="336.34" height="70" rx="17.5" ry="17.5" fill="#ffffff" stroke="none" stroke-width="1"/>
+<text x="1740.00" y="583.30" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">read-only probes, Cost Management,</text>
+<text x="1740.00" y="603.30" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">Defender alerts; scripts and Act 7 write APIM</text>
+<text x="1740.00" y="623.30" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">named values</text>
+<rect x="1577.59" y="767.2" width="324.82" height="50" rx="12.5" ry="12.5" fill="#ffffff" stroke="none" stroke-width="1"/>
+<text x="1740.00" y="782.20" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">KQL pack, Refresh from logs and the token</text>
+<text x="1740.00" y="802.20" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">meter; rows land 2-18 min later</text>
+<rect x="1572.71" y="926.1" width="334.58" height="70" rx="17.5" ry="17.5" fill="#ffffff" stroke="none" stroke-width="1"/>
+<text x="1740.00" y="941.10" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">reads the sign-in log, Conditional Access,</text>
+<text x="1740.00" y="961.10" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">apps, groups, licences; Reset demo restores</text>
+<text x="1740.00" y="981.10" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">operator roles</text>
+<rect x="1580.29" y="1105" width="319.42" height="70" rx="17.5" ry="17.5" fill="#ffffff" stroke="none" stroke-width="1"/>
+<text x="1740.00" y="1120.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">personas.py: one device-code sign-in per</text>
+<text x="1740.00" y="1140.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">persona (abw-test-client); MFA is a human</text>
+<text x="1740.00" y="1160.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">step</text>
+<rect x="953.22" y="1271" width="463.55" height="30" rx="7.5" ry="7.5" fill="#ffffff" stroke="none" stroke-width="1"/>
+<text x="1185.00" y="1286.00" font-size="16" fill="#1e1e1e" text-anchor="middle" dominant-baseline="central" xml:space="preserve">human: the person enters the device code and completes MFA</text>
+<ellipse cx="240" cy="379.5" rx="18" ry="18" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="240.00" y="379.50" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">1</text>
+<ellipse cx="500" cy="459.5" rx="18" ry="18" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="500.00" y="459.50" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">2</text>
+<ellipse cx="500" cy="524.5" rx="18" ry="18" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="500.00" y="524.50" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">6</text>
+<ellipse cx="1070" cy="484.5" rx="18" ry="18" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1070.01" y="484.50" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">3</text>
+<ellipse cx="1325" cy="594.5" rx="18" ry="18" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1325.01" y="594.50" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">4</text>
+<ellipse cx="1740" cy="304.5" rx="18" ry="18" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1740.01" y="304.50" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">5</text>
+<ellipse cx="1740" cy="483.4" rx="18" ry="18" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1740.01" y="483.40" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">5</text>
+<ellipse cx="1740" cy="662.3" rx="18" ry="18" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1740.01" y="662.30" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">5</text>
+<ellipse cx="1740" cy="841.2" rx="18" ry="18" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1740.01" y="841.20" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">5</text>
+<ellipse cx="1740" cy="1020.1" rx="18" ry="18" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1740.01" y="1020.10" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">5</text>
+<ellipse cx="1740" cy="1199" rx="18" ry="18" fill="#1e1e1e" stroke="#1e1e1e" stroke-width="1"/>
+<text x="1740.01" y="1199.00" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="central" xml:space="preserve">5</text>
+</svg>

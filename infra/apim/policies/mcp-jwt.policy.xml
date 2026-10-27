@@ -1,0 +1,113 @@
+<!--
+  ABW gateway policy — one MCP server behind APIM (Entra-authenticated, role-gated, revocable, observable).
+
+  Layers executed here (each independently denies):
+    1. validate-jwt        signature, issuer, audience (THIS server's app), expiry               -> 401 + RFC 9728 WWW-Authenticate
+    2. claim authorisation delegated scope, app role(s), calling client (azp allow-list), kill switch -> 403 + machine-readable reason
+                           (servers that filter their own tool list per caller set __LIST_OPEN__=true: initialize/ping/tools/list need only a valid
+                            token, so an entitled-to-nothing user sees ZERO tools; every tools/call still needs an app role here AND in the server)
+    3. rate-limit-by-key   per user object id
+    4. telemetry           custom metric + trace with the decision (no tool arguments, no bodies)
+  Tokens replaced by Bicep:  __SERVER__  __PATH__  __AUDIENCE__  __ROLES_CS__  __LIST_OPEN__  __VENDOR_SECTION__
+  Named values:  abw-tenant-id  abw-gateway-url  abw-allowed-azp  abw-deny-oids  (+ abw-vendor-key for the vendor API)
+-->
+<policies>
+  <inbound>
+    <base />
+    <validate-jwt header-name="Authorization" require-scheme="Bearer" require-expiration-time="true" require-signed-tokens="true" clock-skew="60" failed-validation-httpcode="401" failed-validation-error-message="Unauthorized" output-token-variable-name="jwt">
+      <openid-config url="https://login.microsoftonline.com/{{abw-tenant-id}}/v2.0/.well-known/openid-configuration" />
+      <audiences>
+        <audience>__AUDIENCE__</audience>
+      </audiences>
+      <issuers>
+        <issuer>https://login.microsoftonline.com/{{abw-tenant-id}}/v2.0</issuer>
+      </issuers>
+      <required-claims>
+        <claim name="tid" match="all">
+          <value>{{abw-tenant-id}}</value>
+        </claim>
+      </required-claims>
+    </validate-jwt>
+    <set-variable name="abw-deny" value="@{
+      var j = (Jwt)context.Variables[&quot;jwt&quot;];
+      var scp = j.Claims.ContainsKey(&quot;scp&quot;) ? string.Join(&quot; &quot;, j.Claims[&quot;scp&quot;]) : &quot;&quot;;
+      var roles = j.Claims.ContainsKey(&quot;roles&quot;) ? j.Claims[&quot;roles&quot;] : new string[0];
+      var azp = j.Claims.ContainsKey(&quot;azp&quot;) ? j.Claims[&quot;azp&quot;].FirstOrDefault() : &quot;&quot;;
+      var oid = j.Claims.ContainsKey(&quot;oid&quot;) ? j.Claims[&quot;oid&quot;].FirstOrDefault() : &quot;&quot;;
+      if (&quot;{{abw-deny-oids}}&quot;.Split(',').Contains(oid)) { return &quot;revoked&quot;; }
+      if (!&quot;{{abw-allowed-azp}}&quot;.Split(',').Contains(azp)) { return &quot;client_not_allowed&quot;; }
+      if (!scp.Split(' ').Contains(&quot;Tools.Read&quot;)) { return &quot;missing_scope&quot;; }
+      var method = &quot;&quot;;
+      try { method = (string)context.Request.Body.As&lt;JObject&gt;(preserveContent: true)[&quot;method&quot;] ?? &quot;&quot;; } catch { }
+      var discovery = __LIST_OPEN__ &amp;&amp; (method == &quot;initialize&quot; || method == &quot;ping&quot; || method == &quot;tools/list&quot; || method.StartsWith(&quot;notifications/&quot;));
+      var required = new string[] { __ROLES_CS__ };
+      if (!discovery &amp;&amp; !roles.Any(r =&gt; required.Contains(r))) { return &quot;missing_role&quot;; }
+      return &quot;&quot;;
+    }" />
+    <set-variable name="abw-oid" value="@{
+      var j = (Jwt)context.Variables[&quot;jwt&quot;];
+      return j.Claims.ContainsKey(&quot;oid&quot;) ? j.Claims[&quot;oid&quot;].FirstOrDefault() : &quot;unknown&quot;;
+    }" />
+    <emit-metric name="abw-gateway-decisions" value="1" namespace="abw">
+      <dimension name="server" value="__SERVER__" />
+      <dimension name="decision" value="@(((string)context.Variables[&quot;abw-deny&quot;]) == &quot;&quot; ? &quot;allow&quot; : &quot;deny&quot;)" />
+      <dimension name="reason" value="@(((string)context.Variables[&quot;abw-deny&quot;]) == &quot;&quot; ? &quot;ok&quot; : (string)context.Variables[&quot;abw-deny&quot;])" />
+      <dimension name="oid" value="@((string)context.Variables[&quot;abw-oid&quot;])" />
+    </emit-metric>
+    <trace source="abw-gateway" severity="information">
+      <message>@(&quot;gateway decision server=__SERVER__ decision=&quot; + (((string)context.Variables[&quot;abw-deny&quot;]) == &quot;&quot; ? &quot;allow&quot; : &quot;deny:&quot; + (string)context.Variables[&quot;abw-deny&quot;]))</message>
+      <metadata name="server" value="__SERVER__" />
+      <metadata name="oid" value="@((string)context.Variables[&quot;abw-oid&quot;])" />
+      <metadata name="reason" value="@(((string)context.Variables[&quot;abw-deny&quot;]) == &quot;&quot; ? &quot;ok&quot; : (string)context.Variables[&quot;abw-deny&quot;])" />
+      <metadata name="request_id" value="@(context.RequestId.ToString())" />
+    </trace>
+    <choose>
+      <when condition="@(((string)context.Variables[&quot;abw-deny&quot;]) != &quot;&quot;)">
+        <return-response>
+          <set-status code="403" reason="Forbidden" />
+          <set-header name="Content-Type" exists-action="override">
+            <value>application/json</value>
+          </set-header>
+          <set-body>@{
+            return new JObject(
+              new JProperty("error", "forbidden"),
+              new JProperty("reason", (string)context.Variables["abw-deny"]),
+              new JProperty("server", "__SERVER__"),
+              new JProperty("request_id", context.RequestId.ToString())).ToString();
+          }</set-body>
+        </return-response>
+      </when>
+    </choose>
+    <rate-limit-by-key calls="120" renewal-period="60" counter-key="@((string)context.Variables[&quot;abw-oid&quot;])" />
+    <set-header name="x-abw-request-id" exists-action="override">
+      <value>@(context.RequestId.ToString())</value>
+    </set-header>
+    <set-header name="x-abw-gateway" exists-action="override">
+      <value>apim</value>
+    </set-header>
+    __VENDOR_SECTION__
+  </inbound>
+  <backend>
+    <base />
+  </backend>
+  <outbound>
+    <base />
+  </outbound>
+  <on-error>
+    <base />
+    <choose>
+      <when condition="@(context.Response.StatusCode == 401)">
+        <return-response>
+          <set-status code="401" reason="Unauthorized" />
+          <set-header name="WWW-Authenticate" exists-action="override">
+            <value>Bearer error="invalid_token", resource_metadata="{{abw-gateway-url}}/.well-known/oauth-protected-resource/__PATH__/mcp"</value>
+          </set-header>
+          <set-header name="Content-Type" exists-action="override">
+            <value>application/json</value>
+          </set-header>
+          <set-body>{"error":"unauthorized","server":"__SERVER__","reason":"a valid Entra access token for this MCP server is required"}</set-body>
+        </return-response>
+      </when>
+    </choose>
+  </on-error>
+</policies>

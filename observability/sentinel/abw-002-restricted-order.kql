@@ -1,0 +1,13 @@
+// @id restricted-order
+// @name ABW-002 Order blocked: restricted-list instrument
+// @severity High
+// @tactics Impact
+// @frequency PT5M
+// @period PT30M
+// @group Account
+// @entity Account.FullName=UserUpn Account.AadUserId=UserOid
+// @details Server=Server Tool=Tool Reason=Reason RequestId=RequestId
+// @description An order that a human approved in the agent was still refused by the Actions MCP server because the instrument is on the restricted list. The approval gate is not the control; the server-side policy is.
+AbwMcpAudit(30m)
+| where Event == 'order_blocked'
+| project TimeGenerated, UserUpn, UserOid, Server, Tool, Reason, RequestId, ClientAppId

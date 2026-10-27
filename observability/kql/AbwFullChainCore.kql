@@ -1,0 +1,285 @@
+// @function AbwFullChainCore
+// @params anyId:string, lookback:timespan = 7d
+// @description Everything one run touched in this workspace, in time order, from ANY of its ids: the tool-call request_id on the board, the front-door request id, or the W3C trace id. APIM front door, Foundry guardrail / agent / model / tool calls, APIM MCP gateway, MCP server audit (with the Entra token id each call carried), data plane (Storage exact by request_id; Search and Cosmos matched by time to the MCP call), APIM policy exceptions and Sentinel alerts. AbwFullChain adds the Entra sign-in and token-issue rows, which live in the Entra sign-in export, not here.
+let qid = tolower(trim(@'\s+', anyId));
+let gw = materialize(AbwGateway(lookback));
+let aud = materialize(AbwMcpAudit(lookback));
+let uMap = aud
+    | where isnotempty(UserOid) and isnotempty(UserUpn)
+    | summarize UserUpn = take_any(UserUpn) by UserOid;
+// an APIM gateway-log row and its APIM request telemetry carry the same TimeGenerated: that maps every APIM request id to its W3C trace id
+let gwTrace = materialize(
+    gw
+    | join kind=inner (
+        AppRequests
+        | where TimeGenerated > ago(lookback) and AppRoleName startswith 'apim'
+        | project TimeGenerated, TraceId = OperationId
+      ) on TimeGenerated
+    | summarize TraceId = take_any(TraceId) by RequestId);
+// every Foundry tool result echoes the MCP request_id: that maps each tool span to its APIM / MCP / data-plane rows
+let toolRid = materialize(
+    AppDependencies
+    | where TimeGenerated > ago(lookback) and Name startswith 'execute_tool'
+    | extend Rid = extract(@'"request_id"\s*:\s*"([0-9a-fA-F-]{36})"', 1, tostring(Properties['gen_ai.tool.call.result']))
+    | where isnotempty(Rid)
+    | project Rid, TraceId = OperationId);
+let tr = toscalar(
+    union
+        (gwTrace | where RequestId == qid | project TraceId),
+        (aud | where RequestId == qid or TraceId == qid | project TraceId),
+        (toolRid | where Rid == qid | project TraceId),
+        (print TraceId = qid | where TraceId matches regex @'^[0-9a-f]{32}$')
+    | where isnotempty(TraceId)
+    | summarize Traces = make_set(TraceId));
+let trk = array_concat(tr, dynamic(['~none~']));
+let rids = toscalar(
+    union
+        (print RequestId = qid),
+        (gwTrace | where TraceId in (trk) | project RequestId),
+        (aud | where TraceId in (trk) | project RequestId),
+        (toolRid | where TraceId in (trk) | project RequestId = Rid)
+    | where isnotempty(RequestId)
+    | summarize Ids = make_set(RequestId));
+let rk = array_concat(rids, dynamic(['~none~']));
+let ak = array_concat(rk, trk);
+let mcpLog = ApiManagementGatewayMCPLog
+    | where TimeGenerated > ago(lookback)
+    | summarize McpMethod = take_any(Method), ToolName = take_any(ToolName), ToolCount = take_any(ToolCount) by RequestId = CorrelationId;
+let gwx = gw
+    | where RequestId in (rk)
+    | lookup (mcpLog) on RequestId
+    | lookup (uMap) on UserOid
+    | lookup (gwTrace) on RequestId
+    | extend Verdict = iff(Outcome == 'allowed' and toint(ResponseCode) >= 400, 'passed the gateway, backend refused', Outcome)
+    | extend GwDetail = strcat('HTTP ', ResponseCode, ' ', Verdict, iff(isnotempty(Reason) and Reason != 'ok', strcat(' (', Reason, ')'), ''), ' | backend=', BackendResponseCode, ' | ', TotalTimeMs, 'ms');
+let frontdoor = gwx
+    | where Api == 'abw-agent-frontdoor'
+    | project
+        Time = TimeGenerated,
+        Step = 1,
+        Layer = 'APIM front door',
+        Actor = coalesce(UserUpn, UserOid, ''),
+        Action = strcat(Method, ' ', Server, ' front door'),
+        Detail = GwDetail,
+        RequestId,
+        TraceId;
+// allowed tools/list and server/discover calls are noise here: they are summarised in the discovery row
+let apimTool = gwx
+    | where Api != 'abw-agent-frontdoor'
+    | where not(McpMethod in ('tools/list', 'server/discover') and toint(ResponseCode) < 400)
+    | project
+        Time = TimeGenerated,
+        Step = 7,
+        Layer = 'APIM gateway',
+        Actor = coalesce(UserUpn, UserOid, ''),
+        Action = strcat(Method, ' ', Server, iff(isnotempty(McpMethod), strcat(' ', McpMethod), ''), iff(isnotempty(ToolName), strcat(' ', ToolName), '')),
+        Detail = GwDetail,
+        RequestId,
+        TraceId;
+let spans = AppDependencies
+    | where TimeGenerated > ago(lookback) and OperationId in (trk)
+    | where Name startswith 'invoke_agent' or Name startswith 'execute_tool' or Name startswith 'chat ';
+let invokes = spans | where Name startswith 'invoke_agent';
+let guardPoints = invokes
+    | extend cf = parse_json(tostring(Properties['microsoft.foundry.content_filter.results']))
+    | mv-expand with_itemindex = i entry = cf
+    | extend src = tostring(entry.source_type), blocked = tobool(entry.blocked), res = entry.content_filter_results
+    | mv-apply k = bag_keys(res) to typeof(string) on (
+        where tobool(res[k].filtered) == true or tobool(res[k].detected) == true
+        | summarize flagged = make_list(k))
+    | extend Point = strcat(src, iff(blocked, strcat(' BLOCKED (', strcat_array(flagged, ', '), ')'), ' ok'))
+    | project TimeGenerated, OperationId, i, Point, blocked;
+// Defender for AI and Purview run inside the Foundry content filter: list the ones that did not return a verdict
+let guardUnavailable = invokes
+    | extend cf = parse_json(tostring(Properties['microsoft.foundry.content_filter.results']))
+    | mv-expand entry = cf
+    | extend res = entry.content_filter_results
+    | mv-apply k = bag_keys(res) to typeof(string) on (
+        where tostring(res[k].details.evaluation) == 'unavailable'
+        | project Provider = k)
+    | summarize Unavailable = make_set(Provider) by OperationId;
+let guard = guardPoints
+    | order by OperationId asc, i asc
+    | summarize Time = min(TimeGenerated), Points = make_list(Point), AnyBlocked = max(toint(blocked)) by OperationId
+    | lookup (guardUnavailable) on OperationId
+    | project
+        Time,
+        Step = 3,
+        Layer = 'Foundry guardrail',
+        Actor = 'Foundry content filter',
+        Action = iff(AnyBlocked == 1, 'BLOCKED', 'passed'),
+        Detail = strcat(strcat_array(Points, ' | '), iff(array_length(Unavailable) > 0, strcat(' | no verdict from: ', strcat_array(Unavailable, ', ')), '')),
+        RequestId = '',
+        TraceId = OperationId;
+let agent = invokes
+    | extend UserOid = tostring(Properties['user.id']), Blueprint = tostring(Properties['microsoft.a365.agent.blueprint.id'])
+    | lookup (uMap) on UserOid
+    | project
+        Time = TimeGenerated,
+        Step = 4,
+        Layer = 'Foundry agent',
+        Actor = substring(Name, strlen('invoke_agent ')),
+        Action = case(tostring(Properties['error.type']) == 'content_filter', 'run stopped by the guardrail', Success, 'run completed', 'run failed'),
+        Detail = strcat('for ', coalesce(UserUpn, UserOid, 'unknown user'), ' | ', toint(DurationMs), 'ms', iff(isnotempty(Blueprint), strcat(' | Agent 365 blueprint ', substring(Blueprint, 0, 8)), '')),
+        RequestId = '',
+        TraceId = OperationId;
+let model = spans
+    | where Name startswith 'chat '
+    | project
+        Time = TimeGenerated,
+        Step = 5,
+        Layer = 'Foundry model',
+        Actor = coalesce(tostring(Properties['gen_ai.request.model']), substring(Name, strlen('chat '))),
+        Action = 'chat completion',
+        Detail = strcat('tokens in=', coalesce(tostring(Properties['gen_ai.usage.input_tokens']), '0'), ' out=', coalesce(tostring(Properties['gen_ai.usage.output_tokens']), '0'), ' cached=', coalesce(tostring(Properties['gen_ai.usage.cached_tokens']), '0'), ' | ', toint(DurationMs), 'ms'),
+        RequestId = '',
+        TraceId = OperationId;
+let tools = spans
+    | where Name startswith 'execute_tool'
+    | extend Rid = extract(@'"request_id"\s*:\s*"([0-9a-fA-F-]{36})"', 1, tostring(Properties['gen_ai.tool.call.result']))
+    | project
+        Time = TimeGenerated,
+        Step = 6,
+        Layer = 'Foundry tool call',
+        Actor = coalesce(tostring(Properties['gen_ai.agent.name']), ''),
+        Action = substring(Name, strlen('execute_tool ')),
+        Detail = strcat('args ', substring(tostring(Properties['gen_ai.tool.call.arguments']), 0, 100), ' | ', toint(DurationMs), 'ms', iff(Success, '', ' | FAILED')),
+        RequestId = Rid,
+        TraceId = OperationId;
+let mcpRows = aud
+    | where (RequestId in (rk) or TraceId in (trk)) and Event != 'tool_listed'
+    | project
+        Time = coalesce(EventTime, TimeGenerated),
+        Step = 8,
+        Layer = 'MCP server',
+        Actor = UserUpn,
+        Action = strcat(Server, '.', Tool, ' [', Event, ']', iff(Server == 'private', ' direct VNet path, no APIM', '')),
+        Detail = strcat(Decision, iff(isnotempty(Reason), strcat(' (', Reason, ')'), ''), iff(isnotempty(DownstreamService), strcat(' | downstream ', DownstreamService, ' ', DownstreamStatus), ''), ' | obo=', OnBehalfOf, ' class=', DataClass, ' client=', ClientAppId, ' roles=', tostring(Roles), iff(isnotempty(TokenId), strcat(' | token ', TokenId), '')),
+        RequestId,
+        TraceId,
+        TokenId;
+let discovery = aud
+    | where (RequestId in (rk) or TraceId in (trk)) and Event == 'tool_listed'
+    | summarize Tools = dcount(Tool), t0 = min(coalesce(EventTime, TimeGenerated)), Upn = take_any(UserUpn), Tid = take_any(TraceId) by Server
+    | summarize Time = min(t0), Listed = array_sort_asc(make_list(strcat(Server, ' ', Tools))), Servers = count(), Upn = take_any(Upn), TraceId = take_any(Tid)
+    | where Servers > 0
+    | project
+        Time,
+        Step = 2,
+        Layer = 'Tool discovery',
+        Actor = Upn,
+        Action = strcat('tools/list on ', Servers, ' MCP servers'),
+        Detail = strcat('tools visible to this user: ', strcat_array(Listed, ' | ')),
+        RequestId = '',
+        TraceId;
+let storage = StorageBlobLogs
+    | where TimeGenerated > ago(lookback) and ClientRequestId in (rk)
+    | project
+        Time = TimeGenerated,
+        Step = 9,
+        Layer = 'Storage data plane',
+        Actor = coalesce(RequesterUpn, RequesterObjectId, ''),
+        Action = strcat(OperationName, ' ', tostring(split(Uri, '?')[0])),
+        Detail = strcat('HTTP ', StatusCode, ' ', StatusText, ' | auth=', AuthenticationType, ' app=', RequesterAppId),
+        RequestId = ClientRequestId,
+        TraceId = '';
+// Search and Cosmos logs carry no caller id: match them to the MCP call that used them by time.
+// The APIM log row is stamped when the request starts, so [start, start + total time] is the window the MCP server worked in.
+let dataCalls = aud
+    | where (RequestId in (rk) or TraceId in (trk)) and Event != 'tool_listed' and DownstreamService in ('search', 'cosmos')
+    | project RequestId, TraceId, DownstreamService, ET = coalesce(EventTime, TimeGenerated)
+    | join kind=leftouter (gw | project RequestId, GwStart = TimeGenerated, GwMs = todouble(TotalTimeMs)) on RequestId
+    | extend WinStart = coalesce(GwStart, ET - 2s) - 200ms, WinEnd = coalesce(GwStart + GwMs * 1ms, ET) + 400ms
+    | project RequestId, TraceId, DownstreamService, ET, WinStart, WinEnd;
+let wLo = toscalar(dataCalls | summarize min(WinStart));
+let wHi = toscalar(dataCalls | summarize max(WinEnd));
+let searchRows = dataCalls
+    | where DownstreamService == 'search'
+    | extend k = 1
+    | join kind=inner (
+        AzureDiagnostics
+        | where TimeGenerated between (wLo .. wHi)
+        | where ResourceProvider == 'MICROSOFT.SEARCH' and OperationName startswith 'Query.'
+        | project STime = TimeGenerated, Service = Resource, Op = OperationName, Code = toint(resultSignature_d), Docs = toint(Documents_d), Ms = toint(DurationMs), Idx = IndexName_s, Q = substring(Query_s, 0, 150)
+        | extend k = 1
+      ) on k
+    | where STime between (WinStart .. WinEnd)
+    | extend Gap = abs(ET - STime)
+    | summarize arg_min(Gap, STime, Service, Op, Code, Docs, Ms, Idx, Q) by RequestId, TraceId
+    | project
+        Time = STime,
+        Step = 9,
+        Layer = 'Search data plane',
+        Actor = Service,
+        Action = strcat(Op, ' ', Idx),
+        Detail = strcat('HTTP ', Code, ' | ', Docs, ' docs | ', Ms, 'ms | ', Q, ' | matched by time (Search logs carry no caller id)'),
+        RequestId,
+        TraceId;
+let cosmosRows = dataCalls
+    | where DownstreamService == 'cosmos'
+    | extend k = 1
+    | join kind=inner (
+        CDBDataPlaneRequests
+        | where TimeGenerated between (wLo .. wHi) and DatabaseName == 'abw'
+        | project CTime = TimeGenerated, Coll = CollectionName, Code = tostring(StatusCode), RU = todouble(RequestCharge)
+        | extend k = 1
+      ) on k
+    | where CTime between (WinStart .. WinEnd)
+    | summarize Time = min(CTime), Calls = count(), RUs = sum(RU), Colls = make_set(Coll), Codes = make_set(Code) by RequestId, TraceId
+    | project
+        Time,
+        Step = 9,
+        Layer = 'Cosmos data plane',
+        Actor = 'MCP server managed identity',
+        Action = strcat(Calls, ' requests on ', strcat_array(Colls, ', ')),
+        Detail = strcat('status ', strcat_array(Codes, ','), ' | ', round(RUs, 1), ' RU | matched by time (Cosmos logs carry no caller id)'),
+        RequestId,
+        TraceId;
+let policy = AppExceptions
+    | where TimeGenerated > ago(lookback) and OperationId in (trk)
+    | project
+        Time = TimeGenerated,
+        Step = 10,
+        Layer = 'APIM policy',
+        Actor = '',
+        Action = ExceptionType,
+        Detail = substring(OuterMessage, 0, 160),
+        RequestId = '',
+        TraceId = OperationId;
+let alertRaw = SecurityAlert
+    | where TimeGenerated > ago(lookback)
+    | where tostring(ExtendedProperties) has_any (ak)
+    | summarize arg_max(TimeGenerated, AlertName, AlertSeverity, Status), FirstSeen = min(TimeGenerated) by SystemAlertId;
+let alerts = alertRaw
+    | summarize Time = min(FirstSeen), Fires = count(), Sev = take_any(AlertSeverity), St = take_any(Status) by AlertName
+    | project
+        Time,
+        Step = 11,
+        Layer = 'Sentinel alert',
+        Actor = 'Sentinel analytics rule',
+        Action = AlertName,
+        Detail = strcat(Sev, ' | ', St, ' | raised ', Fires, iff(Fires == 1, ' time', ' times')),
+        RequestId = '',
+        TraceId = '';
+let alertIds = array_concat(coalesce(toscalar(alertRaw | summarize make_set(SystemAlertId)), dynamic([])), dynamic(['~none~']));
+// each incident row sits at the first of this run's alerts that the incident groups
+let incidents = SecurityIncident
+    | where TimeGenerated > ago(lookback)
+    | where tostring(AlertIds) has_any (alertIds)
+    | summarize arg_max(TimeGenerated, Title, Severity, Status, CreatedTime, AlertIds) by IncidentNumber
+    | mv-expand AlertId = todynamic(AlertIds) to typeof(string)
+    | join kind=inner (alertRaw | project AlertId = SystemAlertId, AlertFirstSeen = FirstSeen) on AlertId
+    | summarize AlertTime = min(AlertFirstSeen), Title = take_any(Title), Severity = take_any(Severity), Status = take_any(Status), CreatedTime = take_any(CreatedTime) by IncidentNumber
+    | project
+        Time = AlertTime,
+        Step = 12,
+        Layer = 'Sentinel incident',
+        Actor = 'Sentinel',
+        Action = strcat('Incident #', IncidentNumber, ' ', Title),
+        Detail = strcat(Severity, ' | ', Status, ' | opened ', format_datetime(CreatedTime, 'MM-dd HH:mm'), ' UTC (an incident groups the alerts of its rule)'),
+        RequestId = '',
+        TraceId = '';
+union frontdoor, discovery, guard, agent, model, tools, apimTool, mcpRows, storage, searchRows, cosmosRows, policy, alerts, incidents
+| extend TraceId = coalesce(TraceId, tostring(tr[0]))
+| order by Time asc, Step asc
+| project Time, Step, Layer, Actor, Action, Detail, RequestId, TraceId, TokenId

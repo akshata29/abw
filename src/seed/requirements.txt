@@ -1,0 +1,4 @@
+azure-identity>=1.19
+azure-storage-blob>=12.23
+azure-search-documents>=11.6
+azure-cosmos>=4.9

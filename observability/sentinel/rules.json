@@ -1,0 +1,294 @@
+[
+  {
+    "id": "wall-violation",
+    "name": "ABW-001 Information-barrier violation attempt (Wall MCP)",
+    "severity": "High",
+    "tactics": [
+      "Collection"
+    ],
+    "frequency": "PT5M",
+    "period": "PT30M",
+    "group": "Account",
+    "entities": [
+      {
+        "entityType": "Account",
+        "fieldMappings": [
+          {
+            "identifier": "FullName",
+            "columnName": "UserUpn"
+          },
+          {
+            "identifier": "AadUserId",
+            "columnName": "UserOid"
+          }
+        ]
+      }
+    ],
+    "details": {
+      "Server": "Server",
+      "Tool": "Tool",
+      "Reason": "Reason",
+      "RequestId": "RequestId",
+      "ClientAppId": "ClientAppId"
+    },
+    "description": "A signed-in user (through an agent) asked the Wall MCP server for a deal room that is not in their token roles. The MCP server refused and logged wall_violation_attempt. Investigate with AbwIdentityChain('<RequestId>').",
+    "query": "AbwMcpAudit(30m)\n| where Event == 'wall_violation_attempt'\n| project TimeGenerated, UserUpn, UserOid, Server, Tool, Reason, RequestId, ClientAppId"
+  },
+  {
+    "id": "restricted-order",
+    "name": "ABW-002 Order blocked: restricted-list instrument",
+    "severity": "High",
+    "tactics": [
+      "Impact"
+    ],
+    "frequency": "PT5M",
+    "period": "PT30M",
+    "group": "Account",
+    "entities": [
+      {
+        "entityType": "Account",
+        "fieldMappings": [
+          {
+            "identifier": "FullName",
+            "columnName": "UserUpn"
+          },
+          {
+            "identifier": "AadUserId",
+            "columnName": "UserOid"
+          }
+        ]
+      }
+    ],
+    "details": {
+      "Server": "Server",
+      "Tool": "Tool",
+      "Reason": "Reason",
+      "RequestId": "RequestId"
+    },
+    "description": "An order that a human approved in the agent was still refused by the Actions MCP server because the instrument is on the restricted list. The approval gate is not the control; the server-side policy is.",
+    "query": "AbwMcpAudit(30m)\n| where Event == 'order_blocked'\n| project TimeGenerated, UserUpn, UserOid, Server, Tool, Reason, RequestId, ClientAppId"
+  },
+  {
+    "id": "legacy-no-identity",
+    "name": "ABW-003 Tool call on the legacy shared-key path (no user identity)",
+    "severity": "Medium",
+    "tactics": [
+      "CredentialAccess"
+    ],
+    "frequency": "PT5M",
+    "period": "PT30M",
+    "group": "AnyAlert",
+    "entities": [
+      {
+        "entityType": "CloudApplication",
+        "fieldMappings": [
+          {
+            "identifier": "Name",
+            "columnName": "ServerApp"
+          }
+        ]
+      }
+    ],
+    "details": {
+      "Server": "Server",
+      "Tool": "Tools",
+      "Calls": "Calls",
+      "RequestId": "RequestId"
+    },
+    "description": "A tool call was served by the legacy MCP server, which authenticates with a shared subscription key. There is no user, no on-behalf-of and no per-user authorization on this path. Move the consumer to the governed gateway APIs.",
+    "query": "AbwMcpAudit(30m)\n| where Event == 'tool_call' and Server == 'legacy' and isempty(UserUpn) and isempty(UserOid)\n| summarize Calls = count(), Tools = make_set(Tool, 10), FirstSeen = min(TimeGenerated), LastSeen = max(TimeGenerated), RequestId = take_any(RequestId) by Server\n| extend TimeGenerated = LastSeen, ServerApp = strcat('ca-abw-mcp-', Server)"
+  },
+  {
+    "id": "client-not-allowed",
+    "name": "ABW-004 Gateway rejected a token from an unapproved client application",
+    "severity": "High",
+    "tactics": [
+      "InitialAccess"
+    ],
+    "frequency": "PT5M",
+    "period": "PT30M",
+    "group": "Account",
+    "entities": [
+      {
+        "entityType": "Account",
+        "fieldMappings": [
+          {
+            "identifier": "AadUserId",
+            "columnName": "UserOid"
+          }
+        ]
+      },
+      {
+        "entityType": "IP",
+        "fieldMappings": [
+          {
+            "identifier": "Address",
+            "columnName": "CallerIp"
+          }
+        ]
+      }
+    ],
+    "details": {
+      "Server": "Server",
+      "Url": "Url",
+      "RequestId": "RequestId"
+    },
+    "description": "APIM validated the Entra token but the calling application (azp) is not on the approved client list. A valid user token minted for another application was replayed against an MCP API.",
+    "query": "AbwGateway(30m)\n| where Reason == 'client_not_allowed'\n| project TimeGenerated, RequestId, Server, UserOid, CallerIp, Method, Url"
+  },
+  {
+    "id": "revoked-principal",
+    "name": "ABW-005 Revoked principal still calling MCP APIs",
+    "severity": "High",
+    "tactics": [
+      "Impact"
+    ],
+    "frequency": "PT5M",
+    "period": "PT30M",
+    "group": "Account",
+    "entities": [
+      {
+        "entityType": "Account",
+        "fieldMappings": [
+          {
+            "identifier": "AadUserId",
+            "columnName": "UserOid"
+          }
+        ]
+      }
+    ],
+    "details": {
+      "Attempts": "Attempts",
+      "Servers": "Servers"
+    },
+    "description": "A user on the kill-switch deny list (APIM named value abw-deny-oids) is still presenting tokens. Revocation is working at the gateway; the caller needs to be contained at the identity layer (revoke sessions, disable the account).",
+    "query": "AbwGateway(30m)\n| where Reason == 'revoked'\n| summarize Attempts = count(), Servers = make_set(Server, 10), CallerIps = make_set(CallerIp, 10), FirstSeen = min(TimeGenerated), LastSeen = max(TimeGenerated) by UserOid\n| extend TimeGenerated = LastSeen"
+  },
+  {
+    "id": "repeated-denials",
+    "name": "ABW-006 Repeated denials for one identity across defence layers",
+    "severity": "Medium",
+    "tactics": [
+      "Discovery"
+    ],
+    "frequency": "PT5M",
+    "period": "PT30M",
+    "group": "AnyAlert",
+    "entities": [
+      {
+        "entityType": "Account",
+        "fieldMappings": [
+          {
+            "identifier": "FullName",
+            "columnName": "Principal"
+          }
+        ]
+      }
+    ],
+    "details": {
+      "Denials": "Denials",
+      "Layers": "Layers",
+      "Reasons": "Reasons",
+      "Targets": "Targets"
+    },
+    "description": "Three or more refusals for the same principal within 30 minutes, from any layer (guardrail, gateway, MCP server, data plane). Probing behaviour from an agent or a user.",
+    "query": "AbwDenials(30m)\n| where not(Layer == '3-data-plane' and Principal == '(anonymous)')\n| where isnotempty(Principal)\n| summarize Denials = count(), Layers = make_set(Layer), Reasons = make_set(Reason, 10), Targets = make_set(Target, 10), FirstSeen = min(TimeGenerated), LastSeen = max(TimeGenerated) by Principal\n| where Denials >= 3\n| extend TimeGenerated = LastSeen"
+  },
+  {
+    "id": "entitlement-drift",
+    "name": "ABW-007 Entitlement drift: gateway and MCP allowed, storage RBAC denied the user",
+    "severity": "High",
+    "tactics": [
+      "PrivilegeEscalation"
+    ],
+    "frequency": "PT5M",
+    "period": "PT1H",
+    "group": "Account",
+    "entities": [
+      {
+        "entityType": "Account",
+        "fieldMappings": [
+          {
+            "identifier": "FullName",
+            "columnName": "UserUpn"
+          }
+        ]
+      }
+    ],
+    "details": {
+      "Control": "Control",
+      "Target": "Target",
+      "Reason": "Reason",
+      "RequestId": "RequestId"
+    },
+    "description": "The request passed the gateway and the MCP server (the token carries the role) but Azure Storage refused the signed-in user: the user lost the Azure RBAC data permission while the token (or the app role) still says yes. Fix the group membership or role assignment; the data-plane layer caught the drift.",
+    "query": "AbwDenials(1h)\n| where Layer == '3-data-plane' and Principal != '(anonymous)'\n| project TimeGenerated, UserUpn = Principal, Control, Target, Reason, RequestId"
+  },
+  {
+    "id": "guardrail-intervention",
+    "name": "ABW-008 Foundry guardrail stopped an agent run (prompt-injection indicator)",
+    "severity": "High",
+    "tactics": [
+      "Execution"
+    ],
+    "frequency": "PT5M",
+    "period": "PT30M",
+    "group": "AnyAlert",
+    "entities": [
+      {
+        "entityType": "CloudApplication",
+        "fieldMappings": [
+          {
+            "identifier": "Name",
+            "columnName": "Agent"
+          }
+        ]
+      }
+    ],
+    "details": {
+      "Agent": "Agent",
+      "Control": "Control",
+      "Target": "Target",
+      "RequestId": "RequestId"
+    },
+    "description": "The Foundry guardrail blocked a prompt (jailbreak) or content a tool returned (indirect prompt injection) and ended the agent run. Control says where it was caught and what it flagged. For tool-returned content, review the tool that produced it and its data source.",
+    "query": "AbwDenials(30m)\n| where Layer == '0-agent-guardrail'\n| project TimeGenerated, Agent = Principal, Control, Target, Reason, RequestId"
+  },
+  {
+    "id": "throttled-burst",
+    "name": "ABW-009 Burst of throttled MCP calls from one identity",
+    "severity": "Low",
+    "tactics": [
+      "Impact"
+    ],
+    "frequency": "PT5M",
+    "period": "PT30M",
+    "group": "AnyAlert",
+    "entities": [
+      {
+        "entityType": "Account",
+        "fieldMappings": [
+          {
+            "identifier": "AadUserId",
+            "columnName": "UserOid"
+          }
+        ]
+      },
+      {
+        "entityType": "IP",
+        "fieldMappings": [
+          {
+            "identifier": "Address",
+            "columnName": "CallerIp"
+          }
+        ]
+      }
+    ],
+    "details": {
+      "Throttled": "Throttled",
+      "Servers": "Servers"
+    },
+    "description": "Five or more calls were rejected by the per-user rate limit (120 calls / minute). A runaway agent loop or scripted abuse.",
+    "query": "AbwGateway(30m)\n| where Outcome == 'rate_limited'\n| summarize Throttled = count(), Servers = make_set(Server, 10), FirstSeen = min(TimeGenerated), LastSeen = max(TimeGenerated) by UserOid, CallerIp\n| where Throttled >= 5\n| extend TimeGenerated = LastSeen"
+  }
+]
